@@ -31,7 +31,7 @@ class TextileLexer implements FlexLexer {
    * l is of the form l = 2*k, k a non negative integer
    */
   private static final int ZZ_LEXSTATE[] = { 
-     0, 0
+     0, 1
   };
 
   /** 
@@ -62,11 +62,11 @@ class TextileLexer implements FlexLexer {
   private static final int [] ZZ_ACTION = zzUnpackAction();
 
   private static final String ZZ_ACTION_PACKED_0 =
-    "\1\0\6\1\1\2\1\0\1\3\1\0\1\4\4\0"+
-    "\1\5\1\6";
+    "\2\0\7\1\1\2\1\0\1\3\2\0\1\4\6\0"+
+    "\2\5\1\6";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[18];
+    int [] result = new int[24];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -91,12 +91,12 @@ class TextileLexer implements FlexLexer {
   private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
-    "\0\0\0\10\0\20\0\30\0\40\0\50\0\60\0\20"+
-    "\0\20\0\10\0\30\0\10\0\70\0\100\0\110\0\120"+
-    "\0\10\0\10";
+    "\0\0\0\10\0\20\0\30\0\40\0\50\0\60\0\70"+
+    "\0\100\0\30\0\30\0\20\0\40\0\110\0\20\0\120"+
+    "\0\100\0\130\0\140\0\150\0\160\0\20\0\100\0\20";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[18];
+    int [] result = new int[24];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -119,13 +119,16 @@ class TextileLexer implements FlexLexer {
   private static final int [] ZZ_TRANS = zzUnpackTrans();
 
   private static final String ZZ_TRANS_PACKED_0 =
-    "\1\2\1\3\1\4\1\5\1\6\2\2\1\7\11\0"+
-    "\1\10\1\11\6\0\1\12\1\13\7\0\1\14\1\15"+
-    "\11\0\1\16\4\0\1\14\10\0\1\17\12\0\1\20"+
-    "\4\0\1\21\6\0\1\22\5\0";
+    "\1\3\1\4\1\5\1\6\5\3\1\4\1\5\1\7"+
+    "\1\10\2\3\1\11\11\0\1\12\1\13\6\0\1\14"+
+    "\1\15\10\0\1\16\6\0\1\17\1\20\3\0\1\21"+
+    "\5\0\1\22\4\0\1\17\1\21\3\0\1\21\3\0"+
+    "\1\23\6\0\1\17\1\24\3\0\1\21\6\0\1\25"+
+    "\4\0\1\26\6\0\1\17\1\27\3\0\1\21\2\0"+
+    "\1\30\5\0";
 
   private static int [] zzUnpackTrans() {
-    int [] result = new int[88];
+    int [] result = new int[120];
     int offset = 0;
     offset = zzUnpackTrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -163,11 +166,11 @@ class TextileLexer implements FlexLexer {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\1\0\1\11\6\1\1\0\1\11\1\0\1\11\4\0"+
-    "\2\11";
+    "\2\0\1\11\7\1\1\0\1\11\2\0\1\11\6\0"+
+    "\1\11\1\1\1\11";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[18];
+    int [] result = new int[24];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -413,11 +416,44 @@ class TextileLexer implements FlexLexer {
     while (true) {
       zzMarkedPosL = zzMarkedPos;
 
+      if (zzMarkedPosL > zzStartRead) {
+        switch (zzBufferL.charAt(zzMarkedPosL-1)) {
+        case '\n':
+        case '\u000B':  // fall through
+        case '\u000C':  // fall through
+        case '\u0085':  // fall through
+        case '\u2028':  // fall through
+        case '\u2029':  // fall through
+          zzAtBOL = true;
+          break;
+        case '\r': 
+          if (zzMarkedPosL < zzEndReadL)
+            zzAtBOL = zzBufferL.charAt(zzMarkedPosL) != '\n';
+          else if (zzAtEOF)
+            zzAtBOL = false;
+          else {
+            boolean eof = zzRefill();
+            zzMarkedPosL = zzMarkedPos;
+            zzEndReadL = zzEndRead;
+            zzBufferL = zzBuffer;
+            if (eof) 
+              zzAtBOL = false;
+            else 
+              zzAtBOL = zzBufferL.charAt(zzMarkedPosL) != '\n';
+          }
+          break;
+        default:
+          zzAtBOL = false;
+        }
+      }
       zzAction = -1;
 
       zzCurrentPosL = zzCurrentPos = zzStartRead = zzMarkedPosL;
 
-      zzState = ZZ_LEXSTATE[zzLexicalState];
+      if (zzAtBOL)
+        zzState = ZZ_LEXSTATE[zzLexicalState+1];
+      else
+        zzState = ZZ_LEXSTATE[zzLexicalState];
 
       // set up zzAction for empty match case:
       int zzAttributes = zzAttrL[zzState];

@@ -2,6 +2,7 @@ package org.potniype4kin.textile.language;
 
 import com.intellij.lexer.Lexer;
 import com.intellij.openapi.editor.colors.TextAttributesKey;
+import com.intellij.openapi.editor.markup.TextAttributes;
 import com.intellij.openapi.fileTypes.SyntaxHighlighter;
 import com.intellij.openapi.fileTypes.SyntaxHighlighterBase;
 import com.intellij.openapi.fileTypes.SyntaxHighlighterFactory;
@@ -12,8 +13,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.potniype4kin.textile.psi.TextileType;
 
-import static com.intellij.openapi.editor.DefaultLanguageHighlighterColors.KEYWORD;
-import static com.intellij.openapi.editor.DefaultLanguageHighlighterColors.STATIC_FIELD;
+import java.awt.*;
+
+import static com.intellij.openapi.editor.DefaultLanguageHighlighterColors.BLOCK_COMMENT;
 
 public class TextileSyntaxHighlighter extends SyntaxHighlighterBase {
     private static final TextAttributesKey[] EMPTY = new TextAttributesKey[0];
@@ -36,13 +38,34 @@ public class TextileSyntaxHighlighter extends SyntaxHighlighterBase {
     @Override
     public TextAttributesKey[] getTokenHighlights(IElementType elementType) {
         if (TextileType.HEADER_START.equals(elementType)) {
-            return pack(STATIC_FIELD);
+            return pack(headerStart());
         } else if (TextileType.LIST_DELIM.equals(elementType)) {
-            return pack(KEYWORD);
+            return pack(listDelim());
         } else if (TextileType.CHAPTER_BREAK.equals(elementType)) {
-            return pack(KEYWORD);
+            return pack(BLOCK_COMMENT);
         } else {
             return EMPTY;
         }
+    }
+
+    @NotNull
+    private TextAttributesKey headerStart() {
+        TextAttributesKey chapterBreakKey = TextAttributesKey.find("CHAPTER_BREAK");
+
+        TextAttributes attrs = chapterBreakKey.getDefaultAttributes();
+        attrs.setForegroundColor(Color.MAGENTA);
+        attrs.setFontType(Font.BOLD);
+
+        return chapterBreakKey;
+    }
+
+    private TextAttributesKey listDelim() {
+        TextAttributesKey chapterBreakKey = TextAttributesKey.find("CHAPTER_BREAK");
+
+        TextAttributes attrs = chapterBreakKey.getDefaultAttributes();
+        attrs.setForegroundColor(Color.BLUE);
+        attrs.setFontType(Font.BOLD);
+
+        return chapterBreakKey;
     }
 }
