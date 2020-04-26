@@ -7,17 +7,17 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 
-public class PropertiesFileType extends LanguageFileType {
-    private static final PropertiesFileType INSTANCE = new PropertiesFileType();
+public class TextileFileType extends LanguageFileType {
+    private static final TextileFileType INSTANCE = new TextileFileType();
 
-    private PropertiesFileType() {
-        super(PropertiesLanguageDefinitions.LANGUAGE);
+    private TextileFileType() {
+        super(TextileLanguageDefinitions.LANGUAGE);
     }
 
     public static class Factory extends FileTypeFactory {
         @Override
         public void createFileTypes(@NotNull FileTypeConsumer fileTypeConsumer) {
-            fileTypeConsumer.consume(PropertiesFileType.INSTANCE);
+            fileTypeConsumer.consume(TextileFileType.INSTANCE);
         }
     }
 
@@ -43,6 +43,6 @@ public class PropertiesFileType extends LanguageFileType {
     @Nullable
     @Override
     public Icon getIcon() {
-        return PropertiesLanguageDefinitions.ICON;
+        return TextileLanguageDefinitions.ICON;
     }
 }
