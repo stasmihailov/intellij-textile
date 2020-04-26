@@ -1,0 +1,22 @@
+{
+  parserClass="org.potniype4kin.textile.parser.TextileParser"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="Textile"
+  psiImplClassSuffix="Impl"
+  psiPackage="org.potniype4kin.textile.psi"
+  psiImplPackage="org.potniype4kin.textile.psi.impl"
+
+  elementTypeHolderClass="org.potniype4kin.textile.psi.TextileType"
+  elementTypeClass="org.potniype4kin.textile.psi.TextileElement"
+  tokenTypeClass="org.potniype4kin.textile.psi.TextileToken"
+
+  psiImplUtilClass="org.potniype4kin.textile.psi.impl.TextilePsiImplUtil"
+}
+
+simpleFile ::= item*
+
+private header ::= HEADER_START HEADER_TEXT
+private list ::= LIST_DELIM LIST_TEXT
+private item ::= (header|list|TEXT)
