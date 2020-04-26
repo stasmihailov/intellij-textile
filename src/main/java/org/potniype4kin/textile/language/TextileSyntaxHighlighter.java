@@ -2,7 +2,6 @@ package org.potniype4kin.textile.language;
 
 import com.intellij.lexer.Lexer;
 import com.intellij.openapi.editor.colors.TextAttributesKey;
-import com.intellij.openapi.editor.markup.TextAttributes;
 import com.intellij.openapi.fileTypes.SyntaxHighlighter;
 import com.intellij.openapi.fileTypes.SyntaxHighlighterBase;
 import com.intellij.openapi.fileTypes.SyntaxHighlighterFactory;
@@ -13,9 +12,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.potniype4kin.textile.psi.TextileType;
 
-import java.awt.*;
-
 import static com.intellij.openapi.editor.DefaultLanguageHighlighterColors.BLOCK_COMMENT;
+import static com.intellij.openapi.editor.DefaultLanguageHighlighterColors.DOC_COMMENT_MARKUP;
 
 public class TextileSyntaxHighlighter extends SyntaxHighlighterBase {
     private static final TextAttributesKey[] EMPTY = new TextAttributesKey[0];
@@ -56,33 +54,14 @@ public class TextileSyntaxHighlighter extends SyntaxHighlighterBase {
 
     @NotNull
     private TextAttributesKey headerStart() {
-        TextAttributesKey chapterBreakKey = TextAttributesKey.find("TEXTILE_HEADER_START");
-
-        TextAttributes attrs = chapterBreakKey.getDefaultAttributes();
-        attrs.setForegroundColor(Color.MAGENTA);
-        attrs.setFontType(Font.BOLD);
-
-        return chapterBreakKey;
+        return TextAttributesKey.find("TEXTILE_HEADER_START");
     }
 
     private TextAttributesKey listDelim() {
-        TextAttributesKey chapterBreakKey = TextAttributesKey.find("TEXTILE_CHAPTER_BREAK");
-
-        TextAttributes attrs = chapterBreakKey.getDefaultAttributes();
-        attrs.setForegroundColor(Color.BLUE);
-        attrs.setFontType(Font.BOLD);
-
-        return chapterBreakKey;
+        return TextAttributesKey.find("TEXTILE_CHAPTER_BREAK");
     }
 
     private TextAttributesKey code() {
-        TextAttributesKey chapterBreakKey = TextAttributesKey.find("TEXTILE_CODE");
-
-        Color lightGreen = new Color(237, 252, 237);
-
-        TextAttributes attrs = chapterBreakKey.getDefaultAttributes();
-        attrs.setBackgroundColor(lightGreen);
-
-        return chapterBreakKey;
+        return DOC_COMMENT_MARKUP;
     }
 }
