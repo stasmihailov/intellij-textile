@@ -12,8 +12,6 @@ and is joined unless two line breaks
 
 this is a different paragraph
 
-h3. Next is a list
-
 - list item 1
 -- nested list item 1.1
 -- nested list item 1.2
@@ -23,7 +21,7 @@ following is a break line
 
 ----
 
-next is a table
+h3. next pagagraph is a table
 | name | value |
 | --- | --- |
 | josh | true |

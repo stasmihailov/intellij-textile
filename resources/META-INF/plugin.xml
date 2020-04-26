@@ -1,8 +1,12 @@
 <idea-plugin>
   <id>com.potniype4kin.intellij-textile</id>
   <name>Textile language support</name>
-  <version>1.0</version>
+  <version>0.1.1</version>
   <vendor>Denis Babochenko</vendor>
+
+  <description>
+    Adds highlighting for textile markup files
+  </description>
 
   <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
   <idea-version since-build="173.0"/>
@@ -17,6 +21,7 @@
                            implementationClass="org.potniype4kin.textile.language.TextileParserDefinition"/>
     <lang.syntaxHighlighterFactory language="Textile"
                                    implementationClass="org.potniype4kin.textile.language.TextileSyntaxHighlighter$Factory"/>
+    <additionalTextAttributes scheme="Default" file="/colorSchemes/Textile.xml"/>
   </extensions>
 
   <actions>
