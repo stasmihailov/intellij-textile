@@ -23,8 +23,6 @@ class TextileLexer implements FlexLexer {
 
   /** lexical states */
   public static final int YYINITIAL = 0;
-  public static final int HEADER = 2;
-  public static final int LIST = 4;
 
   /**
    * ZZ_LEXSTATE[l] is the state in the DFA for the lexical state l
@@ -33,29 +31,30 @@ class TextileLexer implements FlexLexer {
    * l is of the form l = 2*k, k a non negative integer
    */
   private static final int ZZ_LEXSTATE[] = { 
-     0,  1,  2,  2,  2, 2
+     0, 0
   };
 
   /** 
    * Translates characters to character classes
-   * Chosen bits are [8, 6, 7]
-   * Total runtime size is 1040 bytes
+   * Chosen bits are [7, 7, 7]
+   * Total runtime size is 1928 bytes
    */
   public static int ZZ_CMAP(int ch) {
-    return ZZ_CMAP_A[ZZ_CMAP_Y[ZZ_CMAP_Z[ch>>13]|((ch>>7)&0x3f)]|(ch&0x7f)];
+    return ZZ_CMAP_A[(ZZ_CMAP_Y[ZZ_CMAP_Z[ch>>14]|((ch>>7)&0x7f)]<<7)|(ch&0x7f)];
   }
 
-  /* The ZZ_CMAP_Z table has 136 entries */
+  /* The ZZ_CMAP_Z table has 68 entries */
   static final char ZZ_CMAP_Z[] = zzUnpackCMap(
-    "\1\0\207\100");
+    "\1\0\103\200");
 
-  /* The ZZ_CMAP_Y table has 128 entries */
+  /* The ZZ_CMAP_Y table has 256 entries */
   static final char ZZ_CMAP_Y[] = zzUnpackCMap(
-    "\1\0\177\200");
+    "\1\0\1\1\53\2\1\3\22\2\1\4\37\2\1\3\237\2");
 
-  /* The ZZ_CMAP_A table has 256 entries */
+  /* The ZZ_CMAP_A table has 640 entries */
   static final char ZZ_CMAP_A[] = zzUnpackCMap(
-    "\11\0\1\2\1\1\1\0\1\2\1\1\22\0\1\2\11\0\1\6\2\0\1\6\1\5\2\0\6\4\61\0\1\3\227"+
+    "\11\0\1\2\1\1\1\10\1\2\1\1\22\0\1\2\11\0\1\6\2\0\1\7\1\5\2\0\6\4\61\0\1\3"+
+    "\34\0\1\10\32\0\1\10\337\0\1\10\177\0\13\10\35\0\2\10\5\0\1\10\57\0\1\10\40"+
     "\0");
 
   /** 
@@ -64,11 +63,11 @@ class TextileLexer implements FlexLexer {
   private static final int [] ZZ_ACTION = zzUnpackAction();
 
   private static final String ZZ_ACTION_PACKED_0 =
-    "\3\0\1\1\1\2\4\1\1\0\1\3\1\4\2\0"+
-    "\1\5";
+    "\1\0\1\1\1\2\4\1\2\0\1\3\1\0\3\4"+
+    "\1\5\1\6";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[15];
+    int [] result = new int[16];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -93,11 +92,11 @@ class TextileLexer implements FlexLexer {
   private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
-    "\0\0\0\7\0\16\0\25\0\34\0\43\0\52\0\61"+
-    "\0\70\0\77\0\25\0\25\0\70\0\106\0\25";
+    "\0\0\0\11\0\22\0\33\0\44\0\55\0\66\0\77"+
+    "\0\110\0\77\0\121\0\77\0\132\0\143\0\77\0\77";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[15];
+    int [] result = new int[16];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -120,13 +119,16 @@ class TextileLexer implements FlexLexer {
   private static final int [] ZZ_TRANS = zzUnpackTrans();
 
   private static final String ZZ_TRANS_PACKED_0 =
-    "\1\4\2\5\5\4\2\5\1\6\2\4\1\7\1\10"+
-    "\1\11\5\10\10\0\2\5\10\0\1\12\4\0\1\13"+
-    "\4\0\1\10\1\0\5\10\1\0\1\14\1\15\11\0"+
-    "\1\16\3\0\1\17\4\0";
+    "\1\2\2\3\1\4\2\2\1\5\1\6\1\7\1\10"+
+    "\1\0\7\10\1\0\2\3\6\0\1\10\1\0\2\10"+
+    "\1\11\5\10\1\0\1\12\7\10\1\0\1\12\4\10"+
+    "\1\13\1\10\11\0\1\14\1\0\1\10\5\14\1\10"+
+    "\1\14\1\0\1\10\2\14\1\15\2\14\1\10\1\14"+
+    "\1\0\1\10\4\14\1\16\1\10\1\14\1\0\1\17"+
+    "\5\14\1\10\1\14\1\0\1\10\4\14\1\20\1\10";
 
   private static int [] zzUnpackTrans() {
-    int [] result = new int[77];
+    int [] result = new int[108];
     int offset = 0;
     offset = zzUnpackTrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -164,10 +166,10 @@ class TextileLexer implements FlexLexer {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\3\0\1\11\5\1\1\0\2\11\2\0\1\11";
+    "\1\0\5\1\1\11\2\0\1\1\1\0\5\1";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[15];
+    int [] result = new int[16];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -413,44 +415,11 @@ class TextileLexer implements FlexLexer {
     while (true) {
       zzMarkedPosL = zzMarkedPos;
 
-      if (zzMarkedPosL > zzStartRead) {
-        switch (zzBufferL.charAt(zzMarkedPosL-1)) {
-        case '\n':
-        case '\u000B':  // fall through
-        case '\u000C':  // fall through
-        case '\u0085':  // fall through
-        case '\u2028':  // fall through
-        case '\u2029':  // fall through
-          zzAtBOL = true;
-          break;
-        case '\r': 
-          if (zzMarkedPosL < zzEndReadL)
-            zzAtBOL = zzBufferL.charAt(zzMarkedPosL) != '\n';
-          else if (zzAtEOF)
-            zzAtBOL = false;
-          else {
-            boolean eof = zzRefill();
-            zzMarkedPosL = zzMarkedPos;
-            zzEndReadL = zzEndRead;
-            zzBufferL = zzBuffer;
-            if (eof) 
-              zzAtBOL = false;
-            else 
-              zzAtBOL = zzBufferL.charAt(zzMarkedPosL) != '\n';
-          }
-          break;
-        default:
-          zzAtBOL = false;
-        }
-      }
       zzAction = -1;
 
       zzCurrentPosL = zzCurrentPos = zzStartRead = zzMarkedPosL;
 
-      if (zzAtBOL)
-        zzState = ZZ_LEXSTATE[zzLexicalState+1];
-      else
-        zzState = ZZ_LEXSTATE[zzLexicalState];
+      zzState = ZZ_LEXSTATE[zzLexicalState];
 
       // set up zzAction for empty match case:
       int zzAttributes = zzAttrL[zzState];
@@ -514,33 +483,35 @@ class TextileLexer implements FlexLexer {
       else {
         switch (zzAction < 0 ? zzAction : ZZ_ACTION[zzAction]) {
           case 1: 
-            { return TextileType.TEXT;
+            { return TokenType.DUMMY_HOLDER;
             } 
             // fall through
-          case 6: break;
+          case 7: break;
           case 2: 
             { return TokenType.WHITE_SPACE;
             } 
             // fall through
-          case 7: break;
-          case 3: 
-            { yybegin(LIST);
-    return TextileType.LIST_DELIM;
-            } 
-            // fall through
           case 8: break;
-          case 4: 
-            { yybegin(YYINITIAL);
-    return TextileType.TEXT;
+          case 3: 
+            { return TextileType.LIST_DELIM;
             } 
             // fall through
           case 9: break;
-          case 5: 
-            { yybegin(HEADER);
-    return TextileType.HEADER_START;
+          case 4: 
+            { return TextileType.TEXT;
             } 
             // fall through
           case 10: break;
+          case 5: 
+            { return TextileType.HEADER_START;
+            } 
+            // fall through
+          case 11: break;
+          case 6: 
+            { return TextileType.CHAPTER_BREAK;
+            } 
+            // fall through
+          case 12: break;
           default:
             zzScanError(ZZ_NO_MATCH);
           }

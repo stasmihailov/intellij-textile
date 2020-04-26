@@ -24,40 +24,29 @@ HEADER_LEVEL=[1-6]
 HEADER_SUFFIX="."
 HEADER_DEFINITION={HEADER_PREFIX}{HEADER_LEVEL}{HEADER_SUFFIX}{SPACE}
 LIST_DELIM=[-*]
-TEXT=[^\r\n]+
+LIST_DEFINITION={LIST_DELIM}{SPACE}
+CHAPTER_BREAK="-"{4}
+TEXT=[^\r\n\s][^\r\n]+[^\r\n\s]
 PARAGRAPH_BREAK={CRLF}{SPACE}*{CRLF}
-
-%state HEADER
-%state LIST
 
 %%
 
-<YYINITIAL> ({CRLF}|{SPACE})+ {
+{CHAPTER_BREAK} {
+    return TextileType.CHAPTER_BREAK;
+}
+{PARAGRAPH_BREAK} {
     return TokenType.WHITE_SPACE;
 }
-<YYINITIAL> ^{HEADER_DEFINITION} {
-    yybegin(HEADER);
+({CRLF}|{SPACE})+ {
+    return TokenType.WHITE_SPACE;
+}
+({HEADER_DEFINITION}) {
     return TextileType.HEADER_START;
 }
-<HEADER> {PARAGRAPH_BREAK} {
-    yybegin(YYINITIAL);
-    return TextileType.TEXT;
-}
-<YYINITIAL> ^{LIST_DELIM}{SPACE} {
-    yybegin(LIST);
+{LIST_DELIM}{SPACE} {
     return TextileType.LIST_DELIM;
 }
-<LIST> {PARAGRAPH_BREAK} {
-    yybegin(YYINITIAL);
-    return TextileType.TEXT;
-}
-<YYINITIAL> {TEXT} {
-    return TextileType.TEXT;
-}
-<HEADER> {TEXT} {
-    return TextileType.TEXT;
-}
-<LIST> {TEXT} {
+{TEXT} {
     return TextileType.TEXT;
 }
 [^] {

@@ -8,6 +8,7 @@ import com.intellij.lang.ASTNode;
 public interface TextileType {
 
 
+  IElementType CHAPTER_BREAK = new TextileToken("CHAPTER_BREAK");
   IElementType HEADER_START = new TextileToken("HEADER_START");
   IElementType LIST_DELIM = new TextileToken("LIST_DELIM");
   IElementType TEXT = new TextileToken("TEXT");

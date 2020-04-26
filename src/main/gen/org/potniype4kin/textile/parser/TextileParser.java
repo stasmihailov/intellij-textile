@@ -48,13 +48,14 @@ public class TextileParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // header|list|TEXT
+  // header|list|TEXT|CHAPTER_BREAK
   static boolean item(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "item")) return false;
     boolean r;
     r = header(b, l + 1);
     if (!r) r = list(b, l + 1);
     if (!r) r = consumeToken(b, TEXT);
+    if (!r) r = consumeToken(b, CHAPTER_BREAK);
     return r;
   }
 
