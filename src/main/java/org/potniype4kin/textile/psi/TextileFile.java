@@ -8,7 +8,7 @@ import org.potniype4kin.textile.TextileFileType;
 import org.potniype4kin.textile.TextileLanguageDefinitions;
 
 public class TextileFile extends PsiFileBase {
-    protected TextileFile(@NotNull FileViewProvider viewProvider) {
+    public TextileFile(@NotNull FileViewProvider viewProvider) {
         super(viewProvider, TextileLanguageDefinitions.LANGUAGE);
     }
 

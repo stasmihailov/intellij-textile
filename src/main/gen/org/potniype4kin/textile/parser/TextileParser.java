@@ -32,7 +32,7 @@ public class TextileParser implements PsiParser, LightPsiParser {
   }
 
   static boolean parse_root_(IElementType t, PsiBuilder b, int l) {
-    return simpleFile(b, l + 1);
+    return textileFile(b, l + 1);
   }
 
   /* ********************************************************** */
@@ -72,12 +72,12 @@ public class TextileParser implements PsiParser, LightPsiParser {
 
   /* ********************************************************** */
   // item*
-  static boolean simpleFile(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "simpleFile")) return false;
+  static boolean textileFile(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "textileFile")) return false;
     while (true) {
       int c = current_position_(b);
       if (!item(b, l + 1)) break;
-      if (!empty_element_parsed_guard_(b, "simpleFile", c)) break;
+      if (!empty_element_parsed_guard_(b, "textileFile", c)) break;
     }
     return true;
   }
