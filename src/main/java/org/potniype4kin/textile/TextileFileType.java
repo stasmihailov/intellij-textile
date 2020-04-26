@@ -10,7 +10,7 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.*;
 
 public class TextileFileType extends LanguageFileType {
-    private static final TextileFileType INSTANCE = new TextileFileType();
+    public static final TextileFileType INSTANCE = new TextileFileType();
 
     private TextileFileType() {
         super(TextileLanguageDefinitions.LANGUAGE);
