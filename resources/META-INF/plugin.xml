@@ -2,7 +2,7 @@
   <id>com.potniype4kin.intellij-textile</id>
   <name>Textile language support</name>
   <version>1.0</version>
-  <vendor>potniype4kin</vendor>
+  <vendor>Denis Babochenko</vendor>
 
   <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
   <idea-version since-build="173.0"/>
@@ -12,7 +12,7 @@
   <depends>com.intellij.modules.platform</depends>
 
   <extensions defaultExtensionNs="com.intellij">
-    <fileTypeFactory implementation="TextileFileType$Factory"/>
+    <fileTypeFactory implementation="org.potniype4kin.textile.TextileFileType$Factory"/>
   </extensions>
 
   <actions>

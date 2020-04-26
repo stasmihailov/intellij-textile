@@ -1,3 +1,5 @@
+package org.potniype4kin.textile;
+
 import com.intellij.openapi.fileTypes.FileTypeConsumer;
 import com.intellij.openapi.fileTypes.FileTypeFactory;
 import com.intellij.openapi.fileTypes.LanguageFileType;
