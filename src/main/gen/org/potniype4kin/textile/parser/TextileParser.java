@@ -36,13 +36,13 @@ public class TextileParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // HEADER_START HEADER_TEXT
+  // HEADER_START TEXT
   static boolean header(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "header")) return false;
     if (!nextTokenIs(b, HEADER_START)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, HEADER_START, HEADER_TEXT);
+    r = consumeTokens(b, 0, HEADER_START, TEXT);
     exit_section_(b, m, null, r);
     return r;
   }
@@ -59,13 +59,13 @@ public class TextileParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // LIST_DELIM LIST_TEXT
+  // LIST_DELIM TEXT
   static boolean list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "list")) return false;
     if (!nextTokenIs(b, LIST_DELIM)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, LIST_DELIM, LIST_TEXT);
+    r = consumeTokens(b, 0, LIST_DELIM, TEXT);
     exit_section_(b, m, null, r);
     return r;
   }

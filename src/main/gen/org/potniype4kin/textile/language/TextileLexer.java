@@ -38,25 +38,25 @@ class TextileLexer implements FlexLexer {
 
   /** 
    * Translates characters to character classes
-   * Chosen bits are [9, 6, 6]
-   * Total runtime size is 1568 bytes
+   * Chosen bits are [8, 6, 7]
+   * Total runtime size is 1040 bytes
    */
   public static int ZZ_CMAP(int ch) {
-    return ZZ_CMAP_A[(ZZ_CMAP_Y[ZZ_CMAP_Z[ch>>12]|((ch>>6)&0x3f)]<<6)|(ch&0x3f)];
+    return ZZ_CMAP_A[ZZ_CMAP_Y[ZZ_CMAP_Z[ch>>13]|((ch>>7)&0x3f)]|(ch&0x7f)];
   }
 
-  /* The ZZ_CMAP_Z table has 272 entries */
+  /* The ZZ_CMAP_Z table has 136 entries */
   static final char ZZ_CMAP_Z[] = zzUnpackCMap(
-    "\1\0\1\100\1\200\u010d\100");
+    "\1\0\207\100");
 
-  /* The ZZ_CMAP_Y table has 192 entries */
+  /* The ZZ_CMAP_Y table has 128 entries */
   static final char ZZ_CMAP_Y[] = zzUnpackCMap(
-    "\1\0\1\1\1\2\175\3\1\4\77\3");
+    "\1\0\177\200");
 
-  /* The ZZ_CMAP_A table has 320 entries */
+  /* The ZZ_CMAP_A table has 256 entries */
   static final char ZZ_CMAP_A[] = zzUnpackCMap(
-    "\11\0\1\2\1\1\1\6\1\7\1\1\22\0\1\2\6\0\1\3\2\0\1\10\2\0\1\10\3\0\6\5\61\0"+
-    "\1\4\34\0\1\6\242\0\2\6\26\0");
+    "\11\0\1\2\1\1\1\0\1\2\1\1\22\0\1\2\11\0\1\6\2\0\1\6\1\5\2\0\6\4\61\0\1\3\227"+
+    "\0");
 
   /** 
    * Translates DFA states to action switch labels.
@@ -64,11 +64,11 @@ class TextileLexer implements FlexLexer {
   private static final int [] ZZ_ACTION = zzUnpackAction();
 
   private static final String ZZ_ACTION_PACKED_0 =
-    "\3\0\1\1\2\2\2\1\1\3\1\1\1\4\1\5"+
-    "\1\0\5\1\1\6";
+    "\3\0\1\1\1\2\4\1\1\0\1\3\1\4\2\0"+
+    "\1\5";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[19];
+    int [] result = new int[15];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -93,12 +93,11 @@ class TextileLexer implements FlexLexer {
   private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
-    "\0\0\0\11\0\22\0\33\0\44\0\0\0\55\0\66"+
-    "\0\77\0\110\0\33\0\121\0\77\0\132\0\143\0\154"+
-    "\0\165\0\176\0\33";
+    "\0\0\0\7\0\16\0\25\0\34\0\43\0\52\0\61"+
+    "\0\70\0\77\0\25\0\25\0\70\0\106\0\25";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[19];
+    int [] result = new int[15];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -121,18 +120,13 @@ class TextileLexer implements FlexLexer {
   private static final int [] ZZ_TRANS = zzUnpackTrans();
 
   private static final String ZZ_TRANS_PACKED_0 =
-    "\1\4\1\5\1\6\4\4\1\6\2\4\1\5\1\6"+
-    "\1\7\3\4\1\6\1\10\1\4\1\11\10\4\1\0"+
-    "\7\4\1\0\2\5\4\0\1\5\1\0\1\4\1\0"+
-    "\2\4\1\12\5\4\1\0\1\13\4\4\1\13\1\4"+
-    "\1\0\1\14\1\15\4\0\1\15\1\0\1\4\1\0"+
-    "\1\4\1\16\5\4\11\0\1\4\1\0\3\4\1\17"+
-    "\4\4\1\0\1\4\1\20\5\4\1\21\1\0\4\21"+
-    "\2\4\1\21\1\4\1\0\1\4\1\22\6\4\1\0"+
-    "\1\23\4\4\1\23\1\4";
+    "\1\4\2\5\5\4\2\5\1\6\2\4\1\7\1\10"+
+    "\1\11\5\10\10\0\2\5\10\0\1\12\4\0\1\13"+
+    "\4\0\1\10\1\0\5\10\1\0\1\14\1\15\11\0"+
+    "\1\16\3\0\1\17\4\0";
 
   private static int [] zzUnpackTrans() {
-    int [] result = new int[135];
+    int [] result = new int[77];
     int offset = 0;
     offset = zzUnpackTrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -170,10 +164,10 @@ class TextileLexer implements FlexLexer {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\3\0\10\1\1\11\1\0\6\1";
+    "\3\0\1\11\5\1\1\0\2\11\2\0\1\11";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[19];
+    int [] result = new int[15];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -523,35 +517,30 @@ class TextileLexer implements FlexLexer {
             { return TextileType.TEXT;
             } 
             // fall through
-          case 7: break;
+          case 6: break;
           case 2: 
             { return TokenType.WHITE_SPACE;
             } 
             // fall through
-          case 8: break;
+          case 7: break;
           case 3: 
-            { return TokenType.DUMMY_HOLDER;
-            } 
-            // fall through
-          case 9: break;
-          case 4: 
             { yybegin(LIST);
     return TextileType.LIST_DELIM;
             } 
             // fall through
-          case 10: break;
-          case 5: 
+          case 8: break;
+          case 4: 
             { yybegin(YYINITIAL);
     return TextileType.TEXT;
             } 
             // fall through
-          case 11: break;
-          case 6: 
+          case 9: break;
+          case 5: 
             { yybegin(HEADER);
     return TextileType.HEADER_START;
             } 
             // fall through
-          case 12: break;
+          case 10: break;
           default:
             zzScanError(ZZ_NO_MATCH);
           }
