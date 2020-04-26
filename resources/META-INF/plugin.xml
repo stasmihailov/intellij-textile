@@ -13,6 +13,8 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <fileTypeFactory implementation="org.potniype4kin.textile.TextileFileType$Factory"/>
+    <lang.parserDefinition language="Textile"
+                           implementationClass="org.potniype4kin.textile.language.TextileParserDefinition"/>
   </extensions>
 
   <actions>
