@@ -1,19 +1,8 @@
 <idea-plugin>
-  <id>com.your.company.unique.plugin.id</id>
-  <name>Plugin display name here</name>
+  <id>com.potniype4kin.intellij-textile</id>
+  <name>Textile language support</name>
   <version>1.0</version>
-  <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
-
-  <description><![CDATA[
-      Enter short description for your plugin here.<br>
-      <em>most HTML tags may be used</em>
-    ]]></description>
-
-  <change-notes><![CDATA[
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>
-    ]]>
-  </change-notes>
+  <vendor>potniype4kin</vendor>
 
   <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
   <idea-version since-build="173.0"/>
@@ -23,11 +12,10 @@
   <depends>com.intellij.modules.platform</depends>
 
   <extensions defaultExtensionNs="com.intellij">
-    <!-- Add your extensions here -->
+    <fileTypeFactory implementation="PropertiesFileType$Factory"/>
   </extensions>
 
   <actions>
     <!-- Add your actions here -->
   </actions>
-
 </idea-plugin>
