@@ -12,6 +12,8 @@ and is joined unless two line breaks
 
 this is a different paragraph
 
+h3. Next is a list
+
 - list item 1
 -- nested list item 1.1
 -- nested list item 1.2

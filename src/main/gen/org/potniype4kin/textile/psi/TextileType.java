@@ -9,6 +9,9 @@ public interface TextileType {
 
 
   IElementType CHAPTER_BREAK = new TextileToken("CHAPTER_BREAK");
+  IElementType CODE = new TextileToken("CODE");
+  IElementType CODE_END = new TextileToken("CODE_END");
+  IElementType CODE_START = new TextileToken("CODE_START");
   IElementType HEADER_START = new TextileToken("HEADER_START");
   IElementType LIST_DELIM = new TextileToken("LIST_DELIM");
   IElementType PARAGRAPH_BREAK = new TextileToken("PARAGRAPH_BREAK");

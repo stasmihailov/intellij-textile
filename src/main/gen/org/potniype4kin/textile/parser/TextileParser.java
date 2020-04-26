@@ -36,24 +36,59 @@ public class TextileParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // HEADER_START TEXT
-  static boolean header(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "header")) return false;
-    if (!nextTokenIs(b, HEADER_START)) return false;
+  // CODE_START+ CODE* CODE_END
+  static boolean code(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "code")) return false;
+    if (!nextTokenIs(b, CODE_START)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, HEADER_START, TEXT);
+    r = code_0(b, l + 1);
+    r = r && code_1(b, l + 1);
+    r = r && consumeToken(b, CODE_END);
     exit_section_(b, m, null, r);
     return r;
   }
 
+  // CODE_START+
+  private static boolean code_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "code_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = consumeToken(b, CODE_START);
+    while (r) {
+      int c = current_position_(b);
+      if (!consumeToken(b, CODE_START)) break;
+      if (!empty_element_parsed_guard_(b, "code_0", c)) break;
+    }
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // CODE*
+  private static boolean code_1(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "code_1")) return false;
+    while (true) {
+      int c = current_position_(b);
+      if (!consumeToken(b, CODE)) break;
+      if (!empty_element_parsed_guard_(b, "code_1", c)) break;
+    }
+    return true;
+  }
+
   /* ********************************************************** */
-  // header|list|TEXT|CHAPTER_BREAK|PARAGRAPH_BREAK
+  // HEADER_START
+  static boolean header(PsiBuilder b, int l) {
+    return consumeToken(b, HEADER_START);
+  }
+
+  /* ********************************************************** */
+  // header|list|code|TEXT|CHAPTER_BREAK|PARAGRAPH_BREAK
   static boolean item(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "item")) return false;
     boolean r;
     r = header(b, l + 1);
     if (!r) r = list(b, l + 1);
+    if (!r) r = code(b, l + 1);
     if (!r) r = consumeToken(b, TEXT);
     if (!r) r = consumeToken(b, CHAPTER_BREAK);
     if (!r) r = consumeToken(b, PARAGRAPH_BREAK);
@@ -61,15 +96,9 @@ public class TextileParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // LIST_DELIM TEXT
+  // LIST_DELIM
   static boolean list(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "list")) return false;
-    if (!nextTokenIs(b, LIST_DELIM)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, LIST_DELIM, TEXT);
-    exit_section_(b, m, null, r);
-    return r;
+    return consumeToken(b, LIST_DELIM);
   }
 
   /* ********************************************************** */

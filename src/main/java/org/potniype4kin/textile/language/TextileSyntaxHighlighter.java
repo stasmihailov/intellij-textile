@@ -41,6 +41,12 @@ public class TextileSyntaxHighlighter extends SyntaxHighlighterBase {
             return pack(headerStart());
         } else if (TextileType.LIST_DELIM.equals(elementType)) {
             return pack(listDelim());
+        } else if (TextileType.CODE_START.equals(elementType)) {
+            return pack(code());
+        } else if (TextileType.CODE.equals(elementType)) {
+            return pack(code());
+        } else if (TextileType.CODE_END.equals(elementType)) {
+            return pack(code());
         } else if (TextileType.CHAPTER_BREAK.equals(elementType)) {
             return pack(BLOCK_COMMENT);
         } else {
@@ -50,7 +56,7 @@ public class TextileSyntaxHighlighter extends SyntaxHighlighterBase {
 
     @NotNull
     private TextAttributesKey headerStart() {
-        TextAttributesKey chapterBreakKey = TextAttributesKey.find("CHAPTER_BREAK");
+        TextAttributesKey chapterBreakKey = TextAttributesKey.find("TEXTILE_HEADER_START");
 
         TextAttributes attrs = chapterBreakKey.getDefaultAttributes();
         attrs.setForegroundColor(Color.MAGENTA);
@@ -60,11 +66,22 @@ public class TextileSyntaxHighlighter extends SyntaxHighlighterBase {
     }
 
     private TextAttributesKey listDelim() {
-        TextAttributesKey chapterBreakKey = TextAttributesKey.find("CHAPTER_BREAK");
+        TextAttributesKey chapterBreakKey = TextAttributesKey.find("TEXTILE_CHAPTER_BREAK");
 
         TextAttributes attrs = chapterBreakKey.getDefaultAttributes();
         attrs.setForegroundColor(Color.BLUE);
         attrs.setFontType(Font.BOLD);
+
+        return chapterBreakKey;
+    }
+
+    private TextAttributesKey code() {
+        TextAttributesKey chapterBreakKey = TextAttributesKey.find("TEXTILE_CODE");
+
+        Color lightGreen = new Color(237, 252, 237);
+
+        TextAttributes attrs = chapterBreakKey.getDefaultAttributes();
+        attrs.setBackgroundColor(lightGreen);
 
         return chapterBreakKey;
     }
