@@ -15,6 +15,8 @@
     <fileTypeFactory implementation="org.potniype4kin.textile.TextileFileType$Factory"/>
     <lang.parserDefinition language="Textile"
                            implementationClass="org.potniype4kin.textile.language.TextileParserDefinition"/>
+    <lang.syntaxHighlighterFactory language="Textile"
+                                   implementationClass="org.potniype4kin.textile.language.TextileSyntaxHighlighter$Factory"/>
   </extensions>
 
   <actions>
