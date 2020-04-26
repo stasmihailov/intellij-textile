@@ -19,4 +19,4 @@ textileFile ::= item*
 
 private header ::= HEADER_START TEXT
 private list ::= LIST_DELIM TEXT
-private item ::= (header|list|TEXT|CHAPTER_BREAK)
+private item ::= (header|list|TEXT|CHAPTER_BREAK|PARAGRAPH_BREAK)

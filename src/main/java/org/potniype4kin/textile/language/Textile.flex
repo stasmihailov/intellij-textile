@@ -19,15 +19,16 @@ import org.potniype4kin.textile.psi.TextileType;
 CRLF=[\r\n]
 SPACE=[\ \t\f]
 
+CHAPTER_BREAK="-"{4}
+PARAGRAPH_BREAK=({CRLF}{SPACE}*)+{CRLF}
+LINE_BREAK={SPACE}+{CRLF}
+
 HEADER_PREFIX="h"
 HEADER_LEVEL=[1-6]
 HEADER_SUFFIX="."
 HEADER_DEFINITION={HEADER_PREFIX}{HEADER_LEVEL}{HEADER_SUFFIX}{SPACE}
 LIST_DELIM=[-*]
 LIST_DEFINITION={LIST_DELIM}{SPACE}
-CHAPTER_BREAK="-"{4}
-TEXT=[^\r\n\s][^\r\n]+[^\r\n\s]
-PARAGRAPH_BREAK={CRLF}{SPACE}*{CRLF}
 
 %%
 
@@ -35,20 +36,17 @@ PARAGRAPH_BREAK={CRLF}{SPACE}*{CRLF}
     return TextileType.CHAPTER_BREAK;
 }
 {PARAGRAPH_BREAK} {
+    return TextileType.PARAGRAPH_BREAK;
+}
+{LINE_BREAK} {
     return TokenType.WHITE_SPACE;
 }
-({CRLF}|{SPACE})+ {
-    return TokenType.WHITE_SPACE;
-}
-({HEADER_DEFINITION}) {
+{HEADER_DEFINITION} {
     return TextileType.HEADER_START;
 }
-{LIST_DELIM}{SPACE} {
+{LIST_DEFINITION} {
     return TextileType.LIST_DELIM;
 }
-{TEXT} {
-    return TextileType.TEXT;
-}
 [^] {
-    return TokenType.DUMMY_HOLDER;
+    return TextileType.TEXT;
 }
