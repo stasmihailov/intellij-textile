@@ -56,7 +56,7 @@ public class TextileParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // CODE_START+ EOL (CODE+ EOL)* CODE_END
+  // CODE_START+ EOL (CODE+ EOL)* CODE_END EOL?
   static boolean code(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "code")) return false;
     if (!nextTokenIs(b, CODE_START)) return false;
@@ -66,6 +66,7 @@ public class TextileParser implements PsiParser, LightPsiParser {
     r = r && consumeToken(b, EOL);
     r = r && code_2(b, l + 1);
     r = r && consumeToken(b, CODE_END);
+    r = r && code_4(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
@@ -122,6 +123,13 @@ public class TextileParser implements PsiParser, LightPsiParser {
     return r;
   }
 
+  // EOL?
+  private static boolean code_4(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "code_4")) return false;
+    consumeToken(b, EOL);
+    return true;
+  }
+
   /* ********************************************************** */
   // HEADER_START HEADER_TEXT EOL?
   static boolean header(PsiBuilder b, int l) {
@@ -143,7 +151,7 @@ public class TextileParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // INFO_START+ EOL (INFO+ EOL)* INFO_END
+  // INFO_START+ EOL (INFO+ EOL)* INFO_END EOL?
   static boolean info(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "info")) return false;
     if (!nextTokenIs(b, INFO_START)) return false;
@@ -153,6 +161,7 @@ public class TextileParser implements PsiParser, LightPsiParser {
     r = r && consumeToken(b, EOL);
     r = r && info_2(b, l + 1);
     r = r && consumeToken(b, INFO_END);
+    r = r && info_4(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
@@ -207,6 +216,13 @@ public class TextileParser implements PsiParser, LightPsiParser {
     }
     exit_section_(b, m, null, r);
     return r;
+  }
+
+  // EOL?
+  private static boolean info_4(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "info_4")) return false;
+    consumeToken(b, EOL);
+    return true;
   }
 
   /* ********************************************************** */
