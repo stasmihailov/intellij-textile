@@ -111,6 +111,9 @@ INFO_END_TOKEN="{info}"
     {EOL}$ {
         return TextileType.CODE;
     }
+    {LINE_BREAK} {
+        return TextileType.EOL;
+    }
     {CODE_END_TOKEN} {
         yybegin(YYINITIAL);
         return TextileType.CODE_END;
