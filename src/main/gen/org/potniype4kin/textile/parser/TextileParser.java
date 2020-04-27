@@ -56,7 +56,7 @@ public class TextileParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // CODE_START+ EOL (CODE EOL)* CODE_END
+  // CODE_START+ EOL (CODE+ EOL)* CODE_END
   static boolean code(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "code")) return false;
     if (!nextTokenIs(b, CODE_START)) return false;
@@ -85,7 +85,7 @@ public class TextileParser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // (CODE EOL)*
+  // (CODE+ EOL)*
   private static boolean code_2(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "code_2")) return false;
     while (true) {
@@ -96,12 +96,28 @@ public class TextileParser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // CODE EOL
+  // CODE+ EOL
   private static boolean code_2_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "code_2_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CODE, EOL);
+    r = code_2_0_0(b, l + 1);
+    r = r && consumeToken(b, EOL);
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // CODE+
+  private static boolean code_2_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "code_2_0_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = consumeToken(b, CODE);
+    while (r) {
+      int c = current_position_(b);
+      if (!consumeToken(b, CODE)) break;
+      if (!empty_element_parsed_guard_(b, "code_2_0_0", c)) break;
+    }
     exit_section_(b, m, null, r);
     return r;
   }
@@ -127,7 +143,7 @@ public class TextileParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // INFO_START+ EOL (INFO EOL)* INFO_END
+  // INFO_START+ EOL (INFO+ EOL)* INFO_END
   static boolean info(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "info")) return false;
     if (!nextTokenIs(b, INFO_START)) return false;
@@ -156,7 +172,7 @@ public class TextileParser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // (INFO EOL)*
+  // (INFO+ EOL)*
   private static boolean info_2(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "info_2")) return false;
     while (true) {
@@ -167,12 +183,28 @@ public class TextileParser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // INFO EOL
+  // INFO+ EOL
   private static boolean info_2_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "info_2_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, INFO, EOL);
+    r = info_2_0_0(b, l + 1);
+    r = r && consumeToken(b, EOL);
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // INFO+
+  private static boolean info_2_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "info_2_0_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = consumeToken(b, INFO);
+    while (r) {
+      int c = current_position_(b);
+      if (!consumeToken(b, INFO)) break;
+      if (!empty_element_parsed_guard_(b, "info_2_0_0", c)) break;
+    }
     exit_section_(b, m, null, r);
     return r;
   }
@@ -237,14 +269,29 @@ public class TextileParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // TEXT EOL?
+  // TEXT+ EOL?
   static boolean text(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "text")) return false;
     if (!nextTokenIs(b, TEXT)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeToken(b, TEXT);
+    r = text_0(b, l + 1);
     r = r && text_1(b, l + 1);
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // TEXT+
+  private static boolean text_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "text_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = consumeToken(b, TEXT);
+    while (r) {
+      int c = current_position_(b);
+      if (!consumeToken(b, TEXT)) break;
+      if (!empty_element_parsed_guard_(b, "text_0", c)) break;
+    }
     exit_section_(b, m, null, r);
     return r;
   }

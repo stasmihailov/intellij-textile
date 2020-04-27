@@ -108,15 +108,15 @@ INFO_END_TOKEN="{info}"
     }
 }
 <code> {
-    {EOL}$ {
-        return TextileType.CODE;
-    }
     {LINE_BREAK} {
         return TextileType.EOL;
     }
-    {CODE_END_TOKEN} {
+    ^{CODE_END_TOKEN} {
         yybegin(YYINITIAL);
         return TextileType.CODE_END;
+    }
+    [^] {
+        return TextileType.CODE;
     }
 }
 <info_start> {
@@ -133,15 +133,15 @@ INFO_END_TOKEN="{info}"
     }
 }
 <info> {
-    {EOL}$ {
-        return TextileType.INFO;
-    }
     {LINE_BREAK} {
         return TextileType.EOL;
     }
-    {INFO_END_TOKEN} {
+    ^{INFO_END_TOKEN} {
         yybegin(YYINITIAL);
         return TextileType.INFO_END;
+    }
+    [^] {
+        return TextileType.INFO;
     }
 }
 [^] {

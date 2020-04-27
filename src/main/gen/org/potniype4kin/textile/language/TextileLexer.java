@@ -37,7 +37,7 @@ class TextileLexer implements FlexLexer {
    * l is of the form l = 2*k, k a non negative integer
    */
   private static final int ZZ_LEXSTATE[] = { 
-     0,  1,  2,  2,  3,  3,  4,  4,  5,  5,  6,  6,  7, 7
+     0,  1,  2,  2,  3,  3,  4,  4,  5,  6,  7,  7,  8, 9
   };
 
   /** 
@@ -178,15 +178,15 @@ class TextileLexer implements FlexLexer {
   private static final int [] ZZ_ACTION = zzUnpackAction();
 
   private static final String ZZ_ACTION_PACKED_0 =
-    "\10\0\1\1\1\2\1\1\1\3\4\1\1\4\1\5"+
-    "\2\4\1\6\1\4\1\7\3\4\1\10\1\4\1\11"+
-    "\3\4\1\0\1\12\6\0\3\13\1\0\3\14\1\0"+
-    "\1\15\1\0\3\16\2\0\1\17\1\0\3\20\5\0"+
-    "\1\21\1\22\1\23\1\0\1\24\2\0\1\25\4\0"+
-    "\2\26\1\27\1\30\2\0\1\31\1\32";
+    "\12\0\1\1\1\2\1\1\1\3\4\1\1\4\1\5"+
+    "\2\4\1\6\1\4\1\7\1\4\3\10\1\11\1\4"+
+    "\1\12\1\4\3\13\1\0\1\14\6\0\3\15\1\0"+
+    "\3\16\1\0\1\17\2\0\1\20\5\0\1\21\1\22"+
+    "\3\0\1\23\4\0\2\24\1\25\1\26\2\0\1\27"+
+    "\1\30";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[85];
+    int [] result = new int[79];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -212,19 +212,18 @@ class TextileLexer implements FlexLexer {
 
   private static final String ZZ_ROWMAP_PACKED_0 =
     "\0\0\0\26\0\54\0\102\0\130\0\156\0\204\0\232"+
-    "\0\260\0\260\0\306\0\260\0\334\0\362\0\u0108\0\u011e"+
-    "\0\u0134\0\260\0\u014a\0\260\0\260\0\u0160\0\260\0\u0176"+
-    "\0\u018c\0\u01a2\0\260\0\u01b8\0\260\0\u01ce\0\u01e4\0\u01fa"+
-    "\0\306\0\260\0\u0210\0\u0108\0\u0226\0\u023c\0\u0252\0\u0134"+
-    "\0\u0268\0\260\0\u0134\0\u014a\0\u027e\0\260\0\u014a\0\u0160"+
-    "\0\u0176\0\u018c\0\u0294\0\260\0\u018c\0\u02aa\0\u01b8\0\u01ce"+
-    "\0\u01e4\0\u02c0\0\260\0\u01e4\0\u02d6\0\u02ec\0\u0302\0\u0318"+
-    "\0\u032e\0\260\0\260\0\260\0\u0344\0\260\0\u035a\0\u0370"+
-    "\0\260\0\u0386\0\u039c\0\u03b2\0\u03c8\0\u03de\0\260\0\260"+
-    "\0\260\0\u03f4\0\u040a\0\u018c\0\u01e4";
+    "\0\260\0\306\0\334\0\334\0\362\0\334\0\u0108\0\u011e"+
+    "\0\u0134\0\u014a\0\u0160\0\334\0\u0176\0\334\0\334\0\u018c"+
+    "\0\334\0\u01a2\0\334\0\362\0\u01b8\0\334\0\u01ce\0\334"+
+    "\0\u01e4\0\334\0\362\0\u01fa\0\362\0\334\0\u0210\0\u0134"+
+    "\0\u0226\0\u023c\0\u0252\0\u0160\0\u0268\0\334\0\u0160\0\u0176"+
+    "\0\u027e\0\334\0\u0176\0\u018c\0\u01a2\0\u0294\0\u01ce\0\u01e4"+
+    "\0\u02aa\0\u02c0\0\u02d6\0\u02ec\0\u0302\0\334\0\334\0\u0318"+
+    "\0\u032e\0\u0344\0\334\0\u035a\0\u0370\0\u0386\0\u039c\0\u03b2"+
+    "\0\334\0\334\0\334\0\u03c8\0\u03de\0\334\0\334";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[85];
+    int [] result = new int[79];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -247,44 +246,37 @@ class TextileLexer implements FlexLexer {
   private static final int [] ZZ_TRANS = zzUnpackTrans();
 
   private static final String ZZ_TRANS_PACKED_0 =
-    "\1\11\1\12\1\13\16\11\1\12\1\11\1\13\3\11"+
-    "\1\14\1\13\1\15\1\16\2\11\1\17\1\20\10\11"+
-    "\1\14\1\11\1\13\2\11\1\21\1\22\17\21\1\22"+
-    "\4\21\1\23\1\22\17\23\1\22\4\23\1\24\1\25"+
-    "\1\26\12\24\1\27\3\24\1\25\1\24\1\26\1\30"+
-    "\1\24\1\31\1\12\6\31\1\32\10\31\1\12\4\31"+
-    "\1\24\1\33\1\34\12\24\1\35\3\24\1\33\1\24"+
-    "\1\34\1\36\1\24\1\37\1\12\6\37\1\40\10\37"+
-    "\1\12\4\37\27\0\1\12\1\41\16\0\1\12\1\0"+
-    "\1\41\4\0\1\42\1\43\3\0\1\44\13\0\1\42"+
-    "\7\0\1\45\22\0\1\42\1\44\3\0\1\44\13\0"+
-    "\1\42\13\0\1\46\4\0\1\47\7\0\1\50\1\51"+
-    "\17\50\1\52\2\53\2\50\1\54\1\55\17\54\1\56"+
-    "\2\57\2\54\1\0\1\25\1\60\16\0\1\25\1\0"+
-    "\1\60\6\0\2\61\3\0\4\61\1\0\3\61\4\0"+
-    "\1\61\1\62\1\63\17\62\1\64\2\65\3\62\1\63"+
-    "\7\62\1\66\7\62\1\64\2\65\2\62\1\0\1\33"+
-    "\1\67\16\0\1\33\1\0\1\67\6\0\2\70\3\0"+
-    "\4\70\1\0\3\70\4\0\1\70\1\71\1\72\17\71"+
-    "\1\73\2\74\3\71\1\72\14\71\1\75\2\71\1\73"+
-    "\2\74\2\71\2\0\1\42\1\76\3\0\1\44\13\0"+
-    "\1\42\10\0\1\77\31\0\1\100\32\0\1\101\27\0"+
-    "\1\102\25\0\1\103\25\0\1\104\4\0\1\62\1\63"+
-    "\10\62\1\105\6\62\1\64\2\65\2\62\21\0\1\106"+
-    "\4\0\1\71\1\72\15\71\1\107\1\71\1\73\2\74"+
-    "\2\71\2\0\1\42\1\110\3\0\1\44\13\0\1\42"+
-    "\4\0\1\111\20\0\1\111\15\0\1\112\32\0\1\113"+
-    "\5\0\1\62\1\63\11\62\1\114\5\62\1\64\2\65"+
-    "\2\62\1\71\1\72\16\71\1\115\1\73\2\74\2\71"+
-    "\1\0\1\116\1\42\1\44\3\0\1\44\11\0\3\117"+
-    "\16\0\1\120\23\0\1\121\13\0\1\62\1\63\12\62"+
-    "\1\122\4\62\1\64\2\65\2\62\1\71\1\72\10\71"+
-    "\1\123\6\71\1\73\2\74\2\71\21\0\1\117\4\0"+
-    "\1\62\1\63\13\62\1\124\3\62\1\64\2\65\2\62"+
-    "\1\71\1\72\13\71\1\125\3\71\1\73\2\74\2\71";
+    "\1\13\1\14\1\15\16\13\1\14\1\13\1\15\3\13"+
+    "\1\16\1\15\1\17\1\20\2\13\1\21\1\22\10\13"+
+    "\1\16\1\13\1\15\2\13\1\23\1\24\17\23\1\24"+
+    "\4\23\1\25\1\24\17\25\1\24\4\25\1\26\1\27"+
+    "\1\30\12\26\1\31\3\26\1\27\1\26\1\30\1\32"+
+    "\1\26\1\33\1\14\1\34\16\33\1\14\1\33\1\34"+
+    "\3\33\1\14\1\34\5\33\1\35\10\33\1\14\1\33"+
+    "\1\34\2\33\1\26\1\36\1\37\12\26\1\40\3\26"+
+    "\1\36\1\26\1\37\1\41\1\26\1\42\1\14\1\43"+
+    "\16\42\1\14\1\42\1\43\3\42\1\14\1\43\5\42"+
+    "\1\44\10\42\1\14\1\42\1\43\2\42\27\0\1\14"+
+    "\1\45\16\0\1\14\1\0\1\45\4\0\1\46\1\47"+
+    "\3\0\1\50\13\0\1\46\7\0\1\51\22\0\1\46"+
+    "\1\50\3\0\1\50\13\0\1\46\13\0\1\52\4\0"+
+    "\1\53\7\0\1\54\1\55\17\54\1\56\2\57\2\54"+
+    "\1\60\1\61\17\60\1\62\2\63\2\60\1\0\1\27"+
+    "\1\64\16\0\1\27\1\0\1\64\6\0\2\65\3\0"+
+    "\4\65\1\0\3\65\4\0\1\65\11\0\1\66\15\0"+
+    "\1\36\1\67\16\0\1\36\1\0\1\67\6\0\2\70"+
+    "\3\0\4\70\1\0\3\70\4\0\1\70\16\0\1\71"+
+    "\11\0\1\46\1\72\3\0\1\50\13\0\1\46\10\0"+
+    "\1\73\31\0\1\74\32\0\1\75\27\0\1\76\25\0"+
+    "\1\77\16\0\1\100\32\0\1\101\10\0\1\46\1\102"+
+    "\3\0\1\50\13\0\1\46\4\0\1\103\20\0\1\103"+
+    "\15\0\1\104\32\0\1\105\20\0\1\106\32\0\1\107"+
+    "\6\0\1\110\1\46\1\50\3\0\1\50\11\0\3\111"+
+    "\16\0\1\112\23\0\1\113\27\0\1\114\23\0\1\115"+
+    "\34\0\1\111\21\0\1\116\25\0\1\117\10\0";
 
   private static int [] zzUnpackTrans() {
-    int [] result = new int[1056];
+    int [] result = new int[1012];
     int offset = 0;
     offset = zzUnpackTrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -322,15 +314,15 @@ class TextileLexer implements FlexLexer {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\10\0\2\11\1\1\1\11\5\1\1\11\1\1\2\11"+
-    "\1\1\1\11\3\1\1\11\1\1\1\11\3\1\1\0"+
-    "\1\11\6\0\1\1\1\11\1\1\1\0\1\1\1\11"+
-    "\1\1\1\0\1\1\1\0\1\1\1\11\1\1\2\0"+
-    "\1\1\1\0\1\1\1\11\1\1\5\0\3\11\1\0"+
-    "\1\11\2\0\1\11\4\0\1\1\3\11\2\0\2\1";
+    "\12\0\2\11\1\1\1\11\5\1\1\11\1\1\2\11"+
+    "\1\1\1\11\1\1\1\11\2\1\1\11\1\1\1\11"+
+    "\1\1\1\11\2\1\1\0\1\11\6\0\1\1\1\11"+
+    "\1\1\1\0\1\1\1\11\1\1\1\0\1\1\2\0"+
+    "\1\1\5\0\2\11\3\0\1\11\4\0\1\1\3\11"+
+    "\2\0\2\11";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[85];
+    int [] result = new int[79];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -680,57 +672,67 @@ class TextileLexer implements FlexLexer {
             { return TextileType.TEXT;
             } 
             // fall through
-          case 27: break;
+          case 25: break;
           case 2: 
             { return TextileType.EOL;
             } 
             // fall through
-          case 28: break;
+          case 26: break;
           case 3: 
             { return TextileType.PARAGRAPH_BREAK;
             } 
             // fall through
-          case 29: break;
+          case 27: break;
           case 4: 
             { 
             } 
             // fall through
-          case 30: break;
+          case 28: break;
           case 5: 
             { yybegin(YYINITIAL);
         return TextileType.EOL;
             } 
             // fall through
-          case 31: break;
+          case 29: break;
           case 6: 
             { yybegin(code);
         return TextileType.EOL;
             } 
             // fall through
-          case 32: break;
+          case 30: break;
           case 7: 
             { return TextileType.CODE_START;
             } 
             // fall through
-          case 33: break;
+          case 31: break;
           case 8: 
+            { return TextileType.CODE;
+            } 
+            // fall through
+          case 32: break;
+          case 9: 
             { yybegin(info);
         return TextileType.EOL;
             } 
             // fall through
-          case 34: break;
-          case 9: 
+          case 33: break;
+          case 10: 
             { return TextileType.INFO_START;
             } 
             // fall through
+          case 34: break;
+          case 11: 
+            { return TextileType.INFO;
+            } 
+            // fall through
           case 35: break;
-          case 10: 
+          case 12: 
             { yybegin(list);
         return TextileType.LIST_DELIM;
             } 
             // fall through
           case 36: break;
-          case 11: 
+          case 13: 
             // lookahead expression with fixed lookahead length
             zzMarkedPos = Character.offsetByCodePoints
                 (zzBufferL/*, zzStartRead, zzEndRead - zzStartRead*/, zzMarkedPos, -1);
@@ -738,7 +740,7 @@ class TextileLexer implements FlexLexer {
             } 
             // fall through
           case 37: break;
-          case 12: 
+          case 14: 
             // lookahead expression with fixed lookahead length
             zzMarkedPos = Character.offsetByCodePoints
                 (zzBufferL/*, zzStartRead, zzEndRead - zzStartRead*/, zzMarkedPos, -1);
@@ -746,34 +748,18 @@ class TextileLexer implements FlexLexer {
             } 
             // fall through
           case 38: break;
-          case 13: 
+          case 15: 
             { String codeLanguage = yytext().toString().substring(1);
         return TextileType.CODE_START;
             } 
             // fall through
           case 39: break;
-          case 14: 
-            // lookahead expression with fixed lookahead length
-            zzMarkedPos = Character.offsetByCodePoints
-                (zzBufferL/*, zzStartRead, zzEndRead - zzStartRead*/, zzMarkedPos, -1);
-            { return TextileType.CODE;
-            } 
-            // fall through
-          case 40: break;
-          case 15: 
+          case 16: 
             { // get info title, if present
         return TextileType.INFO_START;
             } 
             // fall through
-          case 41: break;
-          case 16: 
-            // lookahead expression with fixed lookahead length
-            zzMarkedPos = Character.offsetByCodePoints
-                (zzBufferL/*, zzStartRead, zzEndRead - zzStartRead*/, zzMarkedPos, -1);
-            { return TextileType.INFO;
-            } 
-            // fall through
-          case 42: break;
+          case 40: break;
           case 17: 
             // lookahead expression with fixed lookahead length
             zzMarkedPos = Character.offsetByCodePoints
@@ -781,7 +767,7 @@ class TextileLexer implements FlexLexer {
             { return TextileType.HEADER_TEXT;
             } 
             // fall through
-          case 43: break;
+          case 41: break;
           case 18: 
             // lookahead expression with fixed lookahead length
             zzMarkedPos = Character.offsetByCodePoints
@@ -789,61 +775,45 @@ class TextileLexer implements FlexLexer {
             { return TextileType.LIST_TEXT;
             } 
             // fall through
-          case 44: break;
+          case 42: break;
           case 19: 
-            // lookahead expression with fixed lookahead length
-            zzMarkedPos = Character.offsetByCodePoints
-                (zzBufferL/*, zzStartRead, zzEndRead - zzStartRead*/, zzMarkedPos, -2);
-            { return TextileType.CODE;
-            } 
-            // fall through
-          case 45: break;
-          case 20: 
-            // lookahead expression with fixed lookahead length
-            zzMarkedPos = Character.offsetByCodePoints
-                (zzBufferL/*, zzStartRead, zzEndRead - zzStartRead*/, zzMarkedPos, -2);
-            { return TextileType.INFO;
-            } 
-            // fall through
-          case 46: break;
-          case 21: 
             { yybegin(header);
         return TextileType.HEADER_START;
             } 
             // fall through
-          case 47: break;
-          case 22: 
+          case 43: break;
+          case 20: 
             // lookahead expression with fixed base length
             zzMarkedPos = Character.offsetByCodePoints
                 (zzBufferL/*, zzStartRead, zzEndRead - zzStartRead*/, zzStartRead, 4);
             { return TextileType.CHAPTER_BREAK;
             } 
             // fall through
-          case 48: break;
-          case 23: 
+          case 44: break;
+          case 21: 
             { yybegin(code_start);
         return TextileType.CODE_START;
             } 
             // fall through
-          case 49: break;
-          case 24: 
+          case 45: break;
+          case 22: 
             { yybegin(info_start);
         return TextileType.INFO_START;
             } 
             // fall through
-          case 50: break;
-          case 25: 
+          case 46: break;
+          case 23: 
             { yybegin(YYINITIAL);
         return TextileType.CODE_END;
             } 
             // fall through
-          case 51: break;
-          case 26: 
+          case 47: break;
+          case 24: 
             { yybegin(YYINITIAL);
         return TextileType.INFO_END;
             } 
             // fall through
-          case 52: break;
+          case 48: break;
           default:
             zzScanError(ZZ_NO_MATCH);
           }
