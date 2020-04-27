@@ -22,4 +22,6 @@ private list ::= LIST_DELIM (LIST_TEXT EOL)+
 private code ::= CODE_START+ EOL (CODE EOL)* CODE_END
 private info ::= INFO_START+ EOL (INFO EOL)* INFO_END
 private text ::= TEXT EOL?
-private item ::= (header|list|code|info|text|CHAPTER_BREAK|PARAGRAPH_BREAK)
+private chapter_break ::= CHAPTER_BREAK EOL?
+private paragraph_break ::= PARAGRAPH_BREAK
+private item ::= (header|list|code|info|text|chapter_break|paragraph_break)

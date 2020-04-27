@@ -37,7 +37,7 @@ class TextileLexer implements FlexLexer {
    * l is of the form l = 2*k, k a non negative integer
    */
   private static final int ZZ_LEXSTATE[] = { 
-     0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13
+     0,  1,  2,  2,  3,  3,  4,  4,  5,  5,  6,  6,  7, 7
   };
 
   /** 
@@ -178,20 +178,15 @@ class TextileLexer implements FlexLexer {
   private static final int [] ZZ_ACTION = zzUnpackAction();
 
   private static final String ZZ_ACTION_PACKED_0 =
-    "\16\0\1\1\1\2\6\1\1\3\12\1\1\4\2\1"+
-    "\1\5\13\1\1\6\1\1\1\7\7\1\1\0\3\10"+
-    "\1\11\2\0\1\12\6\0\3\13\1\0\1\12\5\0"+
-    "\3\14\1\0\1\12\4\0\1\4\2\0\1\15\1\12"+
-    "\5\0\3\16\2\0\1\12\4\0\1\6\1\0\1\17"+
-    "\1\0\3\20\2\0\1\12\4\0\1\21\5\0\1\22"+
-    "\4\0\1\23\10\0\1\24\5\0\1\25\5\0\2\26"+
-    "\1\27\2\0\2\26\2\0\2\26\2\0\2\26\2\0"+
-    "\1\26\1\0\1\26\2\0\1\26\1\0\1\26\2\0"+
-    "\1\30\1\31\1\30\1\31\1\30\1\31\1\30\1\31"+
-    "\1\0\1\30\1\31\1\0\1\30\1\31\1\32\1\33";
+    "\10\0\1\1\1\2\1\1\1\3\4\1\1\4\1\5"+
+    "\2\4\1\6\1\4\1\7\3\4\1\10\1\4\1\11"+
+    "\3\4\1\0\1\12\6\0\3\13\1\0\3\14\1\0"+
+    "\1\15\1\0\3\16\2\0\1\17\1\0\3\20\5\0"+
+    "\1\21\1\22\1\23\1\0\1\24\2\0\1\25\4\0"+
+    "\2\26\1\27\1\30\2\0\1\31\1\32";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[200];
+    int [] result = new int[85];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -217,33 +212,19 @@ class TextileLexer implements FlexLexer {
 
   private static final String ZZ_ROWMAP_PACKED_0 =
     "\0\0\0\26\0\54\0\102\0\130\0\156\0\204\0\232"+
-    "\0\260\0\306\0\334\0\362\0\u0108\0\u011e\0\u0134\0\u014a"+
-    "\0\u0160\0\u0176\0\u018c\0\u01a2\0\u01b8\0\u01ce\0\u014a\0\u01e4"+
-    "\0\u01fa\0\u0210\0\u0226\0\u023c\0\u0252\0\u0268\0\u027e\0\u0294"+
-    "\0\u02aa\0\u014a\0\u02c0\0\u02d6\0\u02aa\0\u02ec\0\u0302\0\u0318"+
-    "\0\u032e\0\u0344\0\u014a\0\u035a\0\u0370\0\u0386\0\u039c\0\u03b2"+
-    "\0\u014a\0\u03c8\0\u02aa\0\u03de\0\u03f4\0\u040a\0\u0420\0\u0436"+
-    "\0\u044c\0\u0462\0\u0134\0\u0478\0\u02aa\0\u0134\0\u014a\0\u014a"+
-    "\0\u048e\0\u0134\0\u04a4\0\u01a2\0\u04ba\0\u04d0\0\u04e6\0\u01ce"+
-    "\0\u04fc\0\u02aa\0\u01ce\0\u0512\0\u01ce\0\u0528\0\u0210\0\u053e"+
-    "\0\u0554\0\u023c\0\u056a\0\u02aa\0\u023c\0\u0580\0\u023c\0\u0596"+
-    "\0\u027e\0\u05ac\0\u05c2\0\u02aa\0\u02c0\0\u05d8\0\u02ec\0\u02aa"+
-    "\0\u05ee\0\u0318\0\u0604\0\u061a\0\u0344\0\u0630\0\u02aa\0\u0344"+
-    "\0\u0646\0\u065c\0\u0344\0\u0672\0\u039c\0\u0688\0\u069e\0\u02aa"+
-    "\0\u03c8\0\u03de\0\u03f4\0\u06b4\0\u02aa\0\u03f4\0\u06ca\0\u06e0"+
-    "\0\u03f4\0\u06f6\0\u044c\0\u070c\0\u0722\0\u02aa\0\u0738\0\u074e"+
-    "\0\u0764\0\u077a\0\u0790\0\u02aa\0\u07a6\0\u07bc\0\u07d2\0\u07e8"+
-    "\0\u02aa\0\u07fe\0\u0814\0\u082a\0\u0840\0\u0856\0\u086c\0\u0882"+
-    "\0\u0898\0\u02aa\0\u08ae\0\u08c4\0\u08da\0\u08f0\0\u0906\0\u02aa"+
-    "\0\u091c\0\u0932\0\u0948\0\u095e\0\u0974\0\u0134\0\u01a2\0\u0134"+
-    "\0\u098a\0\u09a0\0\u01ce\0\u0210\0\u09b6\0\u09cc\0\u023c\0\u027e"+
-    "\0\u09e2\0\u09f8\0\u02aa\0\u0318\0\u0a0e\0\u0a24\0\u0344\0\u0a3a"+
-    "\0\u039c\0\u0a50\0\u0a66\0\u03f4\0\u0a7c\0\u044c\0\u0a92\0\u0aa8"+
-    "\0\u0134\0\u0134\0\u01ce\0\u01ce\0\u023c\0\u023c\0\u02aa\0\u02aa"+
-    "\0\u0abe\0\u0abe\0\u0344\0\u0ad4\0\u03f4\0\u0ad4\0\u0344\0\u03f4";
+    "\0\260\0\260\0\306\0\260\0\334\0\362\0\u0108\0\u011e"+
+    "\0\u0134\0\260\0\u014a\0\260\0\260\0\u0160\0\260\0\u0176"+
+    "\0\u018c\0\u01a2\0\260\0\u01b8\0\260\0\u01ce\0\u01e4\0\u01fa"+
+    "\0\306\0\260\0\u0210\0\u0108\0\u0226\0\u023c\0\u0252\0\u0134"+
+    "\0\u0268\0\260\0\u0134\0\u014a\0\u027e\0\260\0\u014a\0\u0160"+
+    "\0\u0176\0\u018c\0\u0294\0\260\0\u018c\0\u02aa\0\u01b8\0\u01ce"+
+    "\0\u01e4\0\u02c0\0\260\0\u01e4\0\u02d6\0\u02ec\0\u0302\0\u0318"+
+    "\0\u032e\0\260\0\260\0\260\0\u0344\0\260\0\u035a\0\u0370"+
+    "\0\260\0\u0386\0\u039c\0\u03b2\0\u03c8\0\u03de\0\260\0\260"+
+    "\0\260\0\u03f4\0\u040a\0\u018c\0\u01e4";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[200];
+    int [] result = new int[85];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -266,126 +247,44 @@ class TextileLexer implements FlexLexer {
   private static final int [] ZZ_TRANS = zzUnpackTrans();
 
   private static final String ZZ_TRANS_PACKED_0 =
-    "\1\17\1\20\1\17\1\21\15\17\1\20\5\17\1\20"+
-    "\1\17\1\22\1\23\2\17\1\24\1\25\10\17\1\20"+
-    "\4\17\1\26\1\27\1\26\1\30\15\26\1\27\5\26"+
-    "\1\27\1\26\1\31\3\26\1\32\1\33\10\26\1\27"+
-    "\4\26\1\34\1\27\1\34\1\35\15\34\1\27\5\34"+
-    "\1\27\1\34\1\36\3\34\1\37\1\40\10\34\1\27"+
-    "\4\34\1\41\1\42\1\43\1\44\11\41\1\45\3\41"+
-    "\1\42\1\41\1\43\1\46\2\41\1\42\1\43\1\47"+
-    "\3\41\1\50\1\51\4\41\1\45\3\41\1\42\1\41"+
-    "\1\43\1\46\1\41\1\52\1\53\1\52\1\54\4\52"+
-    "\1\55\10\52\1\53\5\52\1\53\1\52\1\56\3\52"+
-    "\1\57\1\60\10\52\1\53\4\52\1\41\1\61\1\62"+
-    "\1\44\11\41\1\63\3\41\1\61\1\41\1\62\1\64"+
-    "\2\41\1\61\1\62\1\47\3\41\1\50\1\51\4\41"+
-    "\1\63\3\41\1\61\1\41\1\62\1\64\1\41\1\65"+
-    "\1\20\1\65\1\66\4\65\1\67\10\65\1\20\5\65"+
-    "\1\20\1\65\1\70\3\65\1\71\1\72\10\65\1\20"+
-    "\4\65\1\73\1\74\17\73\1\75\2\76\2\73\1\0"+
-    "\1\77\1\100\16\0\1\77\1\0\1\100\2\0\1\73"+
-    "\1\74\1\73\1\101\15\73\1\75\2\76\3\73\1\74"+
-    "\1\102\1\103\3\73\1\104\11\73\1\75\1\76\1\102"+
-    "\3\73\1\74\3\73\1\105\13\73\1\75\2\76\3\73"+
-    "\1\74\1\102\1\104\3\73\1\104\11\73\1\75\1\76"+
-    "\1\102\3\73\1\74\7\73\1\106\4\73\1\107\2\73"+
-    "\1\75\2\76\2\73\1\110\1\111\17\110\1\112\2\113"+
-    "\3\110\1\111\1\110\1\114\15\110\1\112\2\113\3\110"+
-    "\1\111\1\115\1\116\3\110\1\117\11\110\1\112\2\113"+
-    "\3\110\1\111\1\115\1\117\3\110\1\117\11\110\1\112"+
-    "\2\113\3\110\1\111\7\110\1\120\4\110\1\121\2\110"+
-    "\1\112\2\113\2\110\1\122\1\123\17\122\1\124\2\125"+
-    "\3\122\1\123\1\122\1\126\15\122\1\124\2\125\3\122"+
-    "\1\123\1\127\1\130\3\122\1\131\11\122\1\124\1\125"+
-    "\1\127\3\122\1\123\1\127\1\131\3\122\1\131\11\122"+
-    "\1\124\1\125\1\127\3\122\1\123\7\122\1\132\4\122"+
-    "\1\133\2\122\1\124\2\125\2\122\27\0\1\134\1\135"+
-    "\16\0\1\134\1\0\1\135\5\0\1\136\26\0\2\137"+
-    "\3\0\4\137\1\0\3\137\4\0\1\137\2\0\1\140"+
-    "\1\141\3\0\1\142\13\0\1\140\4\0\1\140\1\142"+
-    "\3\0\1\142\13\0\1\140\13\0\1\143\4\0\1\144"+
-    "\7\0\1\145\1\146\17\145\1\147\2\150\3\145\1\146"+
-    "\1\145\1\151\15\145\1\147\2\150\3\145\1\146\7\145"+
-    "\1\152\7\145\1\147\2\150\3\145\1\146\1\153\1\154"+
-    "\3\145\1\155\11\145\1\147\1\150\1\153\3\145\1\146"+
-    "\1\153\1\155\3\145\1\155\11\145\1\147\1\150\1\153"+
-    "\3\145\1\146\7\145\1\156\4\145\1\157\2\145\1\147"+
-    "\2\150\2\145\1\0\1\160\1\161\16\0\1\160\1\0"+
-    "\1\161\6\0\2\162\3\0\4\162\1\0\3\162\4\0"+
-    "\1\162\1\163\1\164\17\163\1\165\2\166\3\163\1\164"+
-    "\1\163\1\167\15\163\1\165\2\166\3\163\1\164\14\163"+
-    "\1\170\2\163\1\165\2\166\3\163\1\164\1\171\1\172"+
-    "\3\163\1\173\11\163\1\165\1\166\1\171\3\163\1\164"+
-    "\1\171\1\173\3\163\1\173\11\163\1\165\1\166\1\171"+
-    "\3\163\1\164\7\163\1\174\4\163\1\175\2\163\1\165"+
-    "\2\166\2\163\21\0\1\176\4\0\1\73\1\74\1\73"+
-    "\1\177\15\73\1\75\2\76\3\73\1\74\1\102\1\200"+
-    "\3\73\1\104\11\73\1\75\1\76\1\102\3\73\1\74"+
-    "\4\73\1\201\12\73\1\75\2\76\3\73\1\74\10\73"+
-    "\1\202\6\73\1\75\2\76\3\73\1\74\15\73\1\203"+
-    "\1\73\1\75\2\76\2\73\21\0\1\204\4\0\1\110"+
-    "\1\111\1\110\1\205\15\110\1\112\2\113\3\110\1\111"+
-    "\1\115\1\206\3\110\1\117\11\110\1\112\2\113\3\110"+
-    "\1\111\10\110\1\207\6\110\1\112\2\113\3\110\1\111"+
-    "\15\110\1\210\1\110\1\112\2\113\2\110\21\0\1\211"+
-    "\4\0\1\122\1\123\1\122\1\212\15\122\1\124\2\125"+
-    "\3\122\1\123\1\127\1\213\3\122\1\131\11\122\1\124"+
-    "\1\125\1\127\3\122\1\123\10\122\1\214\6\122\1\124"+
-    "\2\125\3\122\1\123\15\122\1\215\1\122\1\124\2\125"+
-    "\2\122\3\0\1\216\24\0\1\140\1\217\3\0\1\142"+
-    "\13\0\1\140\14\0\1\220\32\0\1\221\27\0\1\222"+
-    "\4\0\1\145\1\146\1\145\1\223\15\145\1\147\2\150"+
-    "\3\145\1\146\10\145\1\224\6\145\1\147\2\150\3\145"+
-    "\1\146\1\153\1\225\3\145\1\155\11\145\1\147\1\150"+
-    "\1\153\3\145\1\146\10\145\1\226\6\145\1\147\2\150"+
-    "\3\145\1\146\15\145\1\227\1\145\1\147\2\150\2\145"+
-    "\21\0\1\230\4\0\1\163\1\164\1\163\1\231\15\163"+
-    "\1\165\2\166\3\163\1\164\15\163\1\232\1\163\1\165"+
-    "\2\166\3\163\1\164\1\171\1\233\3\163\1\173\11\163"+
-    "\1\165\1\166\1\171\3\163\1\164\10\163\1\234\6\163"+
-    "\1\165\2\166\3\163\1\164\15\163\1\235\1\163\1\165"+
-    "\2\166\2\163\1\73\1\74\1\73\1\236\15\73\1\75"+
-    "\2\76\3\73\1\74\1\102\1\237\3\73\1\104\11\73"+
-    "\1\75\1\76\1\102\3\73\1\74\1\240\16\73\1\75"+
-    "\1\76\1\240\3\73\1\74\11\73\1\241\5\73\1\75"+
-    "\2\76\3\73\1\74\16\73\1\242\1\75\2\76\2\73"+
-    "\1\110\1\111\1\110\1\243\15\110\1\112\2\113\3\110"+
-    "\1\111\1\115\1\244\3\110\1\117\11\110\1\112\2\113"+
-    "\3\110\1\111\11\110\1\245\5\110\1\112\2\113\3\110"+
-    "\1\111\16\110\1\246\1\112\2\113\2\110\1\122\1\123"+
-    "\1\122\1\247\15\122\1\124\2\125\3\122\1\123\1\127"+
-    "\1\250\3\122\1\131\11\122\1\124\1\125\1\127\3\122"+
-    "\1\123\11\122\1\251\5\122\1\124\2\125\3\122\1\123"+
-    "\16\122\1\252\1\124\2\125\2\122\3\0\1\253\24\0"+
-    "\1\140\1\254\3\0\1\142\13\0\1\140\15\0\1\255"+
-    "\32\0\1\256\5\0\1\145\1\146\1\145\1\257\15\145"+
-    "\1\147\2\150\3\145\1\146\11\145\1\260\5\145\1\147"+
-    "\2\150\3\145\1\146\1\153\1\261\3\145\1\155\11\145"+
-    "\1\147\1\150\1\153\3\145\1\146\11\145\1\262\5\145"+
-    "\1\147\2\150\3\145\1\146\16\145\1\263\1\147\2\150"+
-    "\2\145\1\163\1\164\1\163\1\264\15\163\1\165\2\166"+
-    "\3\163\1\164\16\163\1\265\1\165\2\166\3\163\1\164"+
-    "\1\171\1\266\3\163\1\173\11\163\1\165\1\166\1\171"+
-    "\3\163\1\164\11\163\1\267\5\163\1\165\2\166\3\163"+
-    "\1\164\16\163\1\270\1\165\2\166\2\163\1\73\1\74"+
-    "\12\73\1\271\4\73\1\75\2\76\3\73\1\74\10\73"+
-    "\1\272\6\73\1\75\2\76\2\73\1\110\1\111\12\110"+
-    "\1\273\4\110\1\112\2\113\3\110\1\111\10\110\1\274"+
-    "\6\110\1\112\2\113\2\110\1\122\1\123\12\122\1\275"+
-    "\4\122\1\124\2\125\3\122\1\123\10\122\1\276\6\122"+
-    "\1\124\2\125\2\122\14\0\1\277\23\0\1\300\13\0"+
-    "\1\145\1\146\12\145\1\301\4\145\1\147\2\150\3\145"+
-    "\1\146\12\145\1\302\4\145\1\147\2\150\3\145\1\146"+
-    "\10\145\1\303\6\145\1\147\2\150\2\145\1\163\1\164"+
-    "\10\163\1\304\6\163\1\165\2\166\3\163\1\164\12\163"+
-    "\1\305\4\163\1\165\2\166\3\163\1\164\10\163\1\306"+
-    "\6\163\1\165\2\166\2\163\1\145\1\146\13\145\1\307"+
-    "\3\145\1\147\2\150\2\145\1\163\1\164\13\163\1\310"+
-    "\3\163\1\165\2\166\2\163";
+    "\1\11\1\12\1\13\16\11\1\12\1\11\1\13\3\11"+
+    "\1\14\1\13\1\15\1\16\2\11\1\17\1\20\10\11"+
+    "\1\14\1\11\1\13\2\11\1\21\1\22\17\21\1\22"+
+    "\4\21\1\23\1\22\17\23\1\22\4\23\1\24\1\25"+
+    "\1\26\12\24\1\27\3\24\1\25\1\24\1\26\1\30"+
+    "\1\24\1\31\1\24\6\31\1\32\10\31\1\24\4\31"+
+    "\1\24\1\33\1\34\12\24\1\35\3\24\1\33\1\24"+
+    "\1\34\1\36\1\24\1\37\1\12\6\37\1\40\10\37"+
+    "\1\12\4\37\27\0\1\12\1\41\16\0\1\12\1\0"+
+    "\1\41\4\0\1\42\1\43\3\0\1\44\13\0\1\42"+
+    "\7\0\1\45\22\0\1\42\1\44\3\0\1\44\13\0"+
+    "\1\42\13\0\1\46\4\0\1\47\7\0\1\50\1\51"+
+    "\17\50\1\52\2\53\2\50\1\54\1\55\17\54\1\56"+
+    "\2\57\2\54\1\0\1\25\1\60\16\0\1\25\1\0"+
+    "\1\60\6\0\2\61\3\0\4\61\1\0\3\61\4\0"+
+    "\1\61\1\62\1\63\17\62\1\64\2\65\3\62\1\63"+
+    "\7\62\1\66\7\62\1\64\2\65\2\62\1\0\1\33"+
+    "\1\67\16\0\1\33\1\0\1\67\6\0\2\70\3\0"+
+    "\4\70\1\0\3\70\4\0\1\70\1\71\1\72\17\71"+
+    "\1\73\2\74\3\71\1\72\14\71\1\75\2\71\1\73"+
+    "\2\74\2\71\2\0\1\42\1\76\3\0\1\44\13\0"+
+    "\1\42\10\0\1\77\31\0\1\100\32\0\1\101\27\0"+
+    "\1\102\25\0\1\103\25\0\1\104\4\0\1\62\1\63"+
+    "\10\62\1\105\6\62\1\64\2\65\2\62\21\0\1\106"+
+    "\4\0\1\71\1\72\15\71\1\107\1\71\1\73\2\74"+
+    "\2\71\2\0\1\42\1\110\3\0\1\44\13\0\1\42"+
+    "\4\0\1\111\20\0\1\111\15\0\1\112\32\0\1\113"+
+    "\5\0\1\62\1\63\11\62\1\114\5\62\1\64\2\65"+
+    "\2\62\1\71\1\72\16\71\1\115\1\73\2\74\2\71"+
+    "\1\0\1\116\1\42\1\44\3\0\1\44\11\0\3\117"+
+    "\16\0\1\120\23\0\1\121\13\0\1\62\1\63\12\62"+
+    "\1\122\4\62\1\64\2\65\2\62\1\71\1\72\10\71"+
+    "\1\123\6\71\1\73\2\74\2\71\21\0\1\117\4\0"+
+    "\1\62\1\63\13\62\1\124\3\62\1\64\2\65\2\62"+
+    "\1\71\1\72\13\71\1\125\3\71\1\73\2\74\2\71";
 
   private static int [] zzUnpackTrans() {
-    int [] result = new int[2794];
+    int [] result = new int[1056];
     int offset = 0;
     offset = zzUnpackTrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -423,20 +322,15 @@ class TextileLexer implements FlexLexer {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\16\0\22\1\1\11\3\1\1\11\15\1\1\11\7\1"+
-    "\1\0\1\1\1\11\2\1\2\0\1\1\6\0\1\1"+
-    "\1\11\1\1\1\0\1\1\5\0\1\1\1\11\1\1"+
-    "\1\0\1\1\4\0\1\11\2\0\1\1\1\11\5\0"+
-    "\1\1\1\11\1\1\2\0\1\1\4\0\1\11\1\0"+
-    "\1\1\1\0\1\1\1\11\1\1\2\0\1\1\4\0"+
-    "\1\11\5\0\1\11\4\0\1\11\10\0\1\11\5\0"+
-    "\1\11\5\0\3\1\2\0\2\1\2\0\2\1\2\0"+
-    "\1\11\1\1\2\0\1\1\1\0\1\1\2\0\1\1"+
-    "\1\0\1\1\2\0\6\1\2\11\1\0\2\1\1\0"+
-    "\4\1";
+    "\10\0\2\11\1\1\1\11\5\1\1\11\1\1\2\11"+
+    "\1\1\1\11\3\1\1\11\1\1\1\11\3\1\1\0"+
+    "\1\11\6\0\1\1\1\11\1\1\1\0\1\1\1\11"+
+    "\1\1\1\0\1\1\1\0\1\1\1\11\1\1\2\0"+
+    "\1\1\1\0\1\1\1\11\1\1\5\0\3\11\1\0"+
+    "\1\11\2\0\1\11\4\0\1\1\3\11\2\0\2\1";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[200];
+    int [] result = new int[85];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -783,62 +677,59 @@ class TextileLexer implements FlexLexer {
       else {
         switch (zzAction < 0 ? zzAction : ZZ_ACTION[zzAction]) {
           case 1: 
-            { 
+            { return TextileType.TEXT;
             } 
             // fall through
-          case 28: break;
+          case 27: break;
           case 2: 
             { return TextileType.EOL;
             } 
             // fall through
-          case 29: break;
+          case 28: break;
           case 3: 
-            { yybegin(YYINITIAL);
-    return TextileType.EOL;
-            } 
-            // fall through
-          case 30: break;
-          case 4: 
-            { yybegin(code);
-    return TextileType.EOL;
-            } 
-            // fall through
-          case 31: break;
-          case 5: 
-            { return TextileType.CODE_START;
-            } 
-            // fall through
-          case 32: break;
-          case 6: 
-            { yybegin(info);
-    return TextileType.EOL;
-            } 
-            // fall through
-          case 33: break;
-          case 7: 
-            { return TextileType.INFO_START;
-            } 
-            // fall through
-          case 34: break;
-          case 8: 
-            // lookahead expression with fixed lookahead length
-            zzMarkedPos = Character.offsetByCodePoints
-                (zzBufferL/*, zzStartRead, zzEndRead - zzStartRead*/, zzMarkedPos, -1);
-            { return TextileType.TEXT;
-            } 
-            // fall through
-          case 35: break;
-          case 9: 
             { return TextileType.PARAGRAPH_BREAK;
             } 
             // fall through
-          case 36: break;
-          case 10: 
-            { yybegin(list);
-    return TextileType.LIST_DELIM;
+          case 29: break;
+          case 4: 
+            { 
             } 
             // fall through
-          case 37: break;
+          case 30: break;
+          case 5: 
+            { yybegin(YYINITIAL);
+        return TextileType.EOL;
+            } 
+            // fall through
+          case 31: break;
+          case 6: 
+            { yybegin(code);
+        return TextileType.EOL;
+            } 
+            // fall through
+          case 32: break;
+          case 7: 
+            { return TextileType.CODE_START;
+            } 
+            // fall through
+          case 33: break;
+          case 8: 
+            { yybegin(info);
+        return TextileType.EOL;
+            } 
+            // fall through
+          case 34: break;
+          case 9: 
+            { return TextileType.INFO_START;
+            } 
+            // fall through
+          case 35: break;
+          case 10: 
+            { yybegin(list);
+        return TextileType.LIST_DELIM;
+            } 
+            // fall through
+          case 36: break;
           case 11: 
             // lookahead expression with fixed lookahead length
             zzMarkedPos = Character.offsetByCodePoints
@@ -846,7 +737,7 @@ class TextileLexer implements FlexLexer {
             { return TextileType.HEADER_TEXT;
             } 
             // fall through
-          case 38: break;
+          case 37: break;
           case 12: 
             // lookahead expression with fixed lookahead length
             zzMarkedPos = Character.offsetByCodePoints
@@ -854,13 +745,13 @@ class TextileLexer implements FlexLexer {
             { return TextileType.LIST_TEXT;
             } 
             // fall through
-          case 39: break;
+          case 38: break;
           case 13: 
             { String codeLanguage = yytext().toString().substring(1);
-    return TextileType.CODE_START;
+        return TextileType.CODE_START;
             } 
             // fall through
-          case 40: break;
+          case 39: break;
           case 14: 
             // lookahead expression with fixed lookahead length
             zzMarkedPos = Character.offsetByCodePoints
@@ -868,13 +759,13 @@ class TextileLexer implements FlexLexer {
             { return TextileType.CODE;
             } 
             // fall through
-          case 41: break;
+          case 40: break;
           case 15: 
             { // get info title, if present
-    return TextileType.INFO_START;
+        return TextileType.INFO_START;
             } 
             // fall through
-          case 42: break;
+          case 41: break;
           case 16: 
             // lookahead expression with fixed lookahead length
             zzMarkedPos = Character.offsetByCodePoints
@@ -882,82 +773,77 @@ class TextileLexer implements FlexLexer {
             { return TextileType.INFO;
             } 
             // fall through
-          case 43: break;
+          case 42: break;
           case 17: 
-            // lookahead expression with fixed lookahead length
-            zzMarkedPos = Character.offsetByCodePoints
-                (zzBufferL/*, zzStartRead, zzEndRead - zzStartRead*/, zzMarkedPos, -2);
-            { return TextileType.TEXT;
-            } 
-            // fall through
-          case 44: break;
-          case 18: 
             // lookahead expression with fixed lookahead length
             zzMarkedPos = Character.offsetByCodePoints
                 (zzBufferL/*, zzStartRead, zzEndRead - zzStartRead*/, zzMarkedPos, -2);
             { return TextileType.HEADER_TEXT;
             } 
             // fall through
-          case 45: break;
-          case 19: 
+          case 43: break;
+          case 18: 
             // lookahead expression with fixed lookahead length
             zzMarkedPos = Character.offsetByCodePoints
                 (zzBufferL/*, zzStartRead, zzEndRead - zzStartRead*/, zzMarkedPos, -2);
             { return TextileType.LIST_TEXT;
             } 
             // fall through
-          case 46: break;
-          case 20: 
+          case 44: break;
+          case 19: 
             // lookahead expression with fixed lookahead length
             zzMarkedPos = Character.offsetByCodePoints
                 (zzBufferL/*, zzStartRead, zzEndRead - zzStartRead*/, zzMarkedPos, -2);
             { return TextileType.CODE;
             } 
             // fall through
-          case 47: break;
-          case 21: 
+          case 45: break;
+          case 20: 
             // lookahead expression with fixed lookahead length
             zzMarkedPos = Character.offsetByCodePoints
                 (zzBufferL/*, zzStartRead, zzEndRead - zzStartRead*/, zzMarkedPos, -2);
             { return TextileType.INFO;
             } 
             // fall through
-          case 48: break;
+          case 46: break;
+          case 21: 
+            { yybegin(header);
+        return TextileType.HEADER_START;
+            } 
+            // fall through
+          case 47: break;
           case 22: 
+            // lookahead expression with fixed base length
+            zzMarkedPos = Character.offsetByCodePoints
+                (zzBufferL/*, zzStartRead, zzEndRead - zzStartRead*/, zzStartRead, 4);
             { return TextileType.CHAPTER_BREAK;
             } 
             // fall through
-          case 49: break;
+          case 48: break;
           case 23: 
-            { yybegin(header);
-    return TextileType.HEADER_START;
+            { yybegin(code_start);
+        return TextileType.CODE_START;
+            } 
+            // fall through
+          case 49: break;
+          case 24: 
+            { yybegin(info_start);
+        return TextileType.INFO_START;
             } 
             // fall through
           case 50: break;
-          case 24: 
-            { yybegin(code_start);
-    return TextileType.CODE_START;
+          case 25: 
+            { yybegin(YYINITIAL);
+        return TextileType.CODE_END;
             } 
             // fall through
           case 51: break;
-          case 25: 
-            { yybegin(info_start);
-    return TextileType.INFO_START;
+          case 26: 
+            { yybegin(YYINITIAL);
+        return TextileType.INFO_END;
             } 
             // fall through
           case 52: break;
-          case 26: 
-            { yybegin(YYINITIAL);
-    return TextileType.CODE_END;
-            } 
-            // fall through
-          case 53: break;
-          case 27: 
-            { yybegin(YYINITIAL);
-    return TextileType.INFO_END;
-            } 
-            // fall through
-          case 54: break;
           default:
             zzScanError(ZZ_NO_MATCH);
           }

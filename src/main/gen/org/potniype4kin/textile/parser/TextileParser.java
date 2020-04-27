@@ -36,6 +36,26 @@ public class TextileParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
+  // CHAPTER_BREAK EOL?
+  static boolean chapter_break(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "chapter_break")) return false;
+    if (!nextTokenIs(b, CHAPTER_BREAK)) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = consumeToken(b, CHAPTER_BREAK);
+    r = r && chapter_break_1(b, l + 1);
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // EOL?
+  private static boolean chapter_break_1(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "chapter_break_1")) return false;
+    consumeToken(b, EOL);
+    return true;
+  }
+
+  /* ********************************************************** */
   // CODE_START+ EOL (CODE EOL)* CODE_END
   static boolean code(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "code")) return false;
@@ -158,7 +178,7 @@ public class TextileParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // header|list|code|info|text|CHAPTER_BREAK|PARAGRAPH_BREAK
+  // header|list|code|info|text|chapter_break|paragraph_break
   static boolean item(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "item")) return false;
     boolean r;
@@ -167,8 +187,8 @@ public class TextileParser implements PsiParser, LightPsiParser {
     if (!r) r = code(b, l + 1);
     if (!r) r = info(b, l + 1);
     if (!r) r = text(b, l + 1);
-    if (!r) r = consumeToken(b, CHAPTER_BREAK);
-    if (!r) r = consumeToken(b, PARAGRAPH_BREAK);
+    if (!r) r = chapter_break(b, l + 1);
+    if (!r) r = paragraph_break(b, l + 1);
     return r;
   }
 
@@ -208,6 +228,12 @@ public class TextileParser implements PsiParser, LightPsiParser {
     r = consumeTokens(b, 0, LIST_TEXT, EOL);
     exit_section_(b, m, null, r);
     return r;
+  }
+
+  /* ********************************************************** */
+  // PARAGRAPH_BREAK
+  static boolean paragraph_break(PsiBuilder b, int l) {
+    return consumeToken(b, PARAGRAPH_BREAK);
   }
 
   /* ********************************************************** */

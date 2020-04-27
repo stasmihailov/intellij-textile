@@ -20,7 +20,7 @@ CRLF=[\r\n]
 SPACE=[\ \t\f]
 
 CHAPTER_BREAK="-"{4}
-PARAGRAPH_BREAK=({CRLF}{SPACE}*)+{CRLF}
+PARAGRAPH_BREAK={CRLF}
 EOL=[^\r\n]+
 LINE_BREAK={SPACE}*{CRLF}
 
@@ -47,14 +47,11 @@ INFO_END_TOKEN="{info}"
 %%
 
 <YYINITIAL> {
-    {CHAPTER_BREAK} {
+    ^{CHAPTER_BREAK}$ {
         return TextileType.CHAPTER_BREAK;
     }
-    {PARAGRAPH_BREAK} {
+    ^{PARAGRAPH_BREAK} {
         return TextileType.PARAGRAPH_BREAK;
-    }
-    {EOL}$ {
-        return TextileType.TEXT;
     }
     {LINE_BREAK} {
         return TextileType.EOL;
@@ -74,6 +71,9 @@ INFO_END_TOKEN="{info}"
     ^{INFO_START_TOKEN} {
         yybegin(info_start);
         return TextileType.INFO_START;
+    }
+    [^] {
+        return TextileType.TEXT;
     }
 }
 <header> {
