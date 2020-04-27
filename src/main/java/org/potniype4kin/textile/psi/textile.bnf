@@ -20,4 +20,5 @@ textileFile ::= item*
 private header ::= HEADER_START
 private list ::= LIST_DELIM
 private code ::= CODE_START+ CODE* CODE_END
-private item ::= (header|list|code|TEXT|CHAPTER_BREAK|PARAGRAPH_BREAK)
+private info ::= INFO_START+ INFO* INFO_END
+private item ::= (header|list|code|info|TEXT|CHAPTER_BREAK|PARAGRAPH_BREAK)

@@ -32,11 +32,16 @@ LIST_DEFINITION={LIST_DELIM}+{SPACE}
 CODE_START_TOKEN="{code"
 CODE_START_TOKEN_CLOSE="}"
 CODE_END_TOKEN="{code}"
+INFO_START_TOKEN="{info"
+INFO_START_TOKEN_CLOSE="}"
+INFO_END_TOKEN="{info}"
 
 %state header
 %state list
 %state code_start
 %state code
+%state info_start
+%state info
 
 %%
 
@@ -86,6 +91,28 @@ CODE_END_TOKEN="{code}"
 <code> {CODE_END_TOKEN} {
     yybegin(YYINITIAL);
     return TextileType.CODE_END;
+}
+^{INFO_START_TOKEN} {
+    yybegin(info_start);
+    return TextileType.INFO_START;
+}
+<info_start> :\w+ {
+    // get info title, if present
+    return TextileType.INFO_START;
+}
+<info_start> {INFO_START_TOKEN_CLOSE} {
+    return TextileType.INFO_START;
+}
+<info_start> {LINE_BREAK} {
+    yybegin(info);
+    return TokenType.WHITE_SPACE;
+}
+<info> {LINE_BREAK} {
+    return TextileType.INFO;
+}
+<info> {INFO_END_TOKEN} {
+    yybegin(YYINITIAL);
+    return TextileType.INFO_END;
 }
 [^] {
 }

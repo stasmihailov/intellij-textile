@@ -12,4 +12,9 @@
       <option name="FONT_TYPE" value="1"/>
     </value>
   </option>
+  <option name="TEXTILE_INFO_BLOCK">
+    <value>
+      <option name="BACKGROUND" value="dde7ff"/>
+    </value>
+  </option>
 </list>

@@ -47,6 +47,12 @@ public class TextileSyntaxHighlighter extends SyntaxHighlighterBase {
             return pack(code());
         } else if (TextileType.CHAPTER_BREAK.equals(elementType)) {
             return pack(BLOCK_COMMENT);
+        } else if (TextileType.INFO_START.equals(elementType)) {
+            return pack(info());
+        } else if (TextileType.INFO.equals(elementType)) {
+            return pack(info());
+        } else if (TextileType.INFO_END.equals(elementType)) {
+            return pack(info());
         } else {
             return EMPTY;
         }
@@ -59,6 +65,10 @@ public class TextileSyntaxHighlighter extends SyntaxHighlighterBase {
 
     private TextAttributesKey listDelim() {
         return TextAttributesKey.find("TEXTILE_CHAPTER_BREAK");
+    }
+
+    private TextAttributesKey info() {
+        return TextAttributesKey.find("TEXTILE_INFO_BLOCK");
     }
 
     private TextAttributesKey code() {
