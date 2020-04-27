@@ -53,7 +53,7 @@ INFO_END_TOKEN="{info}"
     return TextileType.PARAGRAPH_BREAK;
 }
 <YYINITIAL> {LINE_BREAK} {
-    return TokenType.WHITE_SPACE;
+    return TextileType.EOL;
 }
 ^{HEADER_DEFINITION} {
     yybegin(header);
@@ -112,7 +112,7 @@ INFO_END_TOKEN="{info}"
 }
 <info_start> {LINE_BREAK} {
     yybegin(info);
-    return TokenType.WHITE_SPACE;
+    return TextileType.EOL;
 }
 <info> {EOL}$ {
     return TextileType.INFO;
@@ -124,7 +124,7 @@ INFO_END_TOKEN="{info}"
     yybegin(YYINITIAL);
     return TextileType.INFO_END;
 }
-^.+$ {
+.+$ {
     return TextileType.TEXT;
 }
 [^] {
