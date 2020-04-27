@@ -21,6 +21,7 @@ SPACE=[\ \t\f]
 
 CHAPTER_BREAK="-"{4}
 PARAGRAPH_BREAK=({CRLF}{SPACE}*)+{CRLF}
+EOL=[^\r\n]+
 LINE_BREAK={SPACE}*{CRLF}
 
 HEADER_PREFIX="h"
@@ -58,17 +59,23 @@ INFO_END_TOKEN="{info}"
     yybegin(header);
     return TextileType.HEADER_START;
 }
+<header> {EOL}$ {
+    return TextileType.HEADER_TEXT;
+}
 <header> {LINE_BREAK} {
     yybegin(YYINITIAL);
-    return TextileType.HEADER_TEXT;
+    return TextileType.EOL;
 }
 ^{LIST_DEFINITION} {
     yybegin(list);
     return TextileType.LIST_DELIM;
 }
+<list> {EOL}$ {
+    return TextileType.LIST_TEXT;
+}
 <list> {LINE_BREAK} {
     yybegin(YYINITIAL);
-    return TextileType.LIST_TEXT;
+    return TextileType.EOL;
 }
 ^{CODE_START_TOKEN} {
     yybegin(code_start);
@@ -83,9 +90,9 @@ INFO_END_TOKEN="{info}"
 }
 <code_start> {LINE_BREAK} {
     yybegin(code);
-    return TokenType.WHITE_SPACE;
+    return TextileType.EOL;
 }
-<code> {LINE_BREAK} {
+<code> {EOL}$ {
     return TextileType.CODE;
 }
 <code> {CODE_END_TOKEN} {
@@ -107,12 +114,18 @@ INFO_END_TOKEN="{info}"
     yybegin(info);
     return TokenType.WHITE_SPACE;
 }
-<info> {LINE_BREAK} {
+<info> {EOL}$ {
     return TextileType.INFO;
+}
+<info> {LINE_BREAK} {
+    return TextileType.EOL;
 }
 <info> {INFO_END_TOKEN} {
     yybegin(YYINITIAL);
     return TextileType.INFO_END;
+}
+^.+$ {
+    return TextileType.TEXT;
 }
 [^] {
 }

@@ -2,13 +2,13 @@
 <list>
   <option name="TEXTILE_HEADER_START">
     <value>
-      <option name="FOREGROUND" value="ff00ff"/>
+      <option name="FOREGROUND" value="b816b6"/>
       <option name="FONT_TYPE" value="1"/>
     </value>
   </option>
   <option name="TEXTILE_HEADER_TEXT">
     <value>
-      <option name="FOREGROUND" value="ff00ff"/>
+      <option name="FOREGROUND" value="b816b6"/>
     </value>
   </option>
   <option name="TEXTILE_CHAPTER_BREAK">

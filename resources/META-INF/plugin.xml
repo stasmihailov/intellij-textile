@@ -1,7 +1,7 @@
 <idea-plugin>
   <id>com.potniype4kin.intellij-textile</id>
   <name>Textile language support</name>
-  <version>0.1.1</version>
+  <version>0.1.2</version>
   <vendor>Denis Babochenko</vendor>
 
   <description>
