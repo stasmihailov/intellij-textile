@@ -6,6 +6,11 @@
       <option name="FONT_TYPE" value="1"/>
     </value>
   </option>
+  <option name="TEXTILE_HEADER_TEXT">
+    <value>
+      <option name="FOREGROUND" value="ff00ff"/>
+    </value>
+  </option>
   <option name="TEXTILE_CHAPTER_BREAK">
     <value>
       <option name="FOREGROUND" value="0000ff"/>

@@ -37,6 +37,8 @@ public class TextileSyntaxHighlighter extends SyntaxHighlighterBase {
     public TextAttributesKey[] getTokenHighlights(IElementType elementType) {
         if (TextileType.HEADER_START.equals(elementType)) {
             return pack(headerStart());
+        } else if (TextileType.HEADER_TEXT.equals(elementType)) {
+            return pack(headerText());
         } else if (TextileType.LIST_DELIM.equals(elementType)) {
             return pack(listDelim());
         } else if (TextileType.CODE_START.equals(elementType)) {
@@ -58,9 +60,12 @@ public class TextileSyntaxHighlighter extends SyntaxHighlighterBase {
         }
     }
 
-    @NotNull
     private TextAttributesKey headerStart() {
         return TextAttributesKey.find("TEXTILE_HEADER_START");
+    }
+
+    private TextAttributesKey headerText() {
+        return TextAttributesKey.find("TEXTILE_HEADER_TEXT");
     }
 
     private TextAttributesKey listDelim() {

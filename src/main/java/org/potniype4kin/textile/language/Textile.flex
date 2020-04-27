@@ -60,7 +60,7 @@ INFO_END_TOKEN="{info}"
 }
 <header> {LINE_BREAK} {
     yybegin(YYINITIAL);
-    return TextileType.TEXT;
+    return TextileType.HEADER_TEXT;
 }
 ^{LIST_DEFINITION} {
     yybegin(list);
@@ -68,7 +68,7 @@ INFO_END_TOKEN="{info}"
 }
 <list> {LINE_BREAK} {
     yybegin(YYINITIAL);
-    return TextileType.TEXT;
+    return TextileType.LIST_TEXT;
 }
 ^{CODE_START_TOKEN} {
     yybegin(code_start);
