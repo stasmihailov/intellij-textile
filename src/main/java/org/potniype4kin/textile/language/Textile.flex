@@ -46,86 +46,100 @@ INFO_END_TOKEN="{info}"
 
 %%
 
-{CHAPTER_BREAK} {
-    return TextileType.CHAPTER_BREAK;
+<YYINITIAL> {
+    {CHAPTER_BREAK} {
+        return TextileType.CHAPTER_BREAK;
+    }
+    {PARAGRAPH_BREAK} {
+        return TextileType.PARAGRAPH_BREAK;
+    }
+    {EOL}$ {
+        return TextileType.TEXT;
+    }
+    {LINE_BREAK} {
+        return TextileType.EOL;
+    }
+    ^{HEADER_DEFINITION} {
+        yybegin(header);
+        return TextileType.HEADER_START;
+    }
+    ^{LIST_DEFINITION} {
+        yybegin(list);
+        return TextileType.LIST_DELIM;
+    }
+    ^{CODE_START_TOKEN} {
+        yybegin(code_start);
+        return TextileType.CODE_START;
+    }
+    ^{INFO_START_TOKEN} {
+        yybegin(info_start);
+        return TextileType.INFO_START;
+    }
 }
-{PARAGRAPH_BREAK} {
-    return TextileType.PARAGRAPH_BREAK;
+<header> {
+    {EOL}$ {
+        return TextileType.HEADER_TEXT;
+    }
+    {LINE_BREAK} {
+        yybegin(YYINITIAL);
+        return TextileType.EOL;
+    }
 }
-<YYINITIAL> {LINE_BREAK} {
-    return TextileType.EOL;
+<list> {
+    {EOL}$ {
+        return TextileType.LIST_TEXT;
+    }
+    {LINE_BREAK} {
+        yybegin(YYINITIAL);
+        return TextileType.EOL;
+    }
 }
-^{HEADER_DEFINITION} {
-    yybegin(header);
-    return TextileType.HEADER_START;
+<code_start> {
+    :\w+ {
+        String codeLanguage = yytext().toString().substring(1);
+        return TextileType.CODE_START;
+    }
+    {CODE_START_TOKEN_CLOSE} {
+        return TextileType.CODE_START;
+    }
+    {LINE_BREAK} {
+        yybegin(code);
+        return TextileType.EOL;
+    }
 }
-<header> {EOL}$ {
-    return TextileType.HEADER_TEXT;
+<code> {
+    {EOL}$ {
+        return TextileType.CODE;
+    }
+    {CODE_END_TOKEN} {
+        yybegin(YYINITIAL);
+        return TextileType.CODE_END;
+    }
 }
-<header> {LINE_BREAK} {
-    yybegin(YYINITIAL);
-    return TextileType.EOL;
+<info_start> {
+    :\w+ {
+        // get info title, if present
+        return TextileType.INFO_START;
+    }
+    {INFO_START_TOKEN_CLOSE} {
+        return TextileType.INFO_START;
+    }
+    {LINE_BREAK} {
+        yybegin(info);
+        return TextileType.EOL;
+    }
 }
-^{LIST_DEFINITION} {
-    yybegin(list);
-    return TextileType.LIST_DELIM;
-}
-<list> {EOL}$ {
-    return TextileType.LIST_TEXT;
-}
-<list> {LINE_BREAK} {
-    yybegin(YYINITIAL);
-    return TextileType.EOL;
-}
-^{CODE_START_TOKEN} {
-    yybegin(code_start);
-    return TextileType.CODE_START;
-}
-<code_start> :\w+ {
-    String codeLanguage = yytext().toString().substring(1);
-    return TextileType.CODE_START;
-}
-<code_start> {CODE_START_TOKEN_CLOSE} {
-    return TextileType.CODE_START;
-}
-<code_start> {LINE_BREAK} {
-    yybegin(code);
-    return TextileType.EOL;
-}
-<code> {EOL}$ {
-    return TextileType.CODE;
-}
-<code> {CODE_END_TOKEN} {
-    yybegin(YYINITIAL);
-    return TextileType.CODE_END;
-}
-^{INFO_START_TOKEN} {
-    yybegin(info_start);
-    return TextileType.INFO_START;
-}
-<info_start> :\w+ {
-    // get info title, if present
-    return TextileType.INFO_START;
-}
-<info_start> {INFO_START_TOKEN_CLOSE} {
-    return TextileType.INFO_START;
-}
-<info_start> {LINE_BREAK} {
-    yybegin(info);
-    return TextileType.EOL;
-}
-<info> {EOL}$ {
-    return TextileType.INFO;
-}
-<info> {LINE_BREAK} {
-    return TextileType.EOL;
-}
-<info> {INFO_END_TOKEN} {
-    yybegin(YYINITIAL);
-    return TextileType.INFO_END;
-}
-.+$ {
-    return TextileType.TEXT;
+<info> {
+    {EOL}$ {
+        return TextileType.INFO;
+    }
+    {LINE_BREAK} {
+        return TextileType.EOL;
+    }
+    {INFO_END_TOKEN} {
+        yybegin(YYINITIAL);
+        return TextileType.INFO_END;
+    }
 }
 [^] {
 }
