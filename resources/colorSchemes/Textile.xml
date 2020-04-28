@@ -22,4 +22,29 @@
       <option name="BACKGROUND" value="dde7ff"/>
     </value>
   </option>
+  <option name="TEXTILE_SIGN_WARNING">
+    <value>
+      <option name="BACKGROUND" value="f4cd33"/>
+    </value>
+  </option>
+  <option name="TEXTILE_SIGN_PLUS">
+    <value>
+      <option name="BACKGROUND" value="24b87f"/>
+    </value>
+  </option>
+  <option name="TEXTILE_SIGN_MINUS">
+    <value>
+      <option name="BACKGROUND" value="ea5757"/>
+    </value>
+  </option>
+  <option name="TEXTILE_SIGN_OK">
+    <value>
+      <option name="BACKGROUND" value="24b87f"/>
+    </value>
+  </option>
+  <option name="TEXTILE_SIGN_QUESTION">
+    <value>
+      <option name="BACKGROUND" value="6240d0"/>
+    </value>
+  </option>
 </list>

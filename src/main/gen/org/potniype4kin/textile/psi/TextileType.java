@@ -21,6 +21,11 @@ public interface TextileType {
   IElementType LIST_DELIM = new TextileToken("LIST_DELIM");
   IElementType LIST_TEXT = new TextileToken("LIST_TEXT");
   IElementType PARAGRAPH_BREAK = new TextileToken("PARAGRAPH_BREAK");
+  IElementType SIGN_MINUS = new TextileToken("SIGN_MINUS");
+  IElementType SIGN_OK = new TextileToken("SIGN_OK");
+  IElementType SIGN_PLUS = new TextileToken("SIGN_PLUS");
+  IElementType SIGN_QUESTION = new TextileToken("SIGN_QUESTION");
+  IElementType SIGN_WARNING = new TextileToken("SIGN_WARNING");
   IElementType TEXT = new TextileToken("TEXT");
 
   class Factory {

@@ -12,16 +12,16 @@ and is joined unless two line breaks
 
 this is a different paragraph
 
-- list item 1
--- nested list item 1.1
--- nested list item 1.2
-- list item 2
+- (+) list item 1
+-- (-) nested list item 1.1
+-- (+) nested list item 1.2
+- (+) list item 2
 
-following is a break line
+(?) following is a break line
 
 ----
 
-h3. next pagagraph is a table
+h3. (!) next pagagraph is a table (!)
 | name | value |
 | --- | --- |
 | josh | true |
@@ -37,7 +37,7 @@ code is defined as follows:
 
 info panel is defined as follows:
 {info:title=something to consider!}
-nothing to see here
+(x) nothing to see here!
 {info}
 
 the end!

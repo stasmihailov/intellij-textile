@@ -24,4 +24,5 @@ private info ::= INFO_START+ (INFO+ EOL)* INFO* INFO_END EOL?
 private text ::= TEXT+ EOL?
 private chapter_break ::= CHAPTER_BREAK EOL?
 private paragraph_break ::= PARAGRAPH_BREAK
-private item ::= (header|list|code|info|text|chapter_break|paragraph_break)
+private signs ::= SIGN_WARNING | SIGN_PLUS | SIGN_MINUS | SIGN_OK | SIGN_QUESTION
+private item ::= (header|list|code|info|text|chapter_break|paragraph_break|signs)

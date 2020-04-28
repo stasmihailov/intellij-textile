@@ -248,7 +248,7 @@ public class TextileParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // header|list|code|info|text|chapter_break|paragraph_break
+  // header|list|code|info|text|chapter_break|paragraph_break|signs
   static boolean item(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "item")) return false;
     boolean r;
@@ -259,6 +259,7 @@ public class TextileParser implements PsiParser, LightPsiParser {
     if (!r) r = text(b, l + 1);
     if (!r) r = chapter_break(b, l + 1);
     if (!r) r = paragraph_break(b, l + 1);
+    if (!r) r = signs(b, l + 1);
     return r;
   }
 
@@ -304,6 +305,19 @@ public class TextileParser implements PsiParser, LightPsiParser {
   // PARAGRAPH_BREAK
   static boolean paragraph_break(PsiBuilder b, int l) {
     return consumeToken(b, PARAGRAPH_BREAK);
+  }
+
+  /* ********************************************************** */
+  // SIGN_WARNING | SIGN_PLUS | SIGN_MINUS | SIGN_OK | SIGN_QUESTION
+  static boolean signs(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "signs")) return false;
+    boolean r;
+    r = consumeToken(b, SIGN_WARNING);
+    if (!r) r = consumeToken(b, SIGN_PLUS);
+    if (!r) r = consumeToken(b, SIGN_MINUS);
+    if (!r) r = consumeToken(b, SIGN_OK);
+    if (!r) r = consumeToken(b, SIGN_QUESTION);
+    return r;
   }
 
   /* ********************************************************** */

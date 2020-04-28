@@ -36,6 +36,11 @@ CODE_END_TOKEN="{code}"
 INFO_START_TOKEN="{info"
 INFO_START_TOKEN_CLOSE="}"
 INFO_END_TOKEN="{info}"
+SIGN_WARNING="(!)"
+SIGN_PLUS="(+)"
+SIGN_MINUS="(-)"
+SIGN_OK="(/)"
+SIGN_QUESTION="(?)"
 
 %state header
 %state list
@@ -72,26 +77,71 @@ INFO_END_TOKEN="{info}"
         yybegin(info_start);
         return TextileType.INFO_START;
     }
+    {SIGN_WARNING} {
+        return TextileType.SIGN_WARNING;
+    }
+    {SIGN_PLUS} {
+        return TextileType.SIGN_PLUS;
+    }
+    {SIGN_MINUS} {
+        return TextileType.SIGN_MINUS;
+    }
+    {SIGN_OK} {
+        return TextileType.SIGN_OK;
+    }
+    {SIGN_QUESTION} {
+        return TextileType.SIGN_QUESTION;
+    }
     [^] {
         return TextileType.TEXT;
     }
 }
 <header> {
-    {EOL}$ {
-        return TextileType.HEADER_TEXT;
-    }
     {LINE_BREAK} {
         yybegin(YYINITIAL);
         return TextileType.EOL;
+    }
+    {SIGN_WARNING} {
+        return TextileType.SIGN_WARNING;
+    }
+    {SIGN_PLUS} {
+        return TextileType.SIGN_PLUS;
+    }
+    {SIGN_MINUS} {
+        return TextileType.SIGN_MINUS;
+    }
+    {SIGN_OK} {
+        return TextileType.SIGN_OK;
+    }
+    {SIGN_QUESTION} {
+        return TextileType.SIGN_QUESTION;
+    }
+    [^] {
+        return TextileType.HEADER_TEXT;
     }
 }
 <list> {
-    {EOL}$ {
-        return TextileType.LIST_TEXT;
-    }
     {LINE_BREAK} {
         yybegin(YYINITIAL);
         return TextileType.EOL;
+    }
+    {SIGN_WARNING} {
+        return TextileType.SIGN_WARNING;
+    }
+    {SIGN_PLUS} {
+        return TextileType.SIGN_PLUS;
+    }
+    {SIGN_MINUS} {
+        return TextileType.SIGN_MINUS;
+    }
+    {SIGN_OK} {
+        return TextileType.SIGN_OK;
+    }
+    {SIGN_QUESTION} {
+        return TextileType.SIGN_QUESTION;
+    }
+    [^] {
+        return TextileType.LIST_TEXT;
     }
 }
 <code_start> {
@@ -139,6 +189,21 @@ INFO_END_TOKEN="{info}"
     {INFO_END_TOKEN} {
         yybegin(YYINITIAL);
         return TextileType.INFO_END;
+    }
+    {SIGN_WARNING} {
+        return TextileType.SIGN_WARNING;
+    }
+    {SIGN_PLUS} {
+        return TextileType.SIGN_PLUS;
+    }
+    {SIGN_MINUS} {
+        return TextileType.SIGN_MINUS;
+    }
+    {SIGN_OK} {
+        return TextileType.SIGN_OK;
+    }
+    {SIGN_QUESTION} {
+        return TextileType.SIGN_QUESTION;
     }
     [^] {
         return TextileType.INFO;
