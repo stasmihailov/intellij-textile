@@ -64,11 +64,11 @@ INFO_END_TOKEN="{info}"
         yybegin(list);
         return TextileType.LIST_DELIM;
     }
-    ^{CODE_START_TOKEN} {
+    {CODE_START_TOKEN} {
         yybegin(code_start);
         return TextileType.CODE_START;
     }
-    ^{INFO_START_TOKEN} {
+    {INFO_START_TOKEN} {
         yybegin(info_start);
         return TextileType.INFO_START;
     }
@@ -111,7 +111,7 @@ INFO_END_TOKEN="{info}"
     {LINE_BREAK} {
         return TextileType.EOL;
     }
-    ^{CODE_END_TOKEN} {
+    {CODE_END_TOKEN} {
         yybegin(YYINITIAL);
         return TextileType.CODE_END;
     }
@@ -136,7 +136,7 @@ INFO_END_TOKEN="{info}"
     {LINE_BREAK} {
         return TextileType.EOL;
     }
-    ^{INFO_END_TOKEN} {
+    {INFO_END_TOKEN} {
         yybegin(YYINITIAL);
         return TextileType.INFO_END;
     }
