@@ -1,0 +1,50 @@
+h0. This is NOT a header
+
+h1. This is a level 1 header
+
+h2. This is a level 2 header
+
+h3. This is a level 3 header
+
+h4. This is a level 4 header
+
+h5. This is a level 5 header
+
+h6. This is a level 6 header
+
+h7. This is NOT a header
+
+paragraph spans multiple lines
+and is joined unless two line breaks
+
+this is a different paragraph
+
+- (+) list item 1
+-- (-) nested list item 1.1
+-- (+) nested list item 1.2
+- (+) list item 2
+
+(?) following is a break line
+
+----
+
+h3. (!) next pagagraph is a table (!)
+| name | value |
+| --- | --- |
+| josh | true |
+| amy | false |
+
+code is defined as follows:
+{code:clojure}
+(defn -main
+  "main function"
+  [args]
+  (println "Hello Textile!"))
+{code}
+
+info panel is defined as follows:
+{info:title=something to consider!}
+(x) nothing to see here!
+{info}
+
+the end!
