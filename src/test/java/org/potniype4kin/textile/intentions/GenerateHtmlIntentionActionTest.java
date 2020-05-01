@@ -1,4 +1,4 @@
-package org.potniype4kin.textile.conversion;
+package org.potniype4kin.textile.intentions;
 
 import org.apache.commons.io.FilenameUtils;
 import org.jetbrains.annotations.NotNull;

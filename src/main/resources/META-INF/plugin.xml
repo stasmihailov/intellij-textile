@@ -22,6 +22,10 @@
     <lang.syntaxHighlighterFactory language="Textile"
                                    implementationClass="org.potniype4kin.textile.language.TextileSyntaxHighlighter$Factory"/>
     <additionalTextAttributes scheme="Default" file="/colorSchemes/Textile.xml"/>
+    <intentionAction>
+      <className>org.potniype4kin.textile.intentions.GenerateHtmlIntentionAction</className>
+      <category>File Conversion</category>
+    </intentionAction>
   </extensions>
 
   <actions>

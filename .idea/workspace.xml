@@ -20,7 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d87a3c7a-642a-4d36-bd8f-ddff9f4f69fd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/resources/conversion/case-1-simple.textile" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/conversion/case-1-simple.textile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/idea-textile-plugin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/idea-textile-plugin.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/potniype4kin/textile/conversion/GenerateHtmlIntentionAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/potniype4kin/textile/intentions/GenerateHtmlIntentionAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/potniype4kin/textile/conversion/GenerateHtmlIntentionActionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/potniype4kin/textile/intentions/GenerateHtmlIntentionActionTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +131,7 @@
       <recent name="$PROJECT_DIR$/src/main" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.GenerateHtmlIntentionActionTest">
+  <component name="RunManager" selected="Gradle.Plugin">
     <configuration default="true" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
       <setting name="replType" value="NREPL" />
       <setting name="execution" value="LEININGEN" />
@@ -273,7 +277,7 @@
       <workItem from="1588359903378" duration="1275000" />
       <workItem from="1588361191757" duration="2782000" />
       <workItem from="1588364011393" duration="3843000" />
-      <workItem from="1588367887103" duration="3021000" />
+      <workItem from="1588367887103" duration="3329000" />
     </task>
     <task id="LOCAL-00001" summary="migrate to gradle">
       <created>1588363304907</created>
@@ -331,7 +335,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588370597570</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="test &quot;generate html&quot; intention">
+      <created>1588371095637</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1588371095637</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -364,10 +375,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="test &quot;generate html&quot; intention" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="165" y="125" width="1655" height="855" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1588370910082">
+    <state x="165" y="125" width="1655" height="855" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1588371133318">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="165" y="125" width="1655" height="855" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588370910082" />
+    <state x="165" y="125" width="1655" height="855" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588371133318" />
     <state x="668" y="354" width="639" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588367059840">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
@@ -392,22 +403,22 @@
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="783" y="458" key="GitRewordDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588366236589" />
-    <state width="1809" height="555" key="GridCell.Tab.0.bottom" timestamp="1588370910004">
+    <state width="1809" height="555" key="GridCell.Tab.0.bottom" timestamp="1588371136393">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="1809" height="555" key="GridCell.Tab.0.bottom/65.25.1855.1055@65.25.1855.1055" timestamp="1588370910004" />
-    <state width="1809" height="555" key="GridCell.Tab.0.center" timestamp="1588370910003">
+    <state width="1809" height="555" key="GridCell.Tab.0.bottom/65.25.1855.1055@65.25.1855.1055" timestamp="1588371136393" />
+    <state width="1809" height="555" key="GridCell.Tab.0.center" timestamp="1588371136391">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="1809" height="555" key="GridCell.Tab.0.center/65.25.1855.1055@65.25.1855.1055" timestamp="1588370910003" />
-    <state width="1809" height="555" key="GridCell.Tab.0.left" timestamp="1588370910003">
+    <state width="1809" height="555" key="GridCell.Tab.0.center/65.25.1855.1055@65.25.1855.1055" timestamp="1588371136391" />
+    <state width="1809" height="555" key="GridCell.Tab.0.left" timestamp="1588371136389">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="1809" height="555" key="GridCell.Tab.0.left/65.25.1855.1055@65.25.1855.1055" timestamp="1588370910003" />
-    <state width="1809" height="555" key="GridCell.Tab.0.right" timestamp="1588370910003">
+    <state width="1809" height="555" key="GridCell.Tab.0.left/65.25.1855.1055@65.25.1855.1055" timestamp="1588371136389" />
+    <state width="1809" height="555" key="GridCell.Tab.0.right" timestamp="1588371136392">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="1809" height="555" key="GridCell.Tab.0.right/65.25.1855.1055@65.25.1855.1055" timestamp="1588370910003" />
+    <state width="1809" height="555" key="GridCell.Tab.0.right/65.25.1855.1055@65.25.1855.1055" timestamp="1588371136392" />
     <state width="916" height="923" key="GridCell.Tab.1.bottom" timestamp="1588370359963">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
@@ -432,10 +443,10 @@
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="717" y="230" width="530" height="640" key="RollbackChangesDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588363701192" />
-    <state x="481" y="187" width="1022" height="737" key="SettingsEditor" timestamp="1588368845951">
+    <state x="481" y="187" width="1022" height="737" key="SettingsEditor" timestamp="1588371121642">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="481" y="187" width="1022" height="737" key="SettingsEditor/65.25.1855.1055@65.25.1855.1055" timestamp="1588368845951" />
+    <state x="481" y="187" width="1022" height="737" key="SettingsEditor/65.25.1855.1055@65.25.1855.1055" timestamp="1588371121642" />
     <state x="721" y="283" width="639" height="524" key="StructurePopup" timestamp="1588370235729">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>

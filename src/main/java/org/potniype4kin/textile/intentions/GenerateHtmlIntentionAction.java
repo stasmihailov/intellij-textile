@@ -1,4 +1,4 @@
-package org.potniype4kin.textile.conversion;
+package org.potniype4kin.textile.intentions;
 
 import com.intellij.codeInsight.intention.IntentionAction;
 import com.intellij.codeInsight.intention.PsiElementBaseIntentionAction;
