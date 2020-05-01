@@ -2,8 +2,12 @@ package org.potniype4kin.textile.intentions;
 
 import com.intellij.codeInsight.intention.IntentionAction;
 import com.intellij.codeInsight.intention.PsiElementBaseIntentionAction;
+import com.intellij.notification.Notification;
+import com.intellij.notification.NotificationDisplayType;
+import com.intellij.notification.NotificationGroup;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.ui.MessageType;
 import com.intellij.psi.PsiElement;
 import com.intellij.util.IncorrectOperationException;
 import net.java.textilej.parser.MarkupParser;
@@ -22,10 +26,24 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 
 public class GenerateHtmlIntentionAction extends PsiElementBaseIntentionAction implements IntentionAction {
+    private static final NotificationGroup CODE_GENERATION_LOGS = new NotificationGroup("Code Generation Logs", NotificationDisplayType.BALLOON, true);
+
     @Override
     public void invoke(@NotNull Project project, Editor editor, @NotNull PsiElement psiElement) throws IncorrectOperationException {
         Path textileFilePath = Paths.get(psiElement.getContainingFile().getVirtualFile().getPath());
-        generateHtmlFile(textileFilePath);
+        File htmlFile = generateHtmlFile(textileFilePath);
+
+        onHtmlFileCreated(project, htmlFile);
+    }
+
+    private void onHtmlFileCreated(Project project, File htmlFile) {
+        String fullPath = htmlFile.getAbsolutePath();
+        String fileName = htmlFile.getName();
+
+        String message = String.format("Generated HTML file: <a href=\"%s\">%s</a>", fullPath, fileName);
+        Notification notification = CODE_GENERATION_LOGS.createNotification(message, MessageType.INFO);
+
+        notification.notify(project);
     }
 
     File generateHtmlFile(Path textileFilePathStr) {

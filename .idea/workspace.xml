@@ -19,12 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d87a3c7a-642a-4d36-bd8f-ddff9f4f69fd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/idea-textile-plugin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/idea-textile-plugin.iml" afterDir="false" />
+    <list default="true" id="d87a3c7a-642a-4d36-bd8f-ddff9f4f69fd" name="Default Changelist" comment="plugin.xml: add &quot;generate html&quot; intention">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/potniype4kin/textile/conversion/GenerateHtmlIntentionAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/potniype4kin/textile/intentions/GenerateHtmlIntentionAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/potniype4kin/textile/conversion/GenerateHtmlIntentionActionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/potniype4kin/textile/intentions/GenerateHtmlIntentionActionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/potniype4kin/textile/intentions/GenerateHtmlIntentionAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/potniype4kin/textile/intentions/GenerateHtmlIntentionAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,14 +97,14 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="HTML" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT&#10;Textile&#10;HTML" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit3" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3" value="junit.framework.TestCase" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="deletionFromPopupRequiresConfirmation" value="false" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="go.import.settings.migrated" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/resources/conversion" />
+    <property name="last_opened_file_path" value="$USER_HOME$/repos/intellij-community" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -277,7 +275,8 @@
       <workItem from="1588359903378" duration="1275000" />
       <workItem from="1588361191757" duration="2782000" />
       <workItem from="1588364011393" duration="3843000" />
-      <workItem from="1588367887103" duration="3329000" />
+      <workItem from="1588367887103" duration="6819000" />
+      <workItem from="1588374752535" duration="8000" />
     </task>
     <task id="LOCAL-00001" summary="migrate to gradle">
       <created>1588363304907</created>
@@ -342,7 +341,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588371095637</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="plugin.xml: add &quot;generate html&quot; intention">
+      <created>1588371345957</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1588371345957</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -372,9 +378,14 @@
     <MESSAGE value="migrate to gradle" />
     <MESSAGE value="init &quot;generate html&quot; intention" />
     <MESSAGE value="test &quot;generate html&quot; intention" />
-    <option name="LAST_COMMIT_MESSAGE" value="test &quot;generate html&quot; intention" />
+    <MESSAGE value="plugin.xml: add &quot;generate html&quot; intention" />
+    <option name="LAST_COMMIT_MESSAGE" value="plugin.xml: add &quot;generate html&quot; intention" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="792" y="242" width="427" height="603" key="#Notifications" timestamp="1588373006008">
+      <screen x="65" y="25" width="1855" height="1055" />
+    </state>
+    <state x="792" y="242" width="427" height="603" key="#Notifications/65.25.1855.1055@65.25.1855.1055" timestamp="1588373006008" />
     <state x="165" y="125" width="1655" height="855" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1588371133318">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
@@ -387,74 +398,74 @@
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="700" y="314" width="704" height="511" key="#xdebugger.evaluate/65.25.1855.1055@65.25.1855.1055" timestamp="1588370357408" />
-    <state x="549" y="79" width="876" height="935" key="CommitChangelistDialog2" timestamp="1588370597433">
+    <state x="549" y="79" width="876" height="935" key="CommitChangelistDialog2" timestamp="1588372292013">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="549" y="79" width="876" height="935" key="CommitChangelistDialog2/65.25.1855.1055@65.25.1855.1055" timestamp="1588370597433" />
-    <state x="165" y="125" width="1655" height="855" key="DiffContextDialog" timestamp="1588367172146">
+    <state x="549" y="79" width="876" height="935" key="CommitChangelistDialog2/65.25.1855.1055@65.25.1855.1055" timestamp="1588372292013" />
+    <state x="165" y="125" width="1655" height="855" key="DiffContextDialog" timestamp="1588371495076">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="165" y="125" width="1655" height="855" key="DiffContextDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588367172146" />
-    <state x="780" y="165" width="424" height="715" key="FileChooserDialogImpl" timestamp="1588360109254">
+    <state x="165" y="125" width="1655" height="855" key="DiffContextDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588371495076" />
+    <state x="780" y="165" width="424" height="715" key="FileChooserDialogImpl" timestamp="1588373856733">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="780" y="165" width="424" height="715" key="FileChooserDialogImpl/65.25.1855.1055@65.25.1855.1055" timestamp="1588360109254" />
+    <state x="780" y="165" width="424" height="715" key="FileChooserDialogImpl/65.25.1855.1055@65.25.1855.1055" timestamp="1588373856733" />
     <state x="783" y="458" key="GitRewordDialog" timestamp="1588366236589">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="783" y="458" key="GitRewordDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588366236589" />
-    <state width="1809" height="555" key="GridCell.Tab.0.bottom" timestamp="1588371136393">
+    <state width="1809" height="555" key="GridCell.Tab.0.bottom" timestamp="1588374747432">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="1809" height="555" key="GridCell.Tab.0.bottom/65.25.1855.1055@65.25.1855.1055" timestamp="1588371136393" />
-    <state width="1809" height="555" key="GridCell.Tab.0.center" timestamp="1588371136391">
+    <state width="1809" height="555" key="GridCell.Tab.0.bottom/65.25.1855.1055@65.25.1855.1055" timestamp="1588374747432" />
+    <state width="1809" height="555" key="GridCell.Tab.0.center" timestamp="1588374747431">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="1809" height="555" key="GridCell.Tab.0.center/65.25.1855.1055@65.25.1855.1055" timestamp="1588371136391" />
-    <state width="1809" height="555" key="GridCell.Tab.0.left" timestamp="1588371136389">
+    <state width="1809" height="555" key="GridCell.Tab.0.center/65.25.1855.1055@65.25.1855.1055" timestamp="1588374747431" />
+    <state width="1809" height="555" key="GridCell.Tab.0.left" timestamp="1588374747431">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="1809" height="555" key="GridCell.Tab.0.left/65.25.1855.1055@65.25.1855.1055" timestamp="1588371136389" />
-    <state width="1809" height="555" key="GridCell.Tab.0.right" timestamp="1588371136392">
+    <state width="1809" height="555" key="GridCell.Tab.0.left/65.25.1855.1055@65.25.1855.1055" timestamp="1588374747431" />
+    <state width="1809" height="555" key="GridCell.Tab.0.right" timestamp="1588374747431">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="1809" height="555" key="GridCell.Tab.0.right/65.25.1855.1055@65.25.1855.1055" timestamp="1588371136392" />
-    <state width="916" height="923" key="GridCell.Tab.1.bottom" timestamp="1588370359963">
+    <state width="1809" height="555" key="GridCell.Tab.0.right/65.25.1855.1055@65.25.1855.1055" timestamp="1588374747431" />
+    <state width="916" height="923" key="GridCell.Tab.1.bottom" timestamp="1588374747428">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="916" height="923" key="GridCell.Tab.1.bottom/65.25.1855.1055@65.25.1855.1055" timestamp="1588370359963" />
-    <state width="916" height="923" key="GridCell.Tab.1.center" timestamp="1588370359963">
+    <state width="916" height="923" key="GridCell.Tab.1.bottom/65.25.1855.1055@65.25.1855.1055" timestamp="1588374747428" />
+    <state width="916" height="923" key="GridCell.Tab.1.center" timestamp="1588374747427">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="916" height="923" key="GridCell.Tab.1.center/65.25.1855.1055@65.25.1855.1055" timestamp="1588370359963" />
-    <state width="916" height="923" key="GridCell.Tab.1.left" timestamp="1588370359962">
+    <state width="916" height="923" key="GridCell.Tab.1.center/65.25.1855.1055@65.25.1855.1055" timestamp="1588374747427" />
+    <state width="916" height="923" key="GridCell.Tab.1.left" timestamp="1588374747427">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="916" height="923" key="GridCell.Tab.1.left/65.25.1855.1055@65.25.1855.1055" timestamp="1588370359962" />
-    <state width="916" height="923" key="GridCell.Tab.1.right" timestamp="1588370359963">
+    <state width="916" height="923" key="GridCell.Tab.1.left/65.25.1855.1055@65.25.1855.1055" timestamp="1588374747427" />
+    <state width="916" height="923" key="GridCell.Tab.1.right" timestamp="1588374747428">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="916" height="923" key="GridCell.Tab.1.right/65.25.1855.1055@65.25.1855.1055" timestamp="1588370359963" />
-    <state x="575" y="83" width="824" height="890" key="IDE.errors.dialog" timestamp="1588367850572">
+    <state width="916" height="923" key="GridCell.Tab.1.right/65.25.1855.1055@65.25.1855.1055" timestamp="1588374747428" />
+    <state x="575" y="83" width="824" height="890" key="IDE.errors.dialog" timestamp="1588371466957">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="575" y="83" width="824" height="890" key="IDE.errors.dialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588367850572" />
-    <state x="717" y="230" width="530" height="640" key="RollbackChangesDialog" timestamp="1588363701192">
+    <state x="575" y="83" width="824" height="890" key="IDE.errors.dialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588371466957" />
+    <state x="717" y="230" width="530" height="640" key="RollbackChangesDialog" timestamp="1588371496586">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="717" y="230" width="530" height="640" key="RollbackChangesDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588363701192" />
+    <state x="717" y="230" width="530" height="640" key="RollbackChangesDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588371496586" />
     <state x="481" y="187" width="1022" height="737" key="SettingsEditor" timestamp="1588371121642">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="481" y="187" width="1022" height="737" key="SettingsEditor/65.25.1855.1055@65.25.1855.1055" timestamp="1588371121642" />
-    <state x="721" y="283" width="639" height="524" key="StructurePopup" timestamp="1588370235729">
+    <state x="721" y="283" width="639" height="524" key="StructurePopup" timestamp="1588374541469">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="721" y="283" width="639" height="524" key="StructurePopup/65.25.1855.1055@65.25.1855.1055" timestamp="1588370235729" />
-    <state width="548" height="497" key="SwitcherDM" timestamp="1588370837304">
+    <state x="721" y="283" width="639" height="524" key="StructurePopup/65.25.1855.1055@65.25.1855.1055" timestamp="1588374541469" />
+    <state width="548" height="497" key="SwitcherDM" timestamp="1588371680047">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="548" height="497" key="SwitcherDM/65.25.1855.1055@65.25.1855.1055" timestamp="1588370837304" />
+    <state width="548" height="497" key="SwitcherDM/65.25.1855.1055@65.25.1855.1055" timestamp="1588371680047" />
     <state x="759" y="335" width="446" height="447" key="chooseDestDirectoryDialog" timestamp="1588363672424">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
@@ -475,14 +486,14 @@
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="703" y="316" width="568" height="479" key="com.intellij.testIntegration.createTest.CreateTestDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588363795181" />
-    <state x="725" y="311" width="524" height="518" key="extract.method.dialog" timestamp="1588366635128">
+    <state x="725" y="311" width="524" height="518" key="extract.method.dialog" timestamp="1588372074344">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="725" y="311" width="524" height="518" key="extract.method.dialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588366635128" />
-    <state width="640" height="319" key="javadoc.popup.new" timestamp="1588370338699">
+    <state x="725" y="311" width="524" height="518" key="extract.method.dialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588372074344" />
+    <state width="640" height="319" key="javadoc.popup.new" timestamp="1588371778155">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="640" height="319" key="javadoc.popup.new/65.25.1855.1055@65.25.1855.1055" timestamp="1588370338699" />
+    <state width="640" height="319" key="javadoc.popup.new/65.25.1855.1055@65.25.1855.1055" timestamp="1588371778155" />
     <state x="688" y="310" width="598" height="492" key="refactoring.ChangeSignatureDialog" timestamp="1588365581435">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
