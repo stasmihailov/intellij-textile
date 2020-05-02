@@ -20,9 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d87a3c7a-642a-4d36-bd8f-ddff9f4f69fd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/potniype4kin/textile/intentions/OpenGeneratedFileAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/potniype4kin/textile/intentions/GenerateHtmlIntentionAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/potniype4kin/textile/intentions/GenerateHtmlIntentionAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.textile" beforeDir="false" afterPath="$PROJECT_DIR$/README.textile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
