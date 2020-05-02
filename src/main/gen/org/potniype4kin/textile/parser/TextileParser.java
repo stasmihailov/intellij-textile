@@ -56,32 +56,17 @@ public class TextileParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // CODE_START+ (CODE+ EOL)* CODE* CODE_END EOL?
+  // code_start (CODE+ EOL)* CODE* CODE_END EOL?
   static boolean code(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "code")) return false;
-    if (!nextTokenIs(b, CODE_START)) return false;
+    if (!nextTokenIs(b, CODE_DEF)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = code_0(b, l + 1);
+    r = code_start(b, l + 1);
     r = r && code_1(b, l + 1);
     r = r && code_2(b, l + 1);
     r = r && consumeToken(b, CODE_END);
     r = r && code_4(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // CODE_START+
-  private static boolean code_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "code_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeToken(b, CODE_START);
-    while (r) {
-      int c = current_position_(b);
-      if (!consumeToken(b, CODE_START)) break;
-      if (!empty_element_parsed_guard_(b, "code_0", c)) break;
-    }
     exit_section_(b, m, null, r);
     return r;
   }
@@ -139,6 +124,37 @@ public class TextileParser implements PsiParser, LightPsiParser {
     if (!recursion_guard_(b, l, "code_4")) return false;
     consumeToken(b, EOL);
     return true;
+  }
+
+  /* ********************************************************** */
+  // CODE_DEF (CODE_DELIM CODE_LANGUAGE)? CODE_DEF_END
+  static boolean code_start(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "code_start")) return false;
+    if (!nextTokenIs(b, CODE_DEF)) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = consumeToken(b, CODE_DEF);
+    r = r && code_start_1(b, l + 1);
+    r = r && consumeToken(b, CODE_DEF_END);
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // (CODE_DELIM CODE_LANGUAGE)?
+  private static boolean code_start_1(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "code_start_1")) return false;
+    code_start_1_0(b, l + 1);
+    return true;
+  }
+
+  // CODE_DELIM CODE_LANGUAGE
+  private static boolean code_start_1_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "code_start_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = consumeTokens(b, 0, CODE_DELIM, CODE_LANGUAGE);
+    exit_section_(b, m, null, r);
+    return r;
   }
 
   /* ********************************************************** */

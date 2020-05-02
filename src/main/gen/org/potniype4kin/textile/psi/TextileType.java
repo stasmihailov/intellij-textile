@@ -10,8 +10,11 @@ public interface TextileType {
 
   IElementType CHAPTER_BREAK = new TextileToken("CHAPTER_BREAK");
   IElementType CODE = new TextileToken("CODE");
+  IElementType CODE_DEF = new TextileToken("CODE_DEF");
+  IElementType CODE_DEF_END = new TextileToken("CODE_DEF_END");
+  IElementType CODE_DELIM = new TextileToken("CODE_DELIM");
   IElementType CODE_END = new TextileToken("CODE_END");
-  IElementType CODE_START = new TextileToken("CODE_START");
+  IElementType CODE_LANGUAGE = new TextileToken("CODE_LANGUAGE");
   IElementType EOL = new TextileToken("EOL");
   IElementType HEADER_START = new TextileToken("HEADER_START");
   IElementType HEADER_TEXT = new TextileToken("HEADER_TEXT");

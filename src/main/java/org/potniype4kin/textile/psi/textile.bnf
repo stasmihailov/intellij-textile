@@ -19,7 +19,8 @@ textileFile ::= item*
 
 private header ::= HEADER_START HEADER_TEXT EOL?
 private list ::= LIST_DELIM (LIST_TEXT EOL)+
-private code ::= CODE_START+ (CODE+ EOL)* CODE* CODE_END EOL?
+private code_start ::= CODE_DEF (CODE_DELIM CODE_LANGUAGE)? CODE_DEF_END
+private code ::= code_start (CODE+ EOL)* CODE* CODE_END EOL?
 private info ::= INFO_START+ (INFO+ EOL)* INFO* INFO_END EOL?
 private text ::= TEXT+ EOL?
 private chapter_break ::= CHAPTER_BREAK EOL?

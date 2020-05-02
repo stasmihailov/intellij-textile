@@ -21,8 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d87a3c7a-642a-4d36-bd8f-ddff9f4f69fd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/potniype4kin/textile/intentions/GenerateHtmlIntentionActionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/potniype4kin/textile/intentions/GenerateHtmlIntentionActionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/conversion/case-1-simple.psi" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/conversion/case-1-simple.text" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gen/org/potniype4kin/textile/parser/TextileParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gen/org/potniype4kin/textile/parser/TextileParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gen/org/potniype4kin/textile/psi/TextileType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gen/org/potniype4kin/textile/psi/TextileType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/potniype4kin/textile/language/Textile.flex" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/potniype4kin/textile/language/Textile.flex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/potniype4kin/textile/psi/textile.bnf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/potniype4kin/textile/psi/textile.bnf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +134,7 @@
       <recent name="$PROJECT_DIR$/src/main" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.TextileParsingTest">
+  <component name="RunManager" selected="Gradle.Plugin">
     <configuration default="true" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
       <setting name="replType" value="NREPL" />
       <setting name="execution" value="LEININGEN" />
@@ -455,7 +457,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588452929570</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="[test:lex] generate expected PSI tokens">
+      <created>1588454501738</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1588454501739</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -497,8 +506,8 @@
     <MESSAGE value="remove OpenGeneratedFileActionTest: there is no framework for action testing" />
     <MESSAGE value="[intentions] limit &quot;generate HTML&quot; intention to just .textile files" />
     <MESSAGE value="[intentions] add intention description for GenerateHtmlIntentionAction" />
-    <MESSAGE value="[test:lex] generate expected PSI tokens" />
-    <option name="LAST_COMMIT_MESSAGE" value="[test:lex] generate expected PSI tokens" />
+    <MESSAGE value="[lex] test expected PSI tokens" />
+    <option name="LAST_COMMIT_MESSAGE" value="[lex] test expected PSI tokens" />
   </component>
   <component name="WindowStateProjectService">
     <state x="587" y="44" width="800" height="1036" key="#Intentions" timestamp="1588452139906">
@@ -513,10 +522,10 @@
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="654" y="152" width="666" height="807" key="#OpenGeneratedFileActionTest/65.25.1855.1055@65.25.1855.1055" timestamp="1588424873104" />
-    <state x="165" y="125" width="1655" height="855" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1588424031346">
+    <state x="165" y="125" width="1655" height="855" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1588454583890">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="165" y="125" width="1655" height="855" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588424031346" />
+    <state x="165" y="125" width="1655" height="855" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588454583890" />
     <state x="668" y="354" width="724" height="410" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588452249505">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
@@ -525,18 +534,18 @@
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="800" y="260" width="374" height="592" key="#com.intellij.ide.util.MemberChooser/65.25.1855.1055@65.25.1855.1055" timestamp="1588453914523" />
-    <state x="600" y="60" width="764" height="975" key="#com.intellij.internal.psiView.PsiViewerDialog" timestamp="1588452273627">
+    <state x="600" y="25" width="764" height="1055" key="#com.intellij.internal.psiView.PsiViewerDialog" timestamp="1588454790817">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="600" y="60" width="764" height="975" key="#com.intellij.internal.psiView.PsiViewerDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588452273627" />
-    <state x="700" y="314" width="704" height="511" key="#xdebugger.evaluate" timestamp="1588370357408">
+    <state x="600" y="25" width="764" height="1055" key="#com.intellij.internal.psiView.PsiViewerDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588454790817" />
+    <state x="700" y="314" width="704" height="511" key="#xdebugger.evaluate" timestamp="1588454320013">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="700" y="314" width="704" height="511" key="#xdebugger.evaluate/65.25.1855.1055@65.25.1855.1055" timestamp="1588370357408" />
-    <state x="549" y="79" width="876" height="935" key="CommitChangelistDialog2" timestamp="1588452929508">
+    <state x="700" y="314" width="704" height="511" key="#xdebugger.evaluate/65.25.1855.1055@65.25.1855.1055" timestamp="1588454320013" />
+    <state x="549" y="79" width="876" height="935" key="CommitChangelistDialog2" timestamp="1588454501661">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="549" y="79" width="876" height="935" key="CommitChangelistDialog2/65.25.1855.1055@65.25.1855.1055" timestamp="1588452929508" />
+    <state x="549" y="79" width="876" height="935" key="CommitChangelistDialog2/65.25.1855.1055@65.25.1855.1055" timestamp="1588454501661" />
     <state x="165" y="125" width="1655" height="855" key="DiffContextDialog" timestamp="1588452148342">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
@@ -545,42 +554,42 @@
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="780" y="165" width="424" height="715" key="FileChooserDialogImpl/65.25.1855.1055@65.25.1855.1055" timestamp="1588373856733" />
-    <state x="783" y="458" key="GitRewordDialog" timestamp="1588424990639">
+    <state x="783" y="458" key="GitRewordDialog" timestamp="1588454512158">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="783" y="458" key="GitRewordDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588424990639" />
-    <state width="916" height="923" key="GridCell.Tab.0.bottom" timestamp="1588454261332">
+    <state x="783" y="458" key="GitRewordDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588454512158" />
+    <state width="1809" height="555" key="GridCell.Tab.0.bottom" timestamp="1588454571613">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="916" height="923" key="GridCell.Tab.0.bottom/65.25.1855.1055@65.25.1855.1055" timestamp="1588454261332" />
-    <state width="916" height="923" key="GridCell.Tab.0.center" timestamp="1588454261332">
+    <state width="1809" height="555" key="GridCell.Tab.0.bottom/65.25.1855.1055@65.25.1855.1055" timestamp="1588454571613" />
+    <state width="1809" height="555" key="GridCell.Tab.0.center" timestamp="1588454571612">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="916" height="923" key="GridCell.Tab.0.center/65.25.1855.1055@65.25.1855.1055" timestamp="1588454261332" />
-    <state width="916" height="923" key="GridCell.Tab.0.left" timestamp="1588454261331">
+    <state width="1809" height="555" key="GridCell.Tab.0.center/65.25.1855.1055@65.25.1855.1055" timestamp="1588454571612" />
+    <state width="1809" height="555" key="GridCell.Tab.0.left" timestamp="1588454571612">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="916" height="923" key="GridCell.Tab.0.left/65.25.1855.1055@65.25.1855.1055" timestamp="1588454261331" />
-    <state width="916" height="923" key="GridCell.Tab.0.right" timestamp="1588454261332">
+    <state width="1809" height="555" key="GridCell.Tab.0.left/65.25.1855.1055@65.25.1855.1055" timestamp="1588454571612" />
+    <state width="1809" height="555" key="GridCell.Tab.0.right" timestamp="1588454571613">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="916" height="923" key="GridCell.Tab.0.right/65.25.1855.1055@65.25.1855.1055" timestamp="1588454261332" />
-    <state width="916" height="923" key="GridCell.Tab.1.bottom" timestamp="1588454261333">
+    <state width="1809" height="555" key="GridCell.Tab.0.right/65.25.1855.1055@65.25.1855.1055" timestamp="1588454571613" />
+    <state width="916" height="923" key="GridCell.Tab.1.bottom" timestamp="1588454358669">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="916" height="923" key="GridCell.Tab.1.bottom/65.25.1855.1055@65.25.1855.1055" timestamp="1588454261333" />
-    <state width="916" height="923" key="GridCell.Tab.1.center" timestamp="1588454261333">
+    <state width="916" height="923" key="GridCell.Tab.1.bottom/65.25.1855.1055@65.25.1855.1055" timestamp="1588454358669" />
+    <state width="916" height="923" key="GridCell.Tab.1.center" timestamp="1588454358667">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="916" height="923" key="GridCell.Tab.1.center/65.25.1855.1055@65.25.1855.1055" timestamp="1588454261333" />
-    <state width="916" height="923" key="GridCell.Tab.1.left" timestamp="1588454261332">
+    <state width="916" height="923" key="GridCell.Tab.1.center/65.25.1855.1055@65.25.1855.1055" timestamp="1588454358667" />
+    <state width="916" height="923" key="GridCell.Tab.1.left" timestamp="1588454358666">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="916" height="923" key="GridCell.Tab.1.left/65.25.1855.1055@65.25.1855.1055" timestamp="1588454261332" />
-    <state width="916" height="923" key="GridCell.Tab.1.right" timestamp="1588454261333">
+    <state width="916" height="923" key="GridCell.Tab.1.left/65.25.1855.1055@65.25.1855.1055" timestamp="1588454358666" />
+    <state width="916" height="923" key="GridCell.Tab.1.right" timestamp="1588454358668">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="916" height="923" key="GridCell.Tab.1.right/65.25.1855.1055@65.25.1855.1055" timestamp="1588454261333" />
+    <state width="916" height="923" key="GridCell.Tab.1.right/65.25.1855.1055@65.25.1855.1055" timestamp="1588454358668" />
     <state x="575" y="83" width="824" height="890" key="IDE.errors.dialog" timestamp="1588371466957">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
@@ -593,18 +602,18 @@
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="481" y="187" width="1045" height="737" key="SettingsEditor/65.25.1855.1055@65.25.1855.1055" timestamp="1588451859563" />
-    <state x="721" y="283" width="639" height="524" key="StructurePopup" timestamp="1588453375582">
+    <state x="721" y="283" width="639" height="524" key="StructurePopup" timestamp="1588454428147">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="721" y="283" width="639" height="524" key="StructurePopup/65.25.1855.1055@65.25.1855.1055" timestamp="1588453375582" />
-    <state width="548" height="497" key="SwitcherDM" timestamp="1588454010713">
+    <state x="721" y="283" width="639" height="524" key="StructurePopup/65.25.1855.1055@65.25.1855.1055" timestamp="1588454428147" />
+    <state width="548" height="497" key="SwitcherDM" timestamp="1588455685774">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="548" height="497" key="SwitcherDM/65.25.1855.1055@65.25.1855.1055" timestamp="1588454010713" />
-    <state x="587" y="288" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1588448573786">
+    <state width="548" height="497" key="SwitcherDM/65.25.1855.1055@65.25.1855.1055" timestamp="1588455685774" />
+    <state x="587" y="288" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1588454524363">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="587" y="288" width="800" height="535" key="Vcs.Push.Dialog.v2/65.25.1855.1055@65.25.1855.1055" timestamp="1588448573786" />
+    <state x="587" y="288" width="800" height="535" key="Vcs.Push.Dialog.v2/65.25.1855.1055@65.25.1855.1055" timestamp="1588454524363" />
     <state x="759" y="335" width="446" height="447" key="chooseDestDirectoryDialog" timestamp="1588363672424">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
@@ -629,10 +638,10 @@
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="703" y="316" width="568" height="479" key="com.intellij.testIntegration.createTest.CreateTestDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588424309512" />
-    <state x="520" y="271" width="935" height="569" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1588454271658">
+    <state x="520" y="55" width="935" height="950" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1588454348694">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="520" y="271" width="935" height="569" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/65.25.1855.1055@65.25.1855.1055" timestamp="1588454271658" />
+    <state x="520" y="55" width="935" height="950" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/65.25.1855.1055@65.25.1855.1055" timestamp="1588454348694" />
     <state x="725" y="311" width="524" height="518" key="extract.method.dialog" timestamp="1588424215372">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
@@ -649,20 +658,9 @@
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="688" y="310" width="598" height="492" key="refactoring.ChangeSignatureDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588365581435" />
-    <state x="634" y="195" width="716" height="676" key="search.everywhere.popup" timestamp="1588453947030">
+    <state x="634" y="195" width="716" height="676" key="search.everywhere.popup" timestamp="1588455333144">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="634" y="195" width="716" height="676" key="search.everywhere.popup/65.25.1855.1055@65.25.1855.1055" timestamp="1588453947030" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2020.1/6becac80419981b057df9cf0c62efcd94e6075a8/ideaIC-2020.1-sources.jar!/com/intellij/testFramework/ParsingTestCase.java</url>
-          <line>158</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="634" y="195" width="716" height="676" key="search.everywhere.popup/65.25.1855.1055@65.25.1855.1055" timestamp="1588455333144" />
   </component>
 </project>

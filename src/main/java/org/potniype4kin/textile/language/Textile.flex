@@ -31,6 +31,7 @@ HEADER_DEFINITION={HEADER_PREFIX}{HEADER_LEVEL}{HEADER_SUFFIX}{SPACE}
 LIST_DELIM=[-*]
 LIST_DEFINITION={LIST_DELIM}+{SPACE}
 CODE_START_TOKEN="{code"
+CODE_DELIM=":"
 CODE_START_TOKEN_CLOSE="}"
 CODE_END_TOKEN="{code}"
 INFO_START_TOKEN="{info"
@@ -44,7 +45,8 @@ SIGN_QUESTION="(?)"
 
 %state header
 %state list
-%state code_start
+%state code_def
+%state code_delim
 %state code
 %state info_start
 %state info
@@ -70,8 +72,8 @@ SIGN_QUESTION="(?)"
         return TextileType.LIST_DELIM;
     }
     {CODE_START_TOKEN} {
-        yybegin(code_start);
-        return TextileType.CODE_START;
+        yybegin(code_def);
+        return TextileType.CODE_DEF;
     }
     {INFO_START_TOKEN} {
         yybegin(info_start);
@@ -144,17 +146,33 @@ SIGN_QUESTION="(?)"
         return TextileType.LIST_TEXT;
     }
 }
-<code_start> {
-    :\w+ {
-        String codeLanguage = yytext().toString().substring(1);
-        return TextileType.CODE_START;
+<code_def> {
+    {CODE_DELIM} {
+        yybegin(code_delim);
+        return TextileType.CODE_DELIM;
     }
     {CODE_START_TOKEN_CLOSE} {
-        return TextileType.CODE_START;
+        return TextileType.CODE_DEF_END;
     }
     {LINE_BREAK} {
         yybegin(code);
         return TextileType.EOL;
+    }
+}
+<code_delim> {
+    .+ / {CODE_START_TOKEN_CLOSE} {
+        return TextileType.CODE_LANGUAGE;
+    }
+    {CODE_START_TOKEN_CLOSE} {
+        return TextileType.CODE_DEF_END;
+    }
+
+    {LINE_BREAK} {
+        yybegin(code);
+        return TextileType.EOL;
+    }
+    [^] {
+        return TokenType.BAD_CHARACTER;
     }
 }
 <code> {
@@ -163,7 +181,7 @@ SIGN_QUESTION="(?)"
     }
     {CODE_END_TOKEN} {
         yybegin(YYINITIAL);
-        return TextileType.CODE_END;
+        return TextileType.CODE_DEF_END;
     }
     [^] {
         return TextileType.CODE;
