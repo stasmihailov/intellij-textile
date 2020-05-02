@@ -376,7 +376,21 @@
       <option name="project" value="LOCAL" />
       <updated>1588423338893</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="[intentions] open generated HTML file #2: better code">
+      <created>1588424825686</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1588424825686</updated>
+    </task>
+    <task id="LOCAL-00013" summary="[intentions] open generated HTML file #2: better code">
+      <created>1588424982103</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1588424982103</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -409,13 +423,18 @@
     <MESSAGE value="plugin.xml: add &quot;generate html&quot; intention" />
     <MESSAGE value="[intentions] fix tests" />
     <MESSAGE value="[intentions] open generated HTML file" />
-    <option name="LAST_COMMIT_MESSAGE" value="[intentions] open generated HTML file" />
+    <MESSAGE value="[intentions] (inter) open generated HTML file #2: better code, more tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="[intentions] (inter) open generated HTML file #2: better code, more tests" />
   </component>
   <component name="WindowStateProjectService">
     <state x="792" y="242" width="427" height="603" key="#Notifications" timestamp="1588421055411">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="792" y="242" width="427" height="603" key="#Notifications/65.25.1855.1055@65.25.1855.1055" timestamp="1588421055411" />
+    <state x="654" y="152" width="666" height="807" key="#OpenGeneratedFileActionTest" timestamp="1588424873104">
+      <screen x="65" y="25" width="1855" height="1055" />
+    </state>
+    <state x="654" y="152" width="666" height="807" key="#OpenGeneratedFileActionTest/65.25.1855.1055@65.25.1855.1055" timestamp="1588424873104" />
     <state x="165" y="125" width="1655" height="855" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1588424031346">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
@@ -432,38 +451,38 @@
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="700" y="314" width="704" height="511" key="#xdebugger.evaluate/65.25.1855.1055@65.25.1855.1055" timestamp="1588370357408" />
-    <state x="549" y="79" width="876" height="935" key="CommitChangelistDialog2" timestamp="1588423338809">
+    <state x="549" y="79" width="876" height="935" key="CommitChangelistDialog2" timestamp="1588424982029">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="549" y="79" width="876" height="935" key="CommitChangelistDialog2/65.25.1855.1055@65.25.1855.1055" timestamp="1588423338809" />
-    <state x="165" y="125" width="1655" height="855" key="DiffContextDialog" timestamp="1588424031347">
+    <state x="549" y="79" width="876" height="935" key="CommitChangelistDialog2/65.25.1855.1055@65.25.1855.1055" timestamp="1588424982029" />
+    <state x="165" y="125" width="1655" height="855" key="DiffContextDialog" timestamp="1588427346505">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="165" y="125" width="1655" height="855" key="DiffContextDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588424031347" />
+    <state x="165" y="125" width="1655" height="855" key="DiffContextDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588427346505" />
     <state x="780" y="165" width="424" height="715" key="FileChooserDialogImpl" timestamp="1588373856733">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="780" y="165" width="424" height="715" key="FileChooserDialogImpl/65.25.1855.1055@65.25.1855.1055" timestamp="1588373856733" />
-    <state x="783" y="458" key="GitRewordDialog" timestamp="1588366236589">
+    <state x="783" y="458" key="GitRewordDialog" timestamp="1588424990639">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="783" y="458" key="GitRewordDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588366236589" />
-    <state width="1809" height="555" key="GridCell.Tab.0.bottom" timestamp="1588424803723">
+    <state x="783" y="458" key="GitRewordDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588424990639" />
+    <state width="1809" height="555" key="GridCell.Tab.0.bottom" timestamp="1588427339220">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="1809" height="555" key="GridCell.Tab.0.bottom/65.25.1855.1055@65.25.1855.1055" timestamp="1588424803723" />
-    <state width="1809" height="555" key="GridCell.Tab.0.center" timestamp="1588424803722">
+    <state width="1809" height="555" key="GridCell.Tab.0.bottom/65.25.1855.1055@65.25.1855.1055" timestamp="1588427339220" />
+    <state width="1809" height="555" key="GridCell.Tab.0.center" timestamp="1588427339218">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="1809" height="555" key="GridCell.Tab.0.center/65.25.1855.1055@65.25.1855.1055" timestamp="1588424803722" />
-    <state width="1809" height="555" key="GridCell.Tab.0.left" timestamp="1588424803722">
+    <state width="1809" height="555" key="GridCell.Tab.0.center/65.25.1855.1055@65.25.1855.1055" timestamp="1588427339218" />
+    <state width="1809" height="555" key="GridCell.Tab.0.left" timestamp="1588427339216">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="1809" height="555" key="GridCell.Tab.0.left/65.25.1855.1055@65.25.1855.1055" timestamp="1588424803722" />
-    <state width="1809" height="555" key="GridCell.Tab.0.right" timestamp="1588424803723">
+    <state width="1809" height="555" key="GridCell.Tab.0.left/65.25.1855.1055@65.25.1855.1055" timestamp="1588427339216" />
+    <state width="1809" height="555" key="GridCell.Tab.0.right" timestamp="1588427339219">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="1809" height="555" key="GridCell.Tab.0.right/65.25.1855.1055@65.25.1855.1055" timestamp="1588424803723" />
+    <state width="1809" height="555" key="GridCell.Tab.0.right/65.25.1855.1055@65.25.1855.1055" timestamp="1588427339219" />
     <state width="916" height="923" key="GridCell.Tab.1.bottom" timestamp="1588374747428">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
@@ -500,6 +519,10 @@
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state width="548" height="497" key="SwitcherDM/65.25.1855.1055@65.25.1855.1055" timestamp="1588371680047" />
+    <state x="587" y="288" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1588427123793">
+      <screen x="65" y="25" width="1855" height="1055" />
+    </state>
+    <state x="587" y="288" width="800" height="535" key="Vcs.Push.Dialog.v2/65.25.1855.1055@65.25.1855.1055" timestamp="1588427123793" />
     <state x="759" y="335" width="446" height="447" key="chooseDestDirectoryDialog" timestamp="1588363672424">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>

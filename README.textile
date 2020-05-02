@@ -1,0 +1,8 @@
+h2. Textile language support
+
+Adds support for Textile markup to Jetbrains IDEs
+
+Main features:
+- adds Confluence-like code highlighing
+- adds ability to generate HTML from textile document by "Generate HTML from this file" intention action
+
