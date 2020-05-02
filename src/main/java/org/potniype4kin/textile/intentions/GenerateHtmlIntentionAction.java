@@ -2,12 +2,17 @@ package org.potniype4kin.textile.intentions;
 
 import com.intellij.codeInsight.intention.IntentionAction;
 import com.intellij.codeInsight.intention.PsiElementBaseIntentionAction;
+import com.intellij.ide.util.PsiNavigationSupport;
 import com.intellij.notification.Notification;
+import com.intellij.notification.NotificationAction;
 import com.intellij.notification.NotificationDisplayType;
 import com.intellij.notification.NotificationGroup;
+import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.MessageType;
+import com.intellij.openapi.vfs.VfsUtil;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiElement;
 import com.intellij.util.IncorrectOperationException;
 import net.java.textilej.parser.MarkupParser;
@@ -40,10 +45,41 @@ public class GenerateHtmlIntentionAction extends PsiElementBaseIntentionAction i
         String fullPath = htmlFile.getAbsolutePath();
         String fileName = htmlFile.getName();
 
-        String message = String.format("Generated HTML file: <a href=\"%s\">%s</a>", fullPath, fileName);
-        Notification notification = CODE_GENERATION_LOGS.createNotification(message, MessageType.INFO);
-
+        Notification notification = notifyHtmlGenerated(fullPath, fileName);
         notification.notify(project);
+    }
+
+    @NotNull
+    private Notification notifyHtmlGenerated(String filePath, String fileName) {
+        Notification notification = CODE_GENERATION_LOGS.createNotification("Generated HTML file", MessageType.INFO);
+        notification.addAction(new OpenFileAction(filePath, fileName));
+
+        return notification;
+    }
+
+    private static class OpenFileAction extends NotificationAction {
+        private final String filePath;
+
+        public OpenFileAction(String filePath, String fileName) {
+            super("Open " + fileName);
+            this.filePath = filePath;
+        }
+
+        @Override
+        public void actionPerformed(@NotNull AnActionEvent anActionEvent, @NotNull Notification notification) {
+            VirtualFile virtualFile = VfsUtil.findFileByIoFile(new File(filePath), true);
+            if (virtualFile == null) {
+                throw new IllegalStateException("could not find generated html file in current project");
+            }
+
+            Project project = anActionEvent.getProject();
+            if (project == null) {
+                throw new IllegalStateException("could not find project at which an html file was generated");
+            }
+
+            PsiNavigationSupport.getInstance().createNavigatable(project, virtualFile, -1).navigate(true);
+        }
+
     }
 
     File generateHtmlFile(Path textileFilePathStr) {
