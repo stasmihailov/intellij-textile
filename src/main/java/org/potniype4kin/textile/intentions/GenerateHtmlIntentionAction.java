@@ -11,19 +11,19 @@ import com.intellij.openapi.ui.MessageType;
 import com.intellij.psi.PsiElement;
 import com.intellij.util.IncorrectOperationException;
 import net.java.textilej.parser.MarkupParser;
-import net.java.textilej.parser.builder.HtmlDocumentBuilder;
 import net.java.textilej.parser.markup.confluence.ConfluenceDialect;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
+import org.jsoup.Jsoup;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
+
+import static java.util.Collections.singletonList;
 
 public class GenerateHtmlIntentionAction extends PsiElementBaseIntentionAction implements IntentionAction {
     private static final NotificationGroup CODE_GENERATION_LOGS = new NotificationGroup("Code Generation Logs", NotificationDisplayType.BALLOON, true);
@@ -52,24 +52,23 @@ public class GenerateHtmlIntentionAction extends PsiElementBaseIntentionAction i
             throw new IllegalStateException("could not find file " + textileFilePathStr);
         }
 
+        String sourceTextile = readFile(textileFile);
         File targetHtmlFile = createAdjacentHtmlFile(textileFile);
-        PrintWriter output;
+
+        String prettyHtml = convertTextileToHtml(sourceTextile);
         try {
-            output = new PrintWriter(targetHtmlFile);
-        } catch (FileNotFoundException e) {
-            throw new IllegalStateException("file should be created at this point!");
+            Files.write(targetHtmlFile.toPath(), singletonList(prettyHtml));
+        } catch (IOException e) {
+            throw new IllegalStateException("could not write html to " + targetHtmlFile.getName());
         }
 
-        HtmlDocumentBuilder documentBuilder = new HtmlDocumentBuilder(output);
-        documentBuilder.setEmitAsDocument(true);
-
-        String sourceTextile = readFile(textileFile);
-
-        MarkupParser parser = new MarkupParser(new ConfluenceDialect());
-        parser.setBuilder(documentBuilder);
-        parser.parse(sourceTextile);
-
         return targetHtmlFile;
+    }
+
+    private String convertTextileToHtml(String sourceTextile) {
+        MarkupParser parser = new MarkupParser(new ConfluenceDialect());
+        String html = parser.parseToHtml(sourceTextile);
+        return Jsoup.parse(html).outerHtml();
     }
 
     @NotNull

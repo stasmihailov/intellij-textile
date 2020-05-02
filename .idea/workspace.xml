@@ -19,10 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d87a3c7a-642a-4d36-bd8f-ddff9f4f69fd" name="Default Changelist" comment="plugin.xml: add &quot;generate html&quot; intention">
+    <list default="true" id="485711f0-784a-4bcd-a657-4ac5f87a5a77" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/potniype4kin/textile/intentions/GenerateHtmlIntentionAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/potniype4kin/textile/intentions/GenerateHtmlIntentionAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/potniype4kin/textile/intentions/GenerateHtmlIntentionActionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/potniype4kin/textile/intentions/GenerateHtmlIntentionActionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/conversion/case-1-simple.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/conversion/case-1-simple.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/conversion/case-2-headers-code-info.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/conversion/case-2-headers-code-info.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +80,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="SOFT" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
@@ -265,7 +269,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d87a3c7a-642a-4d36-bd8f-ddff9f4f69fd" name="Default Changelist" comment="" />
+      <changelist id="485711f0-784a-4bcd-a657-4ac5f87a5a77" name="Default Changelist" comment="" />
       <created>1588359460472</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />

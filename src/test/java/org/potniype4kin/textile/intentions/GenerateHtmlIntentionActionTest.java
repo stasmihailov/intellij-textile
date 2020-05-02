@@ -2,7 +2,6 @@ package org.potniype4kin.textile.intentions;
 
 import org.apache.commons.io.FilenameUtils;
 import org.jetbrains.annotations.NotNull;
-import org.jsoup.Jsoup;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -57,7 +56,7 @@ public class GenerateHtmlIntentionActionTest {
         deleteFile(source);
         deleteFile(target);
 
-        return Jsoup.parse(generatedHtml).outerHtml();
+        return generatedHtml;
     }
 
     private void deleteFile(File resultHtmlFile) {
