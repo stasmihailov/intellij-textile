@@ -19,8 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d87a3c7a-642a-4d36-bd8f-ddff9f4f69fd" name="Default Changelist" comment="[intentions] limit &quot;generate HTML&quot; intention to just .textile files">
+    <list default="true" id="d87a3c7a-642a-4d36-bd8f-ddff9f4f69fd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/potniype4kin/textile/intentions/GenerateHtmlIntentionActionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/potniype4kin/textile/intentions/GenerateHtmlIntentionActionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/conversion/case-1-simple.psi" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/conversion/case-1-simple.text" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +72,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit3 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -102,7 +105,7 @@
     <property name="deletionFromPopupRequiresConfirmation" value="false" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="go.import.settings.migrated" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/intentionDescriptions/GenerateHtmlIntentionAction" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/resources/conversion" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -124,12 +127,12 @@
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/intentionDescriptions/GenerateHtmlIntentionAction" />
       <recent name="$PROJECT_DIR$/src/test/resources/conversion" />
+      <recent name="$PROJECT_DIR$/src/main/resources/intentionDescriptions/GenerateHtmlIntentionAction" />
       <recent name="$PROJECT_DIR$/src/main" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Plugin">
+  <component name="RunManager" selected="Gradle.TextileParsingTest">
     <configuration default="true" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
       <setting name="replType" value="NREPL" />
       <setting name="execution" value="LEININGEN" />
@@ -225,42 +228,42 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="idea-textile-plugin [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TextileParsingTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="--tests &quot;org.potniype4kin.textile.intentions.TextileParsingTest&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="build" />
+            <option value=":test" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="idea-textile-plugin [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TextileParsingTestCase" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="--tests &quot;org.potniype4kin.textile.intentions.TextileParsingTest$TextileParsingTestCase&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="test" />
+            <option value=":test" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -272,11 +275,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.TextileParsingTest" />
+        <item itemvalue="Gradle.TextileParsingTestCase" />
         <item itemvalue="Gradle.OpenGeneratedFileActionTest" />
         <item itemvalue="Gradle.SuggestionTest" />
         <item itemvalue="Gradle.GenerateHtmlIntentionActionTest" />
-        <item itemvalue="Gradle.GenerateHtmlIntentionActionTest" />
-        <item itemvalue="Gradle.idea-textile-plugin [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -417,7 +420,42 @@
       <option name="project" value="LOCAL" />
       <updated>1588450860643</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="[intentions] add intention description for GenerateHtmlIntentionAction">
+      <created>1588451983873</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1588451983873</updated>
+    </task>
+    <task id="LOCAL-00019" summary="[intentions] add intention description for GenerateHtmlIntentionAction">
+      <created>1588452072687</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1588452072687</updated>
+    </task>
+    <task id="LOCAL-00020" summary="[test:lex] generate expected PSI tokens">
+      <created>1588452328191</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1588452328191</updated>
+    </task>
+    <task id="LOCAL-00021" summary="[test:lex] generate expected PSI tokens">
+      <created>1588452450976</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1588452450976</updated>
+    </task>
+    <task id="LOCAL-00022" summary="[test:lex] generate expected PSI tokens">
+      <created>1588452929570</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1588452929570</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -456,15 +494,17 @@
     <MESSAGE value="[intentions] (inter) open generated HTML file #2: better code, more tests" />
     <MESSAGE value="add README.textile" />
     <MESSAGE value="README.textile: add intellij plugin link" />
-    <MESSAGE value="[intentions] limit &quot;generate HTML&quot; intention to just .textile files" />
     <MESSAGE value="remove OpenGeneratedFileActionTest: there is no framework for action testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove OpenGeneratedFileActionTest: there is no framework for action testing" />
+    <MESSAGE value="[intentions] limit &quot;generate HTML&quot; intention to just .textile files" />
+    <MESSAGE value="[intentions] add intention description for GenerateHtmlIntentionAction" />
+    <MESSAGE value="[test:lex] generate expected PSI tokens" />
+    <option name="LAST_COMMIT_MESSAGE" value="[test:lex] generate expected PSI tokens" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="587" y="104" width="800" height="976" key="#Intentions" timestamp="1588452022797">
+    <state x="587" y="44" width="800" height="1036" key="#Intentions" timestamp="1588452139906">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="587" y="104" width="800" height="976" key="#Intentions/65.25.1855.1055@65.25.1855.1055" timestamp="1588452022797" />
+    <state x="587" y="44" width="800" height="1036" key="#Intentions/65.25.1855.1055@65.25.1855.1055" timestamp="1588452139906" />
     <state x="792" y="242" width="427" height="603" key="#Notifications" timestamp="1588421055411">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
@@ -477,26 +517,30 @@
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="165" y="125" width="1655" height="855" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588424031346" />
-    <state x="668" y="354" width="674" height="410" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588451819087">
+    <state x="668" y="354" width="724" height="410" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588452249505">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="668" y="354" width="674" height="410" key="#com.intellij.fileTypes.FileTypeChooser/65.25.1855.1055@65.25.1855.1055" timestamp="1588451819087" />
-    <state x="800" y="260" width="374" height="592" key="#com.intellij.ide.util.MemberChooser" timestamp="1588450970484">
+    <state x="668" y="354" width="724" height="410" key="#com.intellij.fileTypes.FileTypeChooser/65.25.1855.1055@65.25.1855.1055" timestamp="1588452249505" />
+    <state x="800" y="260" width="374" height="592" key="#com.intellij.ide.util.MemberChooser" timestamp="1588453914523">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="800" y="260" width="374" height="592" key="#com.intellij.ide.util.MemberChooser/65.25.1855.1055@65.25.1855.1055" timestamp="1588450970484" />
+    <state x="800" y="260" width="374" height="592" key="#com.intellij.ide.util.MemberChooser/65.25.1855.1055@65.25.1855.1055" timestamp="1588453914523" />
+    <state x="600" y="60" width="764" height="975" key="#com.intellij.internal.psiView.PsiViewerDialog" timestamp="1588452273627">
+      <screen x="65" y="25" width="1855" height="1055" />
+    </state>
+    <state x="600" y="60" width="764" height="975" key="#com.intellij.internal.psiView.PsiViewerDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588452273627" />
     <state x="700" y="314" width="704" height="511" key="#xdebugger.evaluate" timestamp="1588370357408">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="700" y="314" width="704" height="511" key="#xdebugger.evaluate/65.25.1855.1055@65.25.1855.1055" timestamp="1588370357408" />
-    <state x="549" y="79" width="876" height="935" key="CommitChangelistDialog2" timestamp="1588450860576">
+    <state x="549" y="79" width="876" height="935" key="CommitChangelistDialog2" timestamp="1588452929508">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="549" y="79" width="876" height="935" key="CommitChangelistDialog2/65.25.1855.1055@65.25.1855.1055" timestamp="1588450860576" />
-    <state x="165" y="125" width="1655" height="855" key="DiffContextDialog" timestamp="1588450832563">
+    <state x="549" y="79" width="876" height="935" key="CommitChangelistDialog2/65.25.1855.1055@65.25.1855.1055" timestamp="1588452929508" />
+    <state x="165" y="125" width="1655" height="855" key="DiffContextDialog" timestamp="1588452148342">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="165" y="125" width="1655" height="855" key="DiffContextDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588450832563" />
+    <state x="165" y="125" width="1655" height="855" key="DiffContextDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588452148342" />
     <state x="780" y="165" width="424" height="715" key="FileChooserDialogImpl" timestamp="1588373856733">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
@@ -505,38 +549,38 @@
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="783" y="458" key="GitRewordDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588424990639" />
-    <state width="1809" height="555" key="GridCell.Tab.0.bottom" timestamp="1588451904125">
+    <state width="916" height="923" key="GridCell.Tab.0.bottom" timestamp="1588454261332">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="1809" height="555" key="GridCell.Tab.0.bottom/65.25.1855.1055@65.25.1855.1055" timestamp="1588451904125" />
-    <state width="1809" height="555" key="GridCell.Tab.0.center" timestamp="1588451904124">
+    <state width="916" height="923" key="GridCell.Tab.0.bottom/65.25.1855.1055@65.25.1855.1055" timestamp="1588454261332" />
+    <state width="916" height="923" key="GridCell.Tab.0.center" timestamp="1588454261332">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="1809" height="555" key="GridCell.Tab.0.center/65.25.1855.1055@65.25.1855.1055" timestamp="1588451904124" />
-    <state width="1809" height="555" key="GridCell.Tab.0.left" timestamp="1588451904124">
+    <state width="916" height="923" key="GridCell.Tab.0.center/65.25.1855.1055@65.25.1855.1055" timestamp="1588454261332" />
+    <state width="916" height="923" key="GridCell.Tab.0.left" timestamp="1588454261331">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="1809" height="555" key="GridCell.Tab.0.left/65.25.1855.1055@65.25.1855.1055" timestamp="1588451904124" />
-    <state width="1809" height="555" key="GridCell.Tab.0.right" timestamp="1588451904125">
+    <state width="916" height="923" key="GridCell.Tab.0.left/65.25.1855.1055@65.25.1855.1055" timestamp="1588454261331" />
+    <state width="916" height="923" key="GridCell.Tab.0.right" timestamp="1588454261332">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="1809" height="555" key="GridCell.Tab.0.right/65.25.1855.1055@65.25.1855.1055" timestamp="1588451904125" />
-    <state width="916" height="923" key="GridCell.Tab.1.bottom" timestamp="1588449388474">
+    <state width="916" height="923" key="GridCell.Tab.0.right/65.25.1855.1055@65.25.1855.1055" timestamp="1588454261332" />
+    <state width="916" height="923" key="GridCell.Tab.1.bottom" timestamp="1588454261333">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="916" height="923" key="GridCell.Tab.1.bottom/65.25.1855.1055@65.25.1855.1055" timestamp="1588449388474" />
-    <state width="916" height="923" key="GridCell.Tab.1.center" timestamp="1588449388474">
+    <state width="916" height="923" key="GridCell.Tab.1.bottom/65.25.1855.1055@65.25.1855.1055" timestamp="1588454261333" />
+    <state width="916" height="923" key="GridCell.Tab.1.center" timestamp="1588454261333">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="916" height="923" key="GridCell.Tab.1.center/65.25.1855.1055@65.25.1855.1055" timestamp="1588449388474" />
-    <state width="916" height="923" key="GridCell.Tab.1.left" timestamp="1588449388473">
+    <state width="916" height="923" key="GridCell.Tab.1.center/65.25.1855.1055@65.25.1855.1055" timestamp="1588454261333" />
+    <state width="916" height="923" key="GridCell.Tab.1.left" timestamp="1588454261332">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="916" height="923" key="GridCell.Tab.1.left/65.25.1855.1055@65.25.1855.1055" timestamp="1588449388473" />
-    <state width="916" height="923" key="GridCell.Tab.1.right" timestamp="1588449388474">
+    <state width="916" height="923" key="GridCell.Tab.1.left/65.25.1855.1055@65.25.1855.1055" timestamp="1588454261332" />
+    <state width="916" height="923" key="GridCell.Tab.1.right" timestamp="1588454261333">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="916" height="923" key="GridCell.Tab.1.right/65.25.1855.1055@65.25.1855.1055" timestamp="1588449388474" />
+    <state width="916" height="923" key="GridCell.Tab.1.right/65.25.1855.1055@65.25.1855.1055" timestamp="1588454261333" />
     <state x="575" y="83" width="824" height="890" key="IDE.errors.dialog" timestamp="1588371466957">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
@@ -549,14 +593,14 @@
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="481" y="187" width="1045" height="737" key="SettingsEditor/65.25.1855.1055@65.25.1855.1055" timestamp="1588451859563" />
-    <state x="721" y="283" width="639" height="524" key="StructurePopup" timestamp="1588450412777">
+    <state x="721" y="283" width="639" height="524" key="StructurePopup" timestamp="1588453375582">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="721" y="283" width="639" height="524" key="StructurePopup/65.25.1855.1055@65.25.1855.1055" timestamp="1588450412777" />
-    <state width="548" height="497" key="SwitcherDM" timestamp="1588451086867">
+    <state x="721" y="283" width="639" height="524" key="StructurePopup/65.25.1855.1055@65.25.1855.1055" timestamp="1588453375582" />
+    <state width="548" height="497" key="SwitcherDM" timestamp="1588454010713">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="548" height="497" key="SwitcherDM/65.25.1855.1055@65.25.1855.1055" timestamp="1588451086867" />
+    <state width="548" height="497" key="SwitcherDM/65.25.1855.1055@65.25.1855.1055" timestamp="1588454010713" />
     <state x="587" y="288" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1588448573786">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
@@ -585,6 +629,10 @@
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="703" y="316" width="568" height="479" key="com.intellij.testIntegration.createTest.CreateTestDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588424309512" />
+    <state x="520" y="271" width="935" height="569" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1588454271658">
+      <screen x="65" y="25" width="1855" height="1055" />
+    </state>
+    <state x="520" y="271" width="935" height="569" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/65.25.1855.1055@65.25.1855.1055" timestamp="1588454271658" />
     <state x="725" y="311" width="524" height="518" key="extract.method.dialog" timestamp="1588424215372">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
@@ -593,26 +641,26 @@
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="609" y="69" width="753" height="899" key="find.popup/65.25.1855.1055@65.25.1855.1055" timestamp="1588451379454" />
-    <state width="640" height="564" key="javadoc.popup.new" timestamp="1588451809658">
+    <state width="640" height="564" key="javadoc.popup.new" timestamp="1588453301527">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="640" height="564" key="javadoc.popup.new/65.25.1855.1055@65.25.1855.1055" timestamp="1588451809657" />
+    <state width="640" height="564" key="javadoc.popup.new/65.25.1855.1055@65.25.1855.1055" timestamp="1588453301527" />
     <state x="688" y="310" width="598" height="492" key="refactoring.ChangeSignatureDialog" timestamp="1588365581435">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="688" y="310" width="598" height="492" key="refactoring.ChangeSignatureDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588365581435" />
-    <state x="634" y="195" width="716" height="676" key="search.everywhere.popup" timestamp="1588451741799">
+    <state x="634" y="195" width="716" height="676" key="search.everywhere.popup" timestamp="1588453947030">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="634" y="195" width="716" height="676" key="search.everywhere.popup/65.25.1855.1055@65.25.1855.1055" timestamp="1588451741799" />
+    <state x="634" y="195" width="716" height="676" key="search.everywhere.popup/65.25.1855.1055@65.25.1855.1055" timestamp="1588453947030" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2020.1/6becac80419981b057df9cf0c62efcd94e6075a8/ideaIC-2020.1-sources.jar!/com/intellij/concurrency/PoisonFactory.java</url>
-          <line>8</line>
-          <option name="timeStamp" value="4" />
+          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2020.1/6becac80419981b057df9cf0c62efcd94e6075a8/ideaIC-2020.1-sources.jar!/com/intellij/testFramework/ParsingTestCase.java</url>
+          <line>158</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -34,10 +34,7 @@ public class GenerateHtmlIntentionActionTest {
     @MethodSource("sourceTextileFiles")
     public void testSimpleHeaderOnlyFile(String textileFile) throws IOException {
         Path textileFilePath = Paths.get(textileFile);
-        Path htmlFilePath = Paths.get(FilenameUtils.removeExtension(textileFilePath.toAbsolutePath().toString()) + ".html");
-        if (!htmlFilePath.toFile().exists()) {
-            throw new IllegalStateException("could not find corresponding expected .html file for .textile file " + textileFile);
-        }
+        Path htmlFilePath = FileUtils.getAdjacentFileWithExtension(textileFilePath, "html");
 
         List<String> textileFileContents = Files.readAllLines(textileFilePath);
         List<String> expectedHtmlFileContents = Files.readAllLines(htmlFilePath);
