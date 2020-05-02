@@ -132,7 +132,7 @@ public class GenerateHtmlIntentionAction extends PsiElementBaseIntentionAction i
     @NotNull
     @Override
     public String getFamilyName() {
-        return "ConditionalOperatorIntention";
+        return getText();
     }
 
     @Nls(capitalization = Nls.Capitalization.Sentence)

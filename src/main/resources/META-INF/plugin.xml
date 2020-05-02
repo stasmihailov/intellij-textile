@@ -26,7 +26,8 @@
     <additionalTextAttributes scheme="Default" file="/colorSchemes/Textile.xml"/>
     <intentionAction>
       <className>org.potniype4kin.textile.intentions.GenerateHtmlIntentionAction</className>
-      <category>File Conversion</category>
+      <category>Textile</category>
+      <descriptionDirectoryName>GenerateHtmlIntentionAction</descriptionDirectoryName>
     </intentionAction>
   </extensions>
 

@@ -21,8 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d87a3c7a-642a-4d36-bd8f-ddff9f4f69fd" name="Default Changelist" comment="[intentions] limit &quot;generate HTML&quot; intention to just .textile files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/potniype4kin/textile/intentions/OpenGeneratedFileActionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/potniype4kin/textile/intentions/OpenGeneratedFileActionTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +102,7 @@
     <property name="deletionFromPopupRequiresConfirmation" value="false" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="go.import.settings.migrated" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/repos/intellij-community" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/intentionDescriptions/GenerateHtmlIntentionAction" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -114,7 +112,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -126,11 +124,12 @@
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/intentionDescriptions/GenerateHtmlIntentionAction" />
       <recent name="$PROJECT_DIR$/src/test/resources/conversion" />
       <recent name="$PROJECT_DIR$/src/main" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.OpenGeneratedFileActionTest">
+  <component name="RunManager" selected="Gradle.Plugin">
     <configuration default="true" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
       <setting name="replType" value="NREPL" />
       <setting name="execution" value="LEININGEN" />
@@ -411,11 +410,21 @@
       <option name="project" value="LOCAL" />
       <updated>1588448530321</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="remove OpenGeneratedFileActionTest: there is no framework for action testing">
+      <created>1588450860643</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1588450860643</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.template" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -448,9 +457,14 @@
     <MESSAGE value="add README.textile" />
     <MESSAGE value="README.textile: add intellij plugin link" />
     <MESSAGE value="[intentions] limit &quot;generate HTML&quot; intention to just .textile files" />
-    <option name="LAST_COMMIT_MESSAGE" value="[intentions] limit &quot;generate HTML&quot; intention to just .textile files" />
+    <MESSAGE value="remove OpenGeneratedFileActionTest: there is no framework for action testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove OpenGeneratedFileActionTest: there is no framework for action testing" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="587" y="104" width="800" height="976" key="#Intentions" timestamp="1588452022797">
+      <screen x="65" y="25" width="1855" height="1055" />
+    </state>
+    <state x="587" y="104" width="800" height="976" key="#Intentions/65.25.1855.1055@65.25.1855.1055" timestamp="1588452022797" />
     <state x="792" y="242" width="427" height="603" key="#Notifications" timestamp="1588421055411">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
@@ -463,26 +477,26 @@
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="165" y="125" width="1655" height="855" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588424031346" />
-    <state x="668" y="354" width="639" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588440363691">
+    <state x="668" y="354" width="674" height="410" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588451819087">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="668" y="354" width="639" height="403" key="#com.intellij.fileTypes.FileTypeChooser/65.25.1855.1055@65.25.1855.1055" timestamp="1588440363691" />
-    <state x="800" y="260" width="374" height="592" key="#com.intellij.ide.util.MemberChooser" timestamp="1588449969702">
+    <state x="668" y="354" width="674" height="410" key="#com.intellij.fileTypes.FileTypeChooser/65.25.1855.1055@65.25.1855.1055" timestamp="1588451819087" />
+    <state x="800" y="260" width="374" height="592" key="#com.intellij.ide.util.MemberChooser" timestamp="1588450970484">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="800" y="260" width="374" height="592" key="#com.intellij.ide.util.MemberChooser/65.25.1855.1055@65.25.1855.1055" timestamp="1588449969702" />
+    <state x="800" y="260" width="374" height="592" key="#com.intellij.ide.util.MemberChooser/65.25.1855.1055@65.25.1855.1055" timestamp="1588450970484" />
     <state x="700" y="314" width="704" height="511" key="#xdebugger.evaluate" timestamp="1588370357408">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="700" y="314" width="704" height="511" key="#xdebugger.evaluate/65.25.1855.1055@65.25.1855.1055" timestamp="1588370357408" />
-    <state x="549" y="79" width="876" height="935" key="CommitChangelistDialog2" timestamp="1588450627019">
+    <state x="549" y="79" width="876" height="935" key="CommitChangelistDialog2" timestamp="1588450860576">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="549" y="79" width="876" height="935" key="CommitChangelistDialog2/65.25.1855.1055@65.25.1855.1055" timestamp="1588450627019" />
-    <state x="165" y="125" width="1655" height="855" key="DiffContextDialog" timestamp="1588448509586">
+    <state x="549" y="79" width="876" height="935" key="CommitChangelistDialog2/65.25.1855.1055@65.25.1855.1055" timestamp="1588450860576" />
+    <state x="165" y="125" width="1655" height="855" key="DiffContextDialog" timestamp="1588450832563">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="165" y="125" width="1655" height="855" key="DiffContextDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588448509586" />
+    <state x="165" y="125" width="1655" height="855" key="DiffContextDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588450832563" />
     <state x="780" y="165" width="424" height="715" key="FileChooserDialogImpl" timestamp="1588373856733">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
@@ -491,22 +505,22 @@
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="783" y="458" key="GitRewordDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588424990639" />
-    <state width="1809" height="555" key="GridCell.Tab.0.bottom" timestamp="1588450482516">
+    <state width="1809" height="555" key="GridCell.Tab.0.bottom" timestamp="1588451904125">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="1809" height="555" key="GridCell.Tab.0.bottom/65.25.1855.1055@65.25.1855.1055" timestamp="1588450482516" />
-    <state width="1809" height="555" key="GridCell.Tab.0.center" timestamp="1588450482515">
+    <state width="1809" height="555" key="GridCell.Tab.0.bottom/65.25.1855.1055@65.25.1855.1055" timestamp="1588451904125" />
+    <state width="1809" height="555" key="GridCell.Tab.0.center" timestamp="1588451904124">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="1809" height="555" key="GridCell.Tab.0.center/65.25.1855.1055@65.25.1855.1055" timestamp="1588450482515" />
-    <state width="1809" height="555" key="GridCell.Tab.0.left" timestamp="1588450482514">
+    <state width="1809" height="555" key="GridCell.Tab.0.center/65.25.1855.1055@65.25.1855.1055" timestamp="1588451904124" />
+    <state width="1809" height="555" key="GridCell.Tab.0.left" timestamp="1588451904124">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="1809" height="555" key="GridCell.Tab.0.left/65.25.1855.1055@65.25.1855.1055" timestamp="1588450482514" />
-    <state width="1809" height="555" key="GridCell.Tab.0.right" timestamp="1588450482516">
+    <state width="1809" height="555" key="GridCell.Tab.0.left/65.25.1855.1055@65.25.1855.1055" timestamp="1588451904124" />
+    <state width="1809" height="555" key="GridCell.Tab.0.right" timestamp="1588451904125">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="1809" height="555" key="GridCell.Tab.0.right/65.25.1855.1055@65.25.1855.1055" timestamp="1588450482516" />
+    <state width="1809" height="555" key="GridCell.Tab.0.right/65.25.1855.1055@65.25.1855.1055" timestamp="1588451904125" />
     <state width="916" height="923" key="GridCell.Tab.1.bottom" timestamp="1588449388474">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
@@ -531,18 +545,18 @@
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="717" y="230" width="530" height="640" key="RollbackChangesDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588450110704" />
-    <state x="481" y="187" width="1045" height="737" key="SettingsEditor" timestamp="1588450254382">
+    <state x="481" y="187" width="1045" height="737" key="SettingsEditor" timestamp="1588451859563">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="481" y="187" width="1045" height="737" key="SettingsEditor/65.25.1855.1055@65.25.1855.1055" timestamp="1588450254382" />
+    <state x="481" y="187" width="1045" height="737" key="SettingsEditor/65.25.1855.1055@65.25.1855.1055" timestamp="1588451859563" />
     <state x="721" y="283" width="639" height="524" key="StructurePopup" timestamp="1588450412777">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="721" y="283" width="639" height="524" key="StructurePopup/65.25.1855.1055@65.25.1855.1055" timestamp="1588450412777" />
-    <state width="548" height="497" key="SwitcherDM" timestamp="1588433381798">
+    <state width="548" height="497" key="SwitcherDM" timestamp="1588451086867">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="548" height="497" key="SwitcherDM/65.25.1855.1055@65.25.1855.1055" timestamp="1588433381798" />
+    <state width="548" height="497" key="SwitcherDM/65.25.1855.1055@65.25.1855.1055" timestamp="1588451086867" />
     <state x="587" y="288" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1588448573786">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
@@ -559,10 +573,10 @@
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="664" y="446" width="646" height="220" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/65.25.1855.1055@65.25.1855.1055" timestamp="1588363830750" />
-    <state x="712" y="235" width="550" height="642" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1588360360836">
+    <state x="712" y="235" width="550" height="642" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1588451398270">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="712" y="235" width="550" height="642" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/65.25.1855.1055@65.25.1855.1055" timestamp="1588360360836" />
+    <state x="712" y="235" width="550" height="642" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/65.25.1855.1055@65.25.1855.1055" timestamp="1588451398270" />
     <state x="764" y="467" width="457" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588359566239">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
@@ -575,22 +589,22 @@
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="725" y="311" width="524" height="518" key="extract.method.dialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588424215372" />
-    <state x="682" y="293" width="620" height="518" key="find.popup" timestamp="1588423103246">
+    <state x="609" y="69" width="753" height="899" key="find.popup" timestamp="1588451379454">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="682" y="293" width="620" height="518" key="find.popup/65.25.1855.1055@65.25.1855.1055" timestamp="1588423103246" />
-    <state width="640" height="319" key="javadoc.popup.new" timestamp="1588448475487">
+    <state x="609" y="69" width="753" height="899" key="find.popup/65.25.1855.1055@65.25.1855.1055" timestamp="1588451379454" />
+    <state width="640" height="564" key="javadoc.popup.new" timestamp="1588451809658">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="640" height="319" key="javadoc.popup.new/65.25.1855.1055@65.25.1855.1055" timestamp="1588448475487" />
+    <state width="640" height="564" key="javadoc.popup.new/65.25.1855.1055@65.25.1855.1055" timestamp="1588451809657" />
     <state x="688" y="310" width="598" height="492" key="refactoring.ChangeSignatureDialog" timestamp="1588365581435">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="688" y="310" width="598" height="492" key="refactoring.ChangeSignatureDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588365581435" />
-    <state x="634" y="195" width="716" height="676" key="search.everywhere.popup" timestamp="1588449261129">
+    <state x="634" y="195" width="716" height="676" key="search.everywhere.popup" timestamp="1588451741799">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="634" y="195" width="716" height="676" key="search.everywhere.popup/65.25.1855.1055@65.25.1855.1055" timestamp="1588449261129" />
+    <state x="634" y="195" width="716" height="676" key="search.everywhere.popup/65.25.1855.1055@65.25.1855.1055" timestamp="1588451741799" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
