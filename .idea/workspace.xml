@@ -19,8 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d87a3c7a-642a-4d36-bd8f-ddff9f4f69fd" name="Default Changelist" comment="">
+    <list default="true" id="d87a3c7a-642a-4d36-bd8f-ddff9f4f69fd" name="Default Changelist" comment="[intentions] limit &quot;generate HTML&quot; intention to just .textile files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/potniype4kin/textile/intentions/OpenGeneratedFileActionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/potniype4kin/textile/intentions/OpenGeneratedFileActionTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,8 +111,8 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="SDKs" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
@@ -128,7 +130,7 @@
       <recent name="$PROJECT_DIR$/src/main" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.GenerateHtmlIntentionActionTest">
+  <component name="RunManager" selected="Gradle.OpenGeneratedFileActionTest">
     <configuration default="true" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
       <setting name="replType" value="NREPL" />
       <setting name="execution" value="LEININGEN" />
@@ -205,6 +207,25 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="SuggestionTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;org.potniype4kin.textile.intentions.SuggestionTest&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="idea-textile-plugin [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -217,25 +238,6 @@
         <option name="taskNames">
           <list>
             <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="idea-textile-plugin [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="dependencies" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -271,11 +273,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.GenerateHtmlIntentionActionTest" />
         <item itemvalue="Gradle.OpenGeneratedFileActionTest" />
+        <item itemvalue="Gradle.SuggestionTest" />
+        <item itemvalue="Gradle.GenerateHtmlIntentionActionTest" />
         <item itemvalue="Gradle.GenerateHtmlIntentionActionTest" />
         <item itemvalue="Gradle.idea-textile-plugin [build]" />
-        <item itemvalue="Gradle.idea-textile-plugin [test]" />
       </list>
     </recent_temporary>
   </component>
@@ -402,7 +404,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588427646628</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="[intentions] limit &quot;generate HTML&quot; intention to just .textile files">
+      <created>1588448530321</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1588448530321</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -438,7 +447,8 @@
     <MESSAGE value="[intentions] (inter) open generated HTML file #2: better code, more tests" />
     <MESSAGE value="add README.textile" />
     <MESSAGE value="README.textile: add intellij plugin link" />
-    <option name="LAST_COMMIT_MESSAGE" value="README.textile: add intellij plugin link" />
+    <MESSAGE value="[intentions] limit &quot;generate HTML&quot; intention to just .textile files" />
+    <option name="LAST_COMMIT_MESSAGE" value="[intentions] limit &quot;generate HTML&quot; intention to just .textile files" />
   </component>
   <component name="WindowStateProjectService">
     <state x="792" y="242" width="427" height="603" key="#Notifications" timestamp="1588421055411">
@@ -457,22 +467,22 @@
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="668" y="354" width="639" height="403" key="#com.intellij.fileTypes.FileTypeChooser/65.25.1855.1055@65.25.1855.1055" timestamp="1588440363691" />
-    <state x="800" y="260" width="374" height="592" key="#com.intellij.ide.util.MemberChooser" timestamp="1588422574975">
+    <state x="800" y="260" width="374" height="592" key="#com.intellij.ide.util.MemberChooser" timestamp="1588449969702">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="800" y="260" width="374" height="592" key="#com.intellij.ide.util.MemberChooser/65.25.1855.1055@65.25.1855.1055" timestamp="1588422574975" />
+    <state x="800" y="260" width="374" height="592" key="#com.intellij.ide.util.MemberChooser/65.25.1855.1055@65.25.1855.1055" timestamp="1588449969702" />
     <state x="700" y="314" width="704" height="511" key="#xdebugger.evaluate" timestamp="1588370357408">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="700" y="314" width="704" height="511" key="#xdebugger.evaluate/65.25.1855.1055@65.25.1855.1055" timestamp="1588370357408" />
-    <state x="549" y="79" width="876" height="935" key="CommitChangelistDialog2" timestamp="1588427646564">
+    <state x="549" y="79" width="876" height="935" key="CommitChangelistDialog2" timestamp="1588450627019">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="549" y="79" width="876" height="935" key="CommitChangelistDialog2/65.25.1855.1055@65.25.1855.1055" timestamp="1588427646564" />
-    <state x="165" y="125" width="1655" height="855" key="DiffContextDialog" timestamp="1588427647058">
+    <state x="549" y="79" width="876" height="935" key="CommitChangelistDialog2/65.25.1855.1055@65.25.1855.1055" timestamp="1588450627019" />
+    <state x="165" y="125" width="1655" height="855" key="DiffContextDialog" timestamp="1588448509586">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="165" y="125" width="1655" height="855" key="DiffContextDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588427647058" />
+    <state x="165" y="125" width="1655" height="855" key="DiffContextDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588448509586" />
     <state x="780" y="165" width="424" height="715" key="FileChooserDialogImpl" timestamp="1588373856733">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
@@ -481,62 +491,62 @@
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="783" y="458" key="GitRewordDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588424990639" />
-    <state width="1809" height="555" key="GridCell.Tab.0.bottom" timestamp="1588427498112">
+    <state width="1809" height="555" key="GridCell.Tab.0.bottom" timestamp="1588450482516">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="1809" height="555" key="GridCell.Tab.0.bottom/65.25.1855.1055@65.25.1855.1055" timestamp="1588427498112" />
-    <state width="1809" height="555" key="GridCell.Tab.0.center" timestamp="1588427498111">
+    <state width="1809" height="555" key="GridCell.Tab.0.bottom/65.25.1855.1055@65.25.1855.1055" timestamp="1588450482516" />
+    <state width="1809" height="555" key="GridCell.Tab.0.center" timestamp="1588450482515">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="1809" height="555" key="GridCell.Tab.0.center/65.25.1855.1055@65.25.1855.1055" timestamp="1588427498111" />
-    <state width="1809" height="555" key="GridCell.Tab.0.left" timestamp="1588427498111">
+    <state width="1809" height="555" key="GridCell.Tab.0.center/65.25.1855.1055@65.25.1855.1055" timestamp="1588450482515" />
+    <state width="1809" height="555" key="GridCell.Tab.0.left" timestamp="1588450482514">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="1809" height="555" key="GridCell.Tab.0.left/65.25.1855.1055@65.25.1855.1055" timestamp="1588427498111" />
-    <state width="1809" height="555" key="GridCell.Tab.0.right" timestamp="1588427498112">
+    <state width="1809" height="555" key="GridCell.Tab.0.left/65.25.1855.1055@65.25.1855.1055" timestamp="1588450482514" />
+    <state width="1809" height="555" key="GridCell.Tab.0.right" timestamp="1588450482516">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="1809" height="555" key="GridCell.Tab.0.right/65.25.1855.1055@65.25.1855.1055" timestamp="1588427498112" />
-    <state width="916" height="923" key="GridCell.Tab.1.bottom" timestamp="1588374747428">
+    <state width="1809" height="555" key="GridCell.Tab.0.right/65.25.1855.1055@65.25.1855.1055" timestamp="1588450482516" />
+    <state width="916" height="923" key="GridCell.Tab.1.bottom" timestamp="1588449388474">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="916" height="923" key="GridCell.Tab.1.bottom/65.25.1855.1055@65.25.1855.1055" timestamp="1588374747428" />
-    <state width="916" height="923" key="GridCell.Tab.1.center" timestamp="1588374747427">
+    <state width="916" height="923" key="GridCell.Tab.1.bottom/65.25.1855.1055@65.25.1855.1055" timestamp="1588449388474" />
+    <state width="916" height="923" key="GridCell.Tab.1.center" timestamp="1588449388474">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="916" height="923" key="GridCell.Tab.1.center/65.25.1855.1055@65.25.1855.1055" timestamp="1588374747427" />
-    <state width="916" height="923" key="GridCell.Tab.1.left" timestamp="1588374747427">
+    <state width="916" height="923" key="GridCell.Tab.1.center/65.25.1855.1055@65.25.1855.1055" timestamp="1588449388474" />
+    <state width="916" height="923" key="GridCell.Tab.1.left" timestamp="1588449388473">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="916" height="923" key="GridCell.Tab.1.left/65.25.1855.1055@65.25.1855.1055" timestamp="1588374747427" />
-    <state width="916" height="923" key="GridCell.Tab.1.right" timestamp="1588374747428">
+    <state width="916" height="923" key="GridCell.Tab.1.left/65.25.1855.1055@65.25.1855.1055" timestamp="1588449388473" />
+    <state width="916" height="923" key="GridCell.Tab.1.right" timestamp="1588449388474">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="916" height="923" key="GridCell.Tab.1.right/65.25.1855.1055@65.25.1855.1055" timestamp="1588374747428" />
+    <state width="916" height="923" key="GridCell.Tab.1.right/65.25.1855.1055@65.25.1855.1055" timestamp="1588449388474" />
     <state x="575" y="83" width="824" height="890" key="IDE.errors.dialog" timestamp="1588371466957">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="575" y="83" width="824" height="890" key="IDE.errors.dialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588371466957" />
-    <state x="717" y="230" width="530" height="640" key="RollbackChangesDialog" timestamp="1588371496586">
+    <state x="717" y="230" width="530" height="640" key="RollbackChangesDialog" timestamp="1588450110704">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="717" y="230" width="530" height="640" key="RollbackChangesDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588371496586" />
-    <state x="481" y="187" width="1022" height="737" key="SettingsEditor" timestamp="1588371121642">
+    <state x="717" y="230" width="530" height="640" key="RollbackChangesDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588450110704" />
+    <state x="481" y="187" width="1045" height="737" key="SettingsEditor" timestamp="1588450254382">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="481" y="187" width="1022" height="737" key="SettingsEditor/65.25.1855.1055@65.25.1855.1055" timestamp="1588371121642" />
-    <state x="721" y="283" width="639" height="524" key="StructurePopup" timestamp="1588424245989">
+    <state x="481" y="187" width="1045" height="737" key="SettingsEditor/65.25.1855.1055@65.25.1855.1055" timestamp="1588450254382" />
+    <state x="721" y="283" width="639" height="524" key="StructurePopup" timestamp="1588450412777">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="721" y="283" width="639" height="524" key="StructurePopup/65.25.1855.1055@65.25.1855.1055" timestamp="1588424245989" />
+    <state x="721" y="283" width="639" height="524" key="StructurePopup/65.25.1855.1055@65.25.1855.1055" timestamp="1588450412777" />
     <state width="548" height="497" key="SwitcherDM" timestamp="1588433381798">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state width="548" height="497" key="SwitcherDM/65.25.1855.1055@65.25.1855.1055" timestamp="1588433381798" />
-    <state x="587" y="288" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1588427649119">
+    <state x="587" y="288" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1588448573786">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="587" y="288" width="800" height="535" key="Vcs.Push.Dialog.v2/65.25.1855.1055@65.25.1855.1055" timestamp="1588427649119" />
+    <state x="587" y="288" width="800" height="535" key="Vcs.Push.Dialog.v2/65.25.1855.1055@65.25.1855.1055" timestamp="1588448573786" />
     <state x="759" y="335" width="446" height="447" key="chooseDestDirectoryDialog" timestamp="1588363672424">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
@@ -569,17 +579,28 @@
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="682" y="293" width="620" height="518" key="find.popup/65.25.1855.1055@65.25.1855.1055" timestamp="1588423103246" />
-    <state width="640" height="319" key="javadoc.popup.new" timestamp="1588424786191">
+    <state width="640" height="319" key="javadoc.popup.new" timestamp="1588448475487">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="640" height="319" key="javadoc.popup.new/65.25.1855.1055@65.25.1855.1055" timestamp="1588424786191" />
+    <state width="640" height="319" key="javadoc.popup.new/65.25.1855.1055@65.25.1855.1055" timestamp="1588448475487" />
     <state x="688" y="310" width="598" height="492" key="refactoring.ChangeSignatureDialog" timestamp="1588365581435">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="688" y="310" width="598" height="492" key="refactoring.ChangeSignatureDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588365581435" />
-    <state x="634" y="195" width="714" height="676" key="search.everywhere.popup" timestamp="1588361616084">
+    <state x="634" y="195" width="716" height="676" key="search.everywhere.popup" timestamp="1588449261129">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="634" y="195" width="714" height="676" key="search.everywhere.popup/65.25.1855.1055@65.25.1855.1055" timestamp="1588361616084" />
+    <state x="634" y="195" width="716" height="676" key="search.everywhere.popup/65.25.1855.1055@65.25.1855.1055" timestamp="1588449261129" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2020.1/6becac80419981b057df9cf0c62efcd94e6075a8/ideaIC-2020.1-sources.jar!/com/intellij/concurrency/PoisonFactory.java</url>
+          <line>8</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

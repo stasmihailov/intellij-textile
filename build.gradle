@@ -21,6 +21,11 @@ dependencies {
     compile group: 'org.jsoup', name: 'jsoup', version: '1.13.1'
 }
 
+compileJava {
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+}
+
 sourceSets {
     main {
         java {
