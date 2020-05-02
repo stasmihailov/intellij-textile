@@ -3,6 +3,7 @@ package org.potniype4kin.textile.intentions;
 import com.intellij.codeInsight.intention.IntentionAction;
 import com.intellij.codeInsight.intention.PsiElementBaseIntentionAction;
 import com.intellij.ide.util.PsiNavigationSupport;
+import com.intellij.lang.Language;
 import com.intellij.notification.Notification;
 import com.intellij.notification.NotificationAction;
 import com.intellij.notification.NotificationDisplayType;
@@ -20,6 +21,7 @@ import net.java.textilej.parser.markup.confluence.ConfluenceDialect;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 import org.jsoup.Jsoup;
+import org.potniype4kin.textile.TextileLanguageDefinitions;
 
 import java.io.File;
 import java.io.IOException;
@@ -122,7 +124,8 @@ public class GenerateHtmlIntentionAction extends PsiElementBaseIntentionAction i
 
     @Override
     public boolean isAvailable(@NotNull Project project, Editor editor, @NotNull PsiElement psiElement) {
-        return true;
+        Language textile = TextileLanguageDefinitions.LANGUAGE;
+        return psiElement.getLanguage().is(textile);
     }
 
     @Nls(capitalization = Nls.Capitalization.Sentence)

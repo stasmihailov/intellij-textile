@@ -21,7 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d87a3c7a-642a-4d36-bd8f-ddff9f4f69fd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.textile" beforeDir="false" afterPath="$PROJECT_DIR$/README.textile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -389,7 +388,21 @@
       <option name="project" value="LOCAL" />
       <updated>1588424982103</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="add README.textile">
+      <created>1588427394736</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1588427394736</updated>
+    </task>
+    <task id="LOCAL-00015" summary="README.textile: add intellij plugin link">
+      <created>1588427646628</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1588427646628</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -423,7 +436,9 @@
     <MESSAGE value="[intentions] fix tests" />
     <MESSAGE value="[intentions] open generated HTML file" />
     <MESSAGE value="[intentions] (inter) open generated HTML file #2: better code, more tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="[intentions] (inter) open generated HTML file #2: better code, more tests" />
+    <MESSAGE value="add README.textile" />
+    <MESSAGE value="README.textile: add intellij plugin link" />
+    <option name="LAST_COMMIT_MESSAGE" value="README.textile: add intellij plugin link" />
   </component>
   <component name="WindowStateProjectService">
     <state x="792" y="242" width="427" height="603" key="#Notifications" timestamp="1588421055411">
@@ -438,10 +453,10 @@
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="165" y="125" width="1655" height="855" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588424031346" />
-    <state x="668" y="354" width="639" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588367059840">
+    <state x="668" y="354" width="639" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588440363691">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="668" y="354" width="639" height="403" key="#com.intellij.fileTypes.FileTypeChooser/65.25.1855.1055@65.25.1855.1055" timestamp="1588367059840" />
+    <state x="668" y="354" width="639" height="403" key="#com.intellij.fileTypes.FileTypeChooser/65.25.1855.1055@65.25.1855.1055" timestamp="1588440363691" />
     <state x="800" y="260" width="374" height="592" key="#com.intellij.ide.util.MemberChooser" timestamp="1588422574975">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
@@ -450,14 +465,14 @@
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="700" y="314" width="704" height="511" key="#xdebugger.evaluate/65.25.1855.1055@65.25.1855.1055" timestamp="1588370357408" />
-    <state x="549" y="79" width="876" height="935" key="CommitChangelistDialog2" timestamp="1588424982029">
+    <state x="549" y="79" width="876" height="935" key="CommitChangelistDialog2" timestamp="1588427646564">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="549" y="79" width="876" height="935" key="CommitChangelistDialog2/65.25.1855.1055@65.25.1855.1055" timestamp="1588424982029" />
-    <state x="165" y="125" width="1655" height="855" key="DiffContextDialog" timestamp="1588427346505">
+    <state x="549" y="79" width="876" height="935" key="CommitChangelistDialog2/65.25.1855.1055@65.25.1855.1055" timestamp="1588427646564" />
+    <state x="165" y="125" width="1655" height="855" key="DiffContextDialog" timestamp="1588427647058">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="165" y="125" width="1655" height="855" key="DiffContextDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588427346505" />
+    <state x="165" y="125" width="1655" height="855" key="DiffContextDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588427647058" />
     <state x="780" y="165" width="424" height="715" key="FileChooserDialogImpl" timestamp="1588373856733">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
@@ -466,22 +481,22 @@
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="783" y="458" key="GitRewordDialog/65.25.1855.1055@65.25.1855.1055" timestamp="1588424990639" />
-    <state width="1809" height="555" key="GridCell.Tab.0.bottom" timestamp="1588427339220">
+    <state width="1809" height="555" key="GridCell.Tab.0.bottom" timestamp="1588427498112">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="1809" height="555" key="GridCell.Tab.0.bottom/65.25.1855.1055@65.25.1855.1055" timestamp="1588427339220" />
-    <state width="1809" height="555" key="GridCell.Tab.0.center" timestamp="1588427339218">
+    <state width="1809" height="555" key="GridCell.Tab.0.bottom/65.25.1855.1055@65.25.1855.1055" timestamp="1588427498112" />
+    <state width="1809" height="555" key="GridCell.Tab.0.center" timestamp="1588427498111">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="1809" height="555" key="GridCell.Tab.0.center/65.25.1855.1055@65.25.1855.1055" timestamp="1588427339218" />
-    <state width="1809" height="555" key="GridCell.Tab.0.left" timestamp="1588427339216">
+    <state width="1809" height="555" key="GridCell.Tab.0.center/65.25.1855.1055@65.25.1855.1055" timestamp="1588427498111" />
+    <state width="1809" height="555" key="GridCell.Tab.0.left" timestamp="1588427498111">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="1809" height="555" key="GridCell.Tab.0.left/65.25.1855.1055@65.25.1855.1055" timestamp="1588427339216" />
-    <state width="1809" height="555" key="GridCell.Tab.0.right" timestamp="1588427339219">
+    <state width="1809" height="555" key="GridCell.Tab.0.left/65.25.1855.1055@65.25.1855.1055" timestamp="1588427498111" />
+    <state width="1809" height="555" key="GridCell.Tab.0.right" timestamp="1588427498112">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="1809" height="555" key="GridCell.Tab.0.right/65.25.1855.1055@65.25.1855.1055" timestamp="1588427339219" />
+    <state width="1809" height="555" key="GridCell.Tab.0.right/65.25.1855.1055@65.25.1855.1055" timestamp="1588427498112" />
     <state width="916" height="923" key="GridCell.Tab.1.bottom" timestamp="1588374747428">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
@@ -514,14 +529,14 @@
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
     <state x="721" y="283" width="639" height="524" key="StructurePopup/65.25.1855.1055@65.25.1855.1055" timestamp="1588424245989" />
-    <state width="548" height="497" key="SwitcherDM" timestamp="1588371680047">
+    <state width="548" height="497" key="SwitcherDM" timestamp="1588433381798">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state width="548" height="497" key="SwitcherDM/65.25.1855.1055@65.25.1855.1055" timestamp="1588371680047" />
-    <state x="587" y="288" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1588427123793">
+    <state width="548" height="497" key="SwitcherDM/65.25.1855.1055@65.25.1855.1055" timestamp="1588433381798" />
+    <state x="587" y="288" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1588427649119">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
-    <state x="587" y="288" width="800" height="535" key="Vcs.Push.Dialog.v2/65.25.1855.1055@65.25.1855.1055" timestamp="1588427123793" />
+    <state x="587" y="288" width="800" height="535" key="Vcs.Push.Dialog.v2/65.25.1855.1055@65.25.1855.1055" timestamp="1588427649119" />
     <state x="759" y="335" width="446" height="447" key="chooseDestDirectoryDialog" timestamp="1588363672424">
       <screen x="65" y="25" width="1855" height="1055" />
     </state>
