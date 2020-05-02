@@ -42,45 +42,20 @@ public class GenerateHtmlIntentionAction extends PsiElementBaseIntentionAction i
     }
 
     private void onHtmlFileCreated(Project project, File htmlFile) {
-        String fullPath = htmlFile.getAbsolutePath();
-        String fileName = htmlFile.getName();
+        Path filePath = htmlFile.toPath();
 
-        Notification notification = notifyHtmlGenerated(fullPath, fileName);
+        Notification notification = notifyHtmlGenerated(filePath);
         notification.notify(project);
     }
 
     @NotNull
-    private Notification notifyHtmlGenerated(String filePath, String fileName) {
+    private Notification notifyHtmlGenerated(Path filePath) {
         Notification notification = CODE_GENERATION_LOGS.createNotification("Generated HTML file", MessageType.INFO);
-        notification.addAction(new OpenFileAction(filePath, fileName));
+        notification.addAction(new OpenGeneratedFileAction(filePath));
 
         return notification;
     }
 
-    private static class OpenFileAction extends NotificationAction {
-        private final String filePath;
-
-        public OpenFileAction(String filePath, String fileName) {
-            super("Open " + fileName);
-            this.filePath = filePath;
-        }
-
-        @Override
-        public void actionPerformed(@NotNull AnActionEvent anActionEvent, @NotNull Notification notification) {
-            VirtualFile virtualFile = VfsUtil.findFileByIoFile(new File(filePath), true);
-            if (virtualFile == null) {
-                throw new IllegalStateException("could not find generated html file in current project");
-            }
-
-            Project project = anActionEvent.getProject();
-            if (project == null) {
-                throw new IllegalStateException("could not find project at which an html file was generated");
-            }
-
-            PsiNavigationSupport.getInstance().createNavigatable(project, virtualFile, -1).navigate(true);
-        }
-
-    }
 
     File generateHtmlFile(Path textileFilePathStr) {
         File textileFile = textileFilePathStr.toFile();
