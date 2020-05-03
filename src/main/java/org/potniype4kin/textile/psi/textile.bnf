@@ -22,12 +22,14 @@ private header_text ::= HEADER_TEXT (space HEADER_TEXT)*
 private header ::= HEADER_START header_text
 
 private code_start ::= space? CODE_DEF (CODE_DELIM CODE_LANGUAGE)? CODE_DEF_END
-private code_line ::= space? CODE (space CODE)*
+private code_line ::= space? CODE+
 private code_end ::= space? CODE_END
 private code ::= code_start eol? (code_line eol?)+ code_end
 
-private info_text ::= INFO_TEXT (space INFO_TEXT)*
-private info ::= INFO_START+ (info_text EOL)+ INFO_END
+private info_start ::= space? INFO_START+
+private info_text ::= INFO_TEXT+
+private info_end ::= space? INFO_END
+private info ::= info_start+ eol? (info_text eol?)+ info_end
 
 private list_text ::= LIST_TEXT (space LIST_TEXT)*
 private list ::= LIST_DELIM list_text

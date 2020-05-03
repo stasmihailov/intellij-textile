@@ -21,7 +21,6 @@ SPACE=[\ \t\f]
 
 CHAPTER_BREAK="-"{4}
 PARAGRAPH_BREAK={CRLF}
-EOL=[^\r\n]+
 LINE_BREAK={SPACE}*{CRLF}
 
 HEADER_PREFIX="h"
@@ -42,7 +41,7 @@ SIGN_PLUS="(+)"
 SIGN_MINUS="(-)"
 SIGN_OK="(/)"
 SIGN_QUESTION="(?)"
-TEXT=[^\ \t\f\r\n{][^\ \t\f\r\n]*
+TEXT=[^\ \t\f\r\n{][^\ \t\f\r\n}]*
 
 %state header
 %state list
@@ -50,6 +49,7 @@ TEXT=[^\ \t\f\r\n{][^\ \t\f\r\n]*
 %state code_delim
 %state code
 %state info_start
+%state info_start_title
 %state info
 
 %%
@@ -135,16 +135,29 @@ TEXT=[^\ \t\f\r\n{][^\ \t\f\r\n]*
         yybegin(YYINITIAL);
         return TextileType.CODE_END;
     }
-    {TEXT} {
+    {TEXT} | {SPACE}+ {
         return TextileType.CODE;
     }
 }
 <info_start> {
-    :\w+ {
-        // get info title, if present
+    :title= {
+        yybegin(info_start_title);
         return TextileType.INFO_START;
     }
     {INFO_START_TOKEN_CLOSE} {
+        return TextileType.INFO_START;
+    }
+    {LINE_BREAK} {
+        yybegin(info);
+        return TextileType.EOL;
+    }
+}
+<info_start> {
+    {TEXT} | {SPACE}+ {
+        return TextileType.INFO_START;
+    }
+    {INFO_START_TOKEN_CLOSE} {
+        yybegin(info);
         return TextileType.INFO_START;
     }
     {LINE_BREAK} {
@@ -160,7 +173,7 @@ TEXT=[^\ \t\f\r\n{][^\ \t\f\r\n]*
         yybegin(YYINITIAL);
         return TextileType.INFO_END;
     }
-    {TEXT} {
+    {TEXT} | {SPACE}+ {
         return TextileType.INFO_TEXT;
     }
 }

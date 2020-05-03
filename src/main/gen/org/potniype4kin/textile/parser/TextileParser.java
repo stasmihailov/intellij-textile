@@ -117,15 +117,14 @@ public class TextileParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // space? CODE (space CODE)*
+  // space? CODE+
   static boolean code_line(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "code_line")) return false;
     if (!nextTokenIs(b, "", CODE, SPACE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = code_line_0(b, l + 1);
-    r = r && consumeToken(b, CODE);
-    r = r && code_line_2(b, l + 1);
+    r = r && code_line_1(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
@@ -137,24 +136,17 @@ public class TextileParser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // (space CODE)*
-  private static boolean code_line_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "code_line_2")) return false;
-    while (true) {
-      int c = current_position_(b);
-      if (!code_line_2_0(b, l + 1)) break;
-      if (!empty_element_parsed_guard_(b, "code_line_2", c)) break;
-    }
-    return true;
-  }
-
-  // space CODE
-  private static boolean code_line_2_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "code_line_2_0")) return false;
+  // CODE+
+  private static boolean code_line_1(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "code_line_1")) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = space(b, l + 1);
-    r = r && consumeToken(b, CODE);
+    r = consumeToken(b, CODE);
+    while (r) {
+      int c = current_position_(b);
+      if (!consumeToken(b, CODE)) break;
+      if (!empty_element_parsed_guard_(b, "code_line_1", c)) break;
+    }
     exit_section_(b, m, null, r);
     return r;
   }
@@ -267,91 +259,143 @@ public class TextileParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // INFO_START+ (info_text EOL)+ INFO_END
+  // info_start+ eol? (info_text eol?)+ info_end
   static boolean info(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "info")) return false;
-    if (!nextTokenIs(b, INFO_START)) return false;
+    if (!nextTokenIs(b, "", INFO_START, SPACE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = info_0(b, l + 1);
     r = r && info_1(b, l + 1);
-    r = r && consumeToken(b, INFO_END);
+    r = r && info_2(b, l + 1);
+    r = r && info_end(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // INFO_START+
+  // info_start+
   private static boolean info_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "info_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeToken(b, INFO_START);
+    r = info_start(b, l + 1);
     while (r) {
       int c = current_position_(b);
-      if (!consumeToken(b, INFO_START)) break;
+      if (!info_start(b, l + 1)) break;
       if (!empty_element_parsed_guard_(b, "info_0", c)) break;
     }
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // (info_text EOL)+
+  // eol?
   private static boolean info_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "info_1")) return false;
+    eol(b, l + 1);
+    return true;
+  }
+
+  // (info_text eol?)+
+  private static boolean info_2(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "info_2")) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = info_1_0(b, l + 1);
+    r = info_2_0(b, l + 1);
     while (r) {
       int c = current_position_(b);
-      if (!info_1_0(b, l + 1)) break;
-      if (!empty_element_parsed_guard_(b, "info_1", c)) break;
+      if (!info_2_0(b, l + 1)) break;
+      if (!empty_element_parsed_guard_(b, "info_2", c)) break;
     }
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // info_text EOL
-  private static boolean info_1_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "info_1_0")) return false;
+  // info_text eol?
+  private static boolean info_2_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "info_2_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = info_text(b, l + 1);
-    r = r && consumeToken(b, EOL);
+    r = r && info_2_0_1(b, l + 1);
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // eol?
+  private static boolean info_2_0_1(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "info_2_0_1")) return false;
+    eol(b, l + 1);
+    return true;
+  }
+
+  /* ********************************************************** */
+  // space? INFO_END
+  static boolean info_end(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "info_end")) return false;
+    if (!nextTokenIs(b, "", INFO_END, SPACE)) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = info_end_0(b, l + 1);
+    r = r && consumeToken(b, INFO_END);
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // space?
+  private static boolean info_end_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "info_end_0")) return false;
+    space(b, l + 1);
+    return true;
+  }
+
+  /* ********************************************************** */
+  // space? INFO_START+
+  static boolean info_start(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "info_start")) return false;
+    if (!nextTokenIs(b, "", INFO_START, SPACE)) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = info_start_0(b, l + 1);
+    r = r && info_start_1(b, l + 1);
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // space?
+  private static boolean info_start_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "info_start_0")) return false;
+    space(b, l + 1);
+    return true;
+  }
+
+  // INFO_START+
+  private static boolean info_start_1(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "info_start_1")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = consumeToken(b, INFO_START);
+    while (r) {
+      int c = current_position_(b);
+      if (!consumeToken(b, INFO_START)) break;
+      if (!empty_element_parsed_guard_(b, "info_start_1", c)) break;
+    }
     exit_section_(b, m, null, r);
     return r;
   }
 
   /* ********************************************************** */
-  // INFO_TEXT (space INFO_TEXT)*
+  // INFO_TEXT+
   static boolean info_text(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "info_text")) return false;
     if (!nextTokenIs(b, INFO_TEXT)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeToken(b, INFO_TEXT);
-    r = r && info_text_1(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // (space INFO_TEXT)*
-  private static boolean info_text_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "info_text_1")) return false;
-    while (true) {
+    while (r) {
       int c = current_position_(b);
-      if (!info_text_1_0(b, l + 1)) break;
-      if (!empty_element_parsed_guard_(b, "info_text_1", c)) break;
+      if (!consumeToken(b, INFO_TEXT)) break;
+      if (!empty_element_parsed_guard_(b, "info_text", c)) break;
     }
-    return true;
-  }
-
-  // space INFO_TEXT
-  private static boolean info_text_1_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "info_text_1_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = space(b, l + 1);
-    r = r && consumeToken(b, INFO_TEXT);
     exit_section_(b, m, null, r);
     return r;
   }
