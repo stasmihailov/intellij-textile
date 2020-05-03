@@ -1,6 +1,6 @@
 h2. Textile language support
 
-_"Plugin Link":https://plugins.jetbrains.com/plugin/14204-textile-language-support_
+![JetBrains IntelliJ plugins](https://img.shields.io/jetbrains/plugin/d/com.potniype4kin.intellij-textile)
 
 Adds support for Textile markup to Jetbrains IDEs
 
