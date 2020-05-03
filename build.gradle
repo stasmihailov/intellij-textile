@@ -68,6 +68,7 @@ intellij {
 }
 patchPluginXml {
     changeNotes """
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>"""
+      - added "Generate HTML from this file" intention action for textile documents
+      - fixed some token parsing bugs
+      """
 }
