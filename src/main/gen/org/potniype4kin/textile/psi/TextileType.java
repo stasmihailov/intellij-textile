@@ -18,9 +18,9 @@ public interface TextileType {
   IElementType EOL = new TextileToken("EOL");
   IElementType HEADER_START = new TextileToken("HEADER_START");
   IElementType HEADER_TEXT = new TextileToken("HEADER_TEXT");
-  IElementType INFO = new TextileToken("INFO");
   IElementType INFO_END = new TextileToken("INFO_END");
   IElementType INFO_START = new TextileToken("INFO_START");
+  IElementType INFO_TEXT = new TextileToken("INFO_TEXT");
   IElementType LIST_DELIM = new TextileToken("LIST_DELIM");
   IElementType LIST_TEXT = new TextileToken("LIST_TEXT");
   IElementType PARAGRAPH_BREAK = new TextileToken("PARAGRAPH_BREAK");
@@ -29,6 +29,7 @@ public interface TextileType {
   IElementType SIGN_PLUS = new TextileToken("SIGN_PLUS");
   IElementType SIGN_QUESTION = new TextileToken("SIGN_QUESTION");
   IElementType SIGN_WARNING = new TextileToken("SIGN_WARNING");
+  IElementType SPACE = new TextileToken("SPACE");
   IElementType TEXT = new TextileToken("TEXT");
 
   class Factory {

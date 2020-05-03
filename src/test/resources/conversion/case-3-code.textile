@@ -1,0 +1,7 @@
+h2. code definition
+
+{code:clojure}
+(defn -main
+  []
+  (println "Hey There"))
+{code}

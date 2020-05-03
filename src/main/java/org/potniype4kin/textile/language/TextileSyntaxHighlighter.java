@@ -35,7 +35,7 @@ public class TextileSyntaxHighlighter extends SyntaxHighlighterBase {
         textKeysByElementType.put(TextileType.CODE_END, () -> pack(code()));
         textKeysByElementType.put(TextileType.CHAPTER_BREAK, () -> pack(BLOCK_COMMENT));
         textKeysByElementType.put(TextileType.INFO_START, () -> pack(info()));
-        textKeysByElementType.put(TextileType.INFO, () -> pack(info()));
+        textKeysByElementType.put(TextileType.INFO_TEXT, () -> pack(info()));
         textKeysByElementType.put(TextileType.INFO_END, () -> pack(info()));
         textKeysByElementType.put(TextileType.SIGN_WARNING, () -> pack(find("TEXTILE_SIGN_WARNING")));
         textKeysByElementType.put(TextileType.SIGN_PLUS, () -> pack(find("TEXTILE_SIGN_PLUS")));

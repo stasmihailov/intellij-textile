@@ -42,6 +42,7 @@ SIGN_PLUS="(+)"
 SIGN_MINUS="(-)"
 SIGN_OK="(/)"
 SIGN_QUESTION="(?)"
+TEXT=[^\ \t\f\r\n{][^\ \t\f\r\n]*
 
 %state header
 %state list
@@ -79,22 +80,7 @@ SIGN_QUESTION="(?)"
         yybegin(info_start);
         return TextileType.INFO_START;
     }
-    {SIGN_WARNING} {
-        return TextileType.SIGN_WARNING;
-    }
-    {SIGN_PLUS} {
-        return TextileType.SIGN_PLUS;
-    }
-    {SIGN_MINUS} {
-        return TextileType.SIGN_MINUS;
-    }
-    {SIGN_OK} {
-        return TextileType.SIGN_OK;
-    }
-    {SIGN_QUESTION} {
-        return TextileType.SIGN_QUESTION;
-    }
-    [^] {
+    {TEXT} {
         return TextileType.TEXT;
     }
 }
@@ -103,22 +89,7 @@ SIGN_QUESTION="(?)"
         yybegin(YYINITIAL);
         return TextileType.EOL;
     }
-    {SIGN_WARNING} {
-        return TextileType.SIGN_WARNING;
-    }
-    {SIGN_PLUS} {
-        return TextileType.SIGN_PLUS;
-    }
-    {SIGN_MINUS} {
-        return TextileType.SIGN_MINUS;
-    }
-    {SIGN_OK} {
-        return TextileType.SIGN_OK;
-    }
-    {SIGN_QUESTION} {
-        return TextileType.SIGN_QUESTION;
-    }
-    [^] {
+    {TEXT} {
         return TextileType.HEADER_TEXT;
     }
 }
@@ -127,22 +98,7 @@ SIGN_QUESTION="(?)"
         yybegin(YYINITIAL);
         return TextileType.EOL;
     }
-    {SIGN_WARNING} {
-        return TextileType.SIGN_WARNING;
-    }
-    {SIGN_PLUS} {
-        return TextileType.SIGN_PLUS;
-    }
-    {SIGN_MINUS} {
-        return TextileType.SIGN_MINUS;
-    }
-    {SIGN_OK} {
-        return TextileType.SIGN_OK;
-    }
-    {SIGN_QUESTION} {
-        return TextileType.SIGN_QUESTION;
-    }
-    [^] {
+    {TEXT} {
         return TextileType.LIST_TEXT;
     }
 }
@@ -160,19 +116,15 @@ SIGN_QUESTION="(?)"
     }
 }
 <code_delim> {
-    .+ / {CODE_START_TOKEN_CLOSE} {
+    {TEXT} / {CODE_START_TOKEN_CLOSE} {
         return TextileType.CODE_LANGUAGE;
     }
     {CODE_START_TOKEN_CLOSE} {
         return TextileType.CODE_DEF_END;
     }
-
     {LINE_BREAK} {
         yybegin(code);
         return TextileType.EOL;
-    }
-    [^] {
-        return TokenType.BAD_CHARACTER;
     }
 }
 <code> {
@@ -181,9 +133,9 @@ SIGN_QUESTION="(?)"
     }
     {CODE_END_TOKEN} {
         yybegin(YYINITIAL);
-        return TextileType.CODE_DEF_END;
+        return TextileType.CODE_END;
     }
-    [^] {
+    {TEXT} {
         return TextileType.CODE;
     }
 }
@@ -208,24 +160,28 @@ SIGN_QUESTION="(?)"
         yybegin(YYINITIAL);
         return TextileType.INFO_END;
     }
-    {SIGN_WARNING} {
-        return TextileType.SIGN_WARNING;
-    }
-    {SIGN_PLUS} {
-        return TextileType.SIGN_PLUS;
-    }
-    {SIGN_MINUS} {
-        return TextileType.SIGN_MINUS;
-    }
-    {SIGN_OK} {
-        return TextileType.SIGN_OK;
-    }
-    {SIGN_QUESTION} {
-        return TextileType.SIGN_QUESTION;
-    }
-    [^] {
-        return TextileType.INFO;
+    {TEXT} {
+        return TextileType.INFO_TEXT;
     }
 }
+{SPACE}+ {
+    return TextileType.SPACE;
+}
+{SIGN_WARNING} {
+    return TextileType.SIGN_WARNING;
+}
+{SIGN_PLUS} {
+    return TextileType.SIGN_PLUS;
+}
+{SIGN_MINUS} {
+    return TextileType.SIGN_MINUS;
+}
+{SIGN_OK} {
+    return TextileType.SIGN_OK;
+}
+{SIGN_QUESTION} {
+    return TextileType.SIGN_QUESTION;
+}
 [^] {
+    return TokenType.BAD_CHARACTER;
 }
