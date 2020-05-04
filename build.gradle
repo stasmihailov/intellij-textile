@@ -46,7 +46,7 @@ test {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-    pluginName 'Textile language support'
+    pluginName 'Textile Markup Language Support'
     version '2020.1'
 }
 patchPluginXml {

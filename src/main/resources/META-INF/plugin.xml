@@ -1,6 +1,6 @@
 <idea-plugin>
   <id>com.potniype4kin.intellij-textile</id>
-  <name>Textile language support</name>
+  <name>Textile Markup Language Support</name>
   <version>0.1.3</version>
   <vendor>Denis Babochenko</vendor>
 
