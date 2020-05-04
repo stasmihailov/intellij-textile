@@ -5,10 +5,7 @@
   <vendor>Denis Babochenko</vendor>
 
   <description>
-    Adds support for textile markup files
-
-    - highlights textile code (does not support full highlighting yet)
-    - adds "Generate HTML from this file" intention action for textile documents
+    Adds highlighting of textile markup files, as well as a "Generate HTML from this file" intention action for textile documents
   </description>
 
   <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
