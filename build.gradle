@@ -43,15 +43,3 @@ sourceSets {
 test {
     useJUnitPlatform()
 }
-
-// See https://github.com/JetBrains/gradle-intellij-plugin/
-intellij {
-    pluginName 'Textile Markup Language Support'
-    version '2020.1'
-}
-patchPluginXml {
-    changeNotes """
-      - added "Generate HTML from this file" intention action for textile documents
-      - fixed some token parsing bugs
-      """
-}

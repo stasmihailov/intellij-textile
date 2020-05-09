@@ -2,18 +2,13 @@ package org.potniype4kin.textile.intentions;
 
 import com.intellij.codeInsight.intention.IntentionAction;
 import com.intellij.codeInsight.intention.PsiElementBaseIntentionAction;
-import com.intellij.ide.util.PsiNavigationSupport;
 import com.intellij.lang.Language;
 import com.intellij.notification.Notification;
-import com.intellij.notification.NotificationAction;
 import com.intellij.notification.NotificationDisplayType;
 import com.intellij.notification.NotificationGroup;
-import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.MessageType;
-import com.intellij.openapi.vfs.VfsUtil;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiElement;
 import com.intellij.util.IncorrectOperationException;
 import net.java.textilej.parser.MarkupParser;
@@ -33,7 +28,9 @@ import java.util.Arrays;
 import static java.util.Collections.singletonList;
 
 public class GenerateHtmlIntentionAction extends PsiElementBaseIntentionAction implements IntentionAction {
-    private static final NotificationGroup CODE_GENERATION_LOGS = new NotificationGroup("Code Generation Logs", NotificationDisplayType.BALLOON, true);
+    private NotificationGroup codeGenerationLogs() {
+        return new NotificationGroup("Code Generation Logs", NotificationDisplayType.BALLOON, true);
+    }
 
     @Override
     public void invoke(@NotNull Project project, Editor editor, @NotNull PsiElement psiElement) throws IncorrectOperationException {
@@ -52,7 +49,7 @@ public class GenerateHtmlIntentionAction extends PsiElementBaseIntentionAction i
 
     @NotNull
     private Notification notifyHtmlGenerated(Path filePath) {
-        Notification notification = CODE_GENERATION_LOGS.createNotification("Generated HTML file", MessageType.INFO);
+        Notification notification = codeGenerationLogs().createNotification("Generated HTML file", MessageType.INFO);
         notification.addAction(new OpenGeneratedFileAction(filePath));
 
         return notification;
