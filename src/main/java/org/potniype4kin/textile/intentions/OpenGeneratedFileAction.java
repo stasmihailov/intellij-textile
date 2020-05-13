@@ -29,6 +29,7 @@ public class OpenGeneratedFileAction extends NotificationAction {
         }
 
         openGeneratedFile(project);
+        notification.expire();
     }
 
     void openGeneratedFile(Project project) {
