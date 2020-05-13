@@ -33,6 +33,8 @@ public class TextileSyntaxHighlighter extends SyntaxHighlighterBase {
         textKeysByElementType.put(TextileType.CODE_DEF_END, () -> pack(code()));
         textKeysByElementType.put(TextileType.CODE_DELIM, () -> pack(code()));
         textKeysByElementType.put(TextileType.CODE, () -> pack(code()));
+        textKeysByElementType.put(TextileType.INLINE_CODE_END, () -> pack(code()));
+        textKeysByElementType.put(TextileType.INLINE_CODE_START, () -> pack(code()));
         textKeysByElementType.put(TextileType.CODE_END, () -> pack(code()));
         textKeysByElementType.put(TextileType.CHAPTER_BREAK, () -> pack(BLOCK_COMMENT));
         textKeysByElementType.put(TextileType.INFO_START, () -> pack(info()));

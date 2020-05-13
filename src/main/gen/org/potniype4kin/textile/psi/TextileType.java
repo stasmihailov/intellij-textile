@@ -21,6 +21,8 @@ public interface TextileType {
   IElementType INFO_END = new TextileToken("INFO_END");
   IElementType INFO_START = new TextileToken("INFO_START");
   IElementType INFO_TEXT = new TextileToken("INFO_TEXT");
+  IElementType INLINE_CODE_END = new TextileToken("INLINE_CODE_END");
+  IElementType INLINE_CODE_START = new TextileToken("INLINE_CODE_START");
   IElementType LIST_DELIM = new TextileToken("LIST_DELIM");
   IElementType LIST_TEXT = new TextileToken("LIST_TEXT");
   IElementType PARAGRAPH_BREAK = new TextileToken("PARAGRAPH_BREAK");

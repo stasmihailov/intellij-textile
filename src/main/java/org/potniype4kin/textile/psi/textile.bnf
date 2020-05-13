@@ -26,6 +26,8 @@ private code_line ::= space? CODE+
 private code_end ::= space? CODE_END
 private code ::= code_start eol? (code_line eol?)+ code_end
 
+private code_inline ::= INLINE_CODE_START space? CODE+ space? INLINE_CODE_END
+
 private info_start ::= space? INFO_START+
 private info_text ::= INFO_TEXT+
 private info_end ::= space? INFO_END
@@ -40,4 +42,14 @@ private signs ::= SIGN_WARNING | SIGN_PLUS | SIGN_MINUS | SIGN_OK | SIGN_QUESTIO
 private chapter_break ::= CHAPTER_BREAK
 private paragraph_break ::= PARAGRAPH_BREAK
 private eol ::= space? EOL
-private item ::= (header|list|code|info|text|chapter_break|paragraph_break|signs|space|eol)
+private item ::= header
+    | list
+    | code
+    | code_inline
+    | info
+    | text
+    | chapter_break
+    | paragraph_break
+    | signs
+    | space
+    | eol

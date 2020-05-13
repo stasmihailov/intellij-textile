@@ -30,6 +30,8 @@ HEADER_DEFINITION={HEADER_PREFIX}{HEADER_LEVEL}{HEADER_SUFFIX}{SPACE}
 LIST_DELIM=[-*]
 LIST_DEFINITION={LIST_DELIM}+{SPACE}
 CODE_START_TOKEN="{code"
+INLINE_CODE_START="{{"
+INLINE_CODE_END="}}"
 CODE_DELIM=":"
 CODE_START_TOKEN_CLOSE="}"
 CODE_END_TOKEN="{code}"
@@ -42,9 +44,11 @@ SIGN_MINUS="(-)"
 SIGN_OK="(/)"
 SIGN_QUESTION="(?)"
 TEXT=[^\ \t\f\r\n{][^\ \t\f\r\n}]*
+TEXT_WITHOUT_MACRO_END=[^\ \t\f\r\n{}][^\ \t\f\r\n}]*
 
 %state header
 %state list
+%state inline_code
 %state code_def
 %state code_delim
 %state code
@@ -75,6 +79,10 @@ TEXT=[^\ \t\f\r\n{][^\ \t\f\r\n}]*
     {CODE_START_TOKEN} {
         yybegin(code_def);
         return TextileType.CODE_DEF;
+    }
+    {INLINE_CODE_START} {
+        yybegin(inline_code);
+        return TextileType.INLINE_CODE_START;
     }
     {INFO_START_TOKEN} {
         yybegin(info_start);
@@ -115,6 +123,15 @@ TEXT=[^\ \t\f\r\n{][^\ \t\f\r\n}]*
         return TextileType.EOL;
     }
 }
+<inline_code> {
+    {TEXT} | {SPACE}+ {
+        return TextileType.CODE;
+    }
+    {INLINE_CODE_END} {
+        yybegin(YYINITIAL);
+        return TextileType.INLINE_CODE_END;
+    }
+}
 <code_delim> {
     {TEXT} / {CODE_START_TOKEN_CLOSE} {
         return TextileType.CODE_LANGUAGE;
@@ -152,8 +169,8 @@ TEXT=[^\ \t\f\r\n{][^\ \t\f\r\n}]*
         return TextileType.EOL;
     }
 }
-<info_start> {
-    {TEXT} | {SPACE}+ {
+<info_start_title> {
+    {TEXT_WITHOUT_MACRO_END} | {SPACE}+ {
         return TextileType.INFO_START;
     }
     {INFO_START_TOKEN_CLOSE} {
@@ -173,7 +190,7 @@ TEXT=[^\ \t\f\r\n{][^\ \t\f\r\n}]*
         yybegin(YYINITIAL);
         return TextileType.INFO_END;
     }
-    {TEXT} | {SPACE}+ {
+    {TEXT_WITHOUT_MACRO_END} | {SPACE}+ {
         return TextileType.INFO_TEXT;
     }
 }

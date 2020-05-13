@@ -117,6 +117,51 @@ public class TextileParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
+  // INLINE_CODE_START space? CODE+ space? INLINE_CODE_END
+  static boolean code_inline(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "code_inline")) return false;
+    if (!nextTokenIs(b, INLINE_CODE_START)) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = consumeToken(b, INLINE_CODE_START);
+    r = r && code_inline_1(b, l + 1);
+    r = r && code_inline_2(b, l + 1);
+    r = r && code_inline_3(b, l + 1);
+    r = r && consumeToken(b, INLINE_CODE_END);
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // space?
+  private static boolean code_inline_1(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "code_inline_1")) return false;
+    space(b, l + 1);
+    return true;
+  }
+
+  // CODE+
+  private static boolean code_inline_2(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "code_inline_2")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = consumeToken(b, CODE);
+    while (r) {
+      int c = current_position_(b);
+      if (!consumeToken(b, CODE)) break;
+      if (!empty_element_parsed_guard_(b, "code_inline_2", c)) break;
+    }
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // space?
+  private static boolean code_inline_3(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "code_inline_3")) return false;
+    space(b, l + 1);
+    return true;
+  }
+
+  /* ********************************************************** */
   // space? CODE+
   static boolean code_line(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "code_line")) return false;
@@ -401,13 +446,24 @@ public class TextileParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // header|list|code|info|text|chapter_break|paragraph_break|signs|space|eol
+  // header
+  //     | list
+  //     | code
+  //     | code_inline
+  //     | info
+  //     | text
+  //     | chapter_break
+  //     | paragraph_break
+  //     | signs
+  //     | space
+  //     | eol
   static boolean item(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "item")) return false;
     boolean r;
     r = header(b, l + 1);
     if (!r) r = list(b, l + 1);
     if (!r) r = code(b, l + 1);
+    if (!r) r = code_inline(b, l + 1);
     if (!r) r = info(b, l + 1);
     if (!r) r = text(b, l + 1);
     if (!r) r = chapter_break(b, l + 1);

@@ -5,3 +5,7 @@ h2. code definition
   []
   (println "Hey There"))
 {code}
+
+here is some inline code: {{Exception raised by Thread-1{(accidentally)}}
+
+The end!
