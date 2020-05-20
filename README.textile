@@ -1,10 +1,9 @@
-h2. Textile language support
+h3. Textile language support
 
 "!https://travis-ci.com/stasmihailov/intellij-textile.svg?branch=master(Travis Build Status)!":https://travis-ci.com/github/stasmihailov/intellij-textile "!https://img.shields.io/jetbrains/plugin/d/com.potniype4kin.intellij-textile(JetBrains IntelliJ plugins)!":https://plugins.jetbrains.com/plugin/14204
 
 Adds support for Textile markup to Jetbrains IDEs
 
-Main features:
-- adds Confluence-like code highlighing
-- adds ability to generate HTML from textile document by "Generate HTML from this file" intention action
-
+h3. Main features
+* adds Confluence-like code highlighing
+* adds ability to generate HTML from textile document by "Generate HTML from this file" intention action
