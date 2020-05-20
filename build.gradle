@@ -43,3 +43,7 @@ sourceSets {
 test {
     useJUnitPlatform()
 }
+
+publishPlugin {
+    token = System.getenv('org.gradle.project.intellijpublishtoken')
+}
