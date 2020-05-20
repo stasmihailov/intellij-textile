@@ -1,7 +1,9 @@
 language: java
 
 deploy:
-  if: branch =~ /.*-RELEASE/
+  on:
+    all_branches: true
+    condition: $TRAVIS_BRANCH =~ /.*-RELEASE/
   skip_cleanup: true
   provider: script
   script: ./gradlew publishPlugin
