@@ -5,7 +5,8 @@
   <vendor>Denis Babochenko</vendor>
 
   <description>
-    Adds highlighting of textile markup files, as well as a "Generate HTML from this file" intention action for textile documents
+    Adds support for <![CDATA[<a href="https://textile-lang.com/">Textile markup language</a>]]>: basic highlighting and
+    syntax checking, as well as generating html files from textile documents via "Generate HTML from this file" intention
   </description>
 
   <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
