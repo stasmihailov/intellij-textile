@@ -1,7 +1,7 @@
 ### Textile language support
 
-[![https://travis-ci.com/stasmihailov/intellij-textile.svg?branch=master](Travis Build Status)](https://travis-ci.com/github/stasmihailov/intellij-textile)
-[![https://img.shields.io/jetbrains/plugin/d/com.potniype4kin.intellij-textile](JetBrains IntelliJ Plugin Link)](https://plugins.jetbrains.com/plugin/14204)
+[![Travis Build Status](https://travis-ci.com/stasmihailov/intellij-textile.svg?branch=master)](https://travis-ci.com/github/stasmihailov/intellij-textile)
+[![JetBrains IntelliJ Plugin Link](https://img.shields.io/jetbrains/plugin/d/com.potniype4kin.intellij-textile)](https://plugins.jetbrains.com/plugin/14204)
 
 Adds support for Textile markup to Jetbrains IDEs
 
