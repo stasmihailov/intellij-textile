@@ -14,66 +14,66 @@ Adds support for Textile markup to Jetbrains IDEs
 #### Block modifiers
 | supported? | when was it added? | feature |
 | --- | --- | --- |
-| [x] | `<0.1.3-RELEASE` | [Paragraphs](https://textile-lang.com/doc/paragraphs) |
-| [x] | `<0.1.3-RELEASE` | [Headings](https://textile-lang.com/doc/headings) |
-| [ ] | | [Pre-formatted text](https://textile-lang.com/doc/pre-formatted-text) |
-| [x] | `<0.1.3-RELEASE` | [Block code](https://textile-lang.com/doc/block-code) |
-| [ ] | | [Block quotations](https://textile-lang.com/doc/block-quotations) |
-| [ ] | | [Textile comments](https://textile-lang.com/doc/textile-comments) |
-| [ ] | | [No formatting (override Textile)](https://textile-lang.com/doc/no-textile-processing) |
-| [ ] | | [HTML](https://textile-lang.com/doc/html) |
+| <ul><li>[x] | `<0.1.3-RELEASE` | [Paragraphs](https://textile-lang.com/doc/paragraphs) |
+| <ul><li>[x] | `<0.1.3-RELEASE` | [Headings](https://textile-lang.com/doc/headings) |
+| <ul><li>[ ] | | [Pre-formatted text](https://textile-lang.com/doc/pre-formatted-text) |
+| <ul><li>[x] | `<0.1.3-RELEASE` | [Block code](https://textile-lang.com/doc/block-code) |
+| <ul><li>[ ] | | [Block quotations](https://textile-lang.com/doc/block-quotations) |
+| <ul><li>[ ] | | [Textile comments](https://textile-lang.com/doc/textile-comments) |
+| <ul><li>[ ] | | [No formatting (override Textile)](https://textile-lang.com/doc/no-textile-processing) |
+| <ul><li>[ ] | | [HTML](https://textile-lang.com/doc/html) |
 
 #### Lists and notes
 | supported? | when was it added? | feature |
 | --- | --- | --- |
-| [x] | @<0.1.3-RELEASE@ | [Bulleted (unordered) lists](https://textile-lang.com/doc/bulleted-unordered-lists) |
-| [ ] | | [Numbered (ordered) lists](https://textile-lang.com/doc/numbered-ordered-lists) |
-| [ ] | | [Definition lists](https://textile-lang.com/doc/definition-lists) |
-| [ ] | | [Footnotes](https://textile-lang.com/doc/footnotes) |
-| [ ] | | [Endnotes (auto-numbered notes)](https://textile-lang.com/doc/auto-numbered-notes) |
+| <ul><li>[x] | `<0.1.3-RELEASE` | [Bulleted (unordered) lists](https://textile-lang.com/doc/bulleted-unordered-lists) |
+| <ul><li>[ ] | | [Numbered (ordered) lists](https://textile-lang.com/doc/numbered-ordered-lists) |
+| <ul><li>[ ] | | [Definition lists](https://textile-lang.com/doc/definition-lists) |
+| <ul><li>[ ] | | [Footnotes](https://textile-lang.com/doc/footnotes) |
+| <ul><li>[ ] | | [Endnotes (auto-numbered notes)](https://textile-lang.com/doc/auto-numbered-notes) |
 
 #### Links and images
 | supported? | when was it added? | feature |
 | --- | --- | --- |
-| [ ] | | [Links](https://textile-lang.com/doc/links) |
-| [ ] | | [Images](https://textile-lang.com/doc/images) |
+| <ul><li>[ ] | | [Links](https://textile-lang.com/doc/links) |
+| <ul><li>[ ] | | [Images](https://textile-lang.com/doc/images) |
 
 #### Tables
 | supported? | when was it added? | feature |
 | --- | --- | --- |
-| [ ] | | [Tables](https://textile-lang.com/doc/tables) |
+| <ul><li>[ ] | | [Tables](https://textile-lang.com/doc/tables) |
 
 #### Phrase modifiers
 | supported? | when was it added? | feature |
 | --- | --- | --- |
-| [ ] | | [Strong and bold text](https://textile-lang.com/doc/strong-and-bold-text) |
-| [ ] | | [Emphasized and italic text](https://textile-lang.com/doc/emphasized-and-italic-text) |
-| [ ] | | [Superscript and subscript text](https://textile-lang.com/doc/subscript-and-superscript-text) |
-| [ ] | | [Insertions and deletions](https://textile-lang.com/doc/insertions-and-deletions) |
-| [ ] | | [Citations](https://textile-lang.com/doc/citations) |
-| [ ] | | [Acronyms and abbreviations](https://textile-lang.com/doc/acronyms-abbreviations) |
-| [ ] | | [Inline code](https://textile-lang.com/doc/inline-code) |
+| <ul><li>[ ] | | [Strong and bold text](https://textile-lang.com/doc/strong-and-bold-text) |
+| <ul><li>[ ] | | [Emphasized and italic text](https://textile-lang.com/doc/emphasized-and-italic-text) |
+| <ul><li>[ ] | | [Superscript and subscript text](https://textile-lang.com/doc/subscript-and-superscript-text) |
+| <ul><li>[ ] | | [Insertions and deletions](https://textile-lang.com/doc/insertions-and-deletions) |
+| <ul><li>[ ] | | [Citations](https://textile-lang.com/doc/citations) |
+| <ul><li>[ ] | | [Acronyms and abbreviations](https://textile-lang.com/doc/acronyms-abbreviations) |
+| <ul><li>[ ] | | [Inline code](https://textile-lang.com/doc/inline-code) |
 
 #### Attributes
 | supported? | when was it added? | feature |
 | --- | --- | --- |
-| [ ] | | [Alignment](https://textile-lang.com/doc/text-alignment) |
-| [ ] | | [Indentation](https://textile-lang.com/doc/indentation) |
-| [ ] | | [Spans](https://textile-lang.com/doc/spans) |
-| [ ] | | [CSS styles](https://textile-lang.com/doc/css-styles) |
-| [ ] | | [Class and ID attributes](https://textile-lang.com/doc/classes-and-ids) |
-| [ ] | | [Language](https://textile-lang.com/doc/language) |
+| <ul><li>[ ] | | [Alignment](https://textile-lang.com/doc/text-alignment) |
+| <ul><li>[ ] | | [Indentation](https://textile-lang.com/doc/indentation) |
+| <ul><li>[ ] | | [Spans](https://textile-lang.com/doc/spans) |
+| <ul><li>[ ] | | [CSS styles](https://textile-lang.com/doc/css-styles) |
+| <ul><li>[ ] | | [Class and ID attributes](https://textile-lang.com/doc/classes-and-ids) |
+| <ul><li>[ ] | | [Language](https://textile-lang.com/doc/language) |
 
 #### Typography
 | supported? | when was it added? | feature |
 | --- | --- | --- |
-| [ ] | | [Character conversions](https://textile-lang.com/doc/special-characters) |
-| [ ] | | [Unicode symbols](https://textile-lang.com/doc/unicode-symbols) |
-| [ ] | | [Uppercase words](https://textile-lang.com/doc/uppercase-words) |
+| <ul><li>[ ] | | [Character conversions](https://textile-lang.com/doc/special-characters) |
+| <ul><li>[ ] | | [Unicode symbols](https://textile-lang.com/doc/unicode-symbols) |
+| <ul><li>[ ] | | [Uppercase words](https://textile-lang.com/doc/uppercase-words) |
 
 #### Additional support of Confluence features
 | supported? | when was it added? | feature |
 | --- | --- | --- |
-| [x] | `<0.1.3-RELEASE` | `{code}` macro |
-| [x] | `<0.1.3-RELEASE` | `{info}` macro |
-| [ ] | | ticker(\`)- and double-brace(`{{`)-style inline code |
+| <ul><li>[x] | `<0.1.3-RELEASE` | `{code}` macro |
+| <ul><li>[x] | `<0.1.3-RELEASE` | `{info}` macro |
+| <ul><li>[ ] | | ticker(\`)- and double-brace(`{{`)-style inline code |
