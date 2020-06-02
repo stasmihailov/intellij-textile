@@ -25,6 +25,7 @@ Adds support for Textile markup to Jetbrains IDEs
 
 #### Lists and notes
 | supported? | when was it added? | feature |
+| --- | --- | --- |
 | [x] | @<0.1.3-RELEASE@ | [Bulleted (unordered) lists](https://textile-lang.com/doc/bulleted-unordered-lists) |
 | [ ] | | [Numbered (ordered) lists](https://textile-lang.com/doc/numbered-ordered-lists) |
 | [ ] | | [Definition lists](https://textile-lang.com/doc/definition-lists) |
@@ -33,15 +34,18 @@ Adds support for Textile markup to Jetbrains IDEs
 
 #### Links and images
 | supported? | when was it added? | feature |
+| --- | --- | --- |
 | [ ] | | [Links](https://textile-lang.com/doc/links) |
 | [ ] | | [Images](https://textile-lang.com/doc/images) |
 
 #### Tables
 | supported? | when was it added? | feature |
+| --- | --- | --- |
 | [ ] | | [Tables](https://textile-lang.com/doc/tables) |
 
 #### Phrase modifiers
 | supported? | when was it added? | feature |
+| --- | --- | --- |
 | [ ] | | [Strong and bold text](https://textile-lang.com/doc/strong-and-bold-text) |
 | [ ] | | [Emphasized and italic text](https://textile-lang.com/doc/emphasized-and-italic-text) |
 | [ ] | | [Superscript and subscript text](https://textile-lang.com/doc/subscript-and-superscript-text) |
@@ -52,6 +56,7 @@ Adds support for Textile markup to Jetbrains IDEs
 
 #### Attributes
 | supported? | when was it added? | feature |
+| --- | --- | --- |
 | [ ] | | [Alignment](https://textile-lang.com/doc/text-alignment) |
 | [ ] | | [Indentation](https://textile-lang.com/doc/indentation) |
 | [ ] | | [Spans](https://textile-lang.com/doc/spans) |
@@ -60,11 +65,15 @@ Adds support for Textile markup to Jetbrains IDEs
 | [ ] | | [Language](https://textile-lang.com/doc/language) |
 
 #### Typography
+| supported? | when was it added? | feature |
+| --- | --- | --- |
 | [ ] | | [Character conversions](https://textile-lang.com/doc/special-characters) |
 | [ ] | | [Unicode symbols](https://textile-lang.com/doc/unicode-symbols) |
 | [ ] | | [Uppercase words](https://textile-lang.com/doc/uppercase-words) |
 
 #### Additional support of Confluence features
+| supported? | when was it added? | feature |
+| --- | --- | --- |
 | [x] | `<0.1.3-RELEASE` | `{code}` macro |
 | [x] | `<0.1.3-RELEASE` | `{info}` macro |
 | [ ] | | ticker(\`)- and double-brace(`{{`)-style inline code |
