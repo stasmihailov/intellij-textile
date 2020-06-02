@@ -14,6 +14,9 @@ Adds support for Textile markup to Jetbrains IDEs
 #### Block modifiers
 | supported? | when was it added? | feature |
 | --- | --- | --- |
+| <ul><li>[x] item1</li><li>[ ] item2</li></ul> | --- | --- |
+| <ul><li>[x] item1</li></ul> | --- | --- |
+| <ul><li>[x] item1 | --- | --- |
 | <ul><li>[x] | `<0.1.3-RELEASE` | [Paragraphs](https://textile-lang.com/doc/paragraphs) |
 | <ul><li>[x] | `<0.1.3-RELEASE` | [Headings](https://textile-lang.com/doc/headings) |
 | <ul><li>[ ] | | [Pre-formatted text](https://textile-lang.com/doc/pre-formatted-text) |
