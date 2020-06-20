@@ -6,7 +6,7 @@ plugins {
 apply plugin: 'com.github.johnrengelman.shadow'
 
 group 'org.potniype4kin'
-version '0.1.3'
+version '0.1.4'
 
 repositories {
     mavenCentral()
