@@ -35,6 +35,7 @@ private info ::= info_start+ eol? (info_text eol?)+ info_end
 
 private list_text ::= LIST_TEXT (space LIST_TEXT)*
 private list ::= LIST_DELIM list_text
+private numbered_list ::= ORDERED_LIST_DELIM list_text
 
 private text ::= TEXT (space TEXT)*
 private space ::= SPACE
@@ -44,6 +45,7 @@ private paragraph_break ::= PARAGRAPH_BREAK
 private eol ::= space? EOL
 private item ::= header
     | list
+    | numbered_list
     | code
     | code_inline
     | info

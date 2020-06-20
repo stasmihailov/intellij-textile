@@ -25,6 +25,7 @@ public interface TextileType {
   IElementType INLINE_CODE_START = new TextileToken("INLINE_CODE_START");
   IElementType LIST_DELIM = new TextileToken("LIST_DELIM");
   IElementType LIST_TEXT = new TextileToken("LIST_TEXT");
+  IElementType ORDERED_LIST_DELIM = new TextileToken("ORDERED_LIST_DELIM");
   IElementType PARAGRAPH_BREAK = new TextileToken("PARAGRAPH_BREAK");
   IElementType SIGN_MINUS = new TextileToken("SIGN_MINUS");
   IElementType SIGN_OK = new TextileToken("SIGN_OK");

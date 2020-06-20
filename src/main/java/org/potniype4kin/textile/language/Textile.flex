@@ -28,7 +28,9 @@ HEADER_LEVEL=[1-6]
 HEADER_SUFFIX="."
 HEADER_DEFINITION={HEADER_PREFIX}{HEADER_LEVEL}{HEADER_SUFFIX}{SPACE}
 LIST_DELIM=[-*]
+ORDERED_LIST_DELIM=[#*]
 LIST_DEFINITION={LIST_DELIM}+{SPACE}
+NUMBERED_LIST_DEFINITION={ORDERED_LIST_DELIM}+{SPACE}
 CODE_START_TOKEN="{code"
 INLINE_CODE_START="{{"
 INLINE_CODE_END="}}"
@@ -48,6 +50,7 @@ TEXT_WITHOUT_MACRO_END=[^\ \t\f\r\n{}][^\ \t\f\r\n}]*
 
 %state header
 %state list
+%state numbered_list
 %state inline_code
 %state code_def
 %state code_delim
@@ -76,6 +79,10 @@ TEXT_WITHOUT_MACRO_END=[^\ \t\f\r\n{}][^\ \t\f\r\n}]*
         yybegin(list);
         return TextileType.LIST_DELIM;
     }
+    ^{NUMBERED_LIST_DEFINITION} {
+        yybegin(numbered_list);
+        return TextileType.ORDERED_LIST_DELIM;
+    }
     {CODE_START_TOKEN} {
         yybegin(code_def);
         return TextileType.CODE_DEF;
@@ -101,7 +108,7 @@ TEXT_WITHOUT_MACRO_END=[^\ \t\f\r\n{}][^\ \t\f\r\n}]*
         return TextileType.HEADER_TEXT;
     }
 }
-<list> {
+<list, numbered_list> {
     {LINE_BREAK} {
         yybegin(YYINITIAL);
         return TextileType.EOL;

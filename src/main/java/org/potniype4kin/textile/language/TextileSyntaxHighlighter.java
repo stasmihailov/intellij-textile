@@ -29,6 +29,7 @@ public class TextileSyntaxHighlighter extends SyntaxHighlighterBase {
         textKeysByElementType.put(TextileType.HEADER_START, () -> pack(headerStart()));
         textKeysByElementType.put(TextileType.HEADER_TEXT, () -> pack(headerText()));
         textKeysByElementType.put(TextileType.LIST_DELIM, () -> pack(listDelim()));
+        textKeysByElementType.put(TextileType.ORDERED_LIST_DELIM, () -> pack(listDelim()));
         textKeysByElementType.put(TextileType.CODE_DEF, () -> pack(code()));
         textKeysByElementType.put(TextileType.CODE_LANGUAGE, () -> pack(code()));
         textKeysByElementType.put(TextileType.CODE_DEF_END, () -> pack(code()));

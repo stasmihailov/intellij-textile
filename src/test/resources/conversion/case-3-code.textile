@@ -6,6 +6,19 @@ h2. code definition
   (println "Hey There"))
 {code}
 
+h2. another header
+
+- unordered list item
+# ordered list item 1
+# ordered list item 2
+## ordered list item 2.1
+## ordered list item 2.2
+# ordered list item 3
+
+    sad {code}
+    some code here
+{code}
+
 here is some inline code: {{Exception raised by Thread-1{(accidentally)}}
 
 The end!

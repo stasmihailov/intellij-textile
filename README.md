@@ -27,7 +27,7 @@ Adds support for Textile markup to Jetbrains IDEs
 | when was it added? | feature |
 | --- | --- |
 | `<0.1.3-RELEASE` | [Bulleted (unordered) lists](https://textile-lang.com/doc/bulleted-unordered-lists) |
-| --- | [Numbered (ordered) lists](https://textile-lang.com/doc/numbered-ordered-lists) |
+| `0.1.4-RELEASE` | [Numbered (ordered) lists](https://textile-lang.com/doc/numbered-ordered-lists) |
 | --- | [Definition lists](https://textile-lang.com/doc/definition-lists) |
 | --- | [Footnotes](https://textile-lang.com/doc/footnotes) |
 | --- | [Endnotes (auto-numbered notes)](https://textile-lang.com/doc/auto-numbered-notes) |

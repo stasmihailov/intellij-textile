@@ -448,6 +448,7 @@ public class TextileParser implements PsiParser, LightPsiParser {
   /* ********************************************************** */
   // header
   //     | list
+  //     | numbered_list
   //     | code
   //     | code_inline
   //     | info
@@ -462,6 +463,7 @@ public class TextileParser implements PsiParser, LightPsiParser {
     boolean r;
     r = header(b, l + 1);
     if (!r) r = list(b, l + 1);
+    if (!r) r = numbered_list(b, l + 1);
     if (!r) r = code(b, l + 1);
     if (!r) r = code_inline(b, l + 1);
     if (!r) r = info(b, l + 1);
@@ -518,6 +520,19 @@ public class TextileParser implements PsiParser, LightPsiParser {
     Marker m = enter_section_(b);
     r = space(b, l + 1);
     r = r && consumeToken(b, LIST_TEXT);
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  /* ********************************************************** */
+  // ORDERED_LIST_DELIM list_text
+  static boolean numbered_list(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "numbered_list")) return false;
+    if (!nextTokenIs(b, ORDERED_LIST_DELIM)) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = consumeToken(b, ORDERED_LIST_DELIM);
+    r = r && list_text(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
