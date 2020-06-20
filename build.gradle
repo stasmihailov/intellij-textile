@@ -47,3 +47,8 @@ test {
 publishPlugin {
     token = System.getenv('org.gradle.project.intellijpublishtoken')
 }
+
+intellij {
+    version = '2020.1'
+    type = 'IC'
+}

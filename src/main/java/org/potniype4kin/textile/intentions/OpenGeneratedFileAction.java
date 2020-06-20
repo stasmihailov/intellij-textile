@@ -1,6 +1,5 @@
 package org.potniype4kin.textile.intentions;
 
-import com.intellij.ide.lightEdit.LightEdit;
 import com.intellij.ide.util.PsiNavigationSupport;
 import com.intellij.notification.Notification;
 import com.intellij.notification.NotificationAction;
@@ -10,7 +9,6 @@ import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
 import java.nio.file.Path;
 
 public class OpenGeneratedFileAction extends NotificationAction {
@@ -38,11 +36,7 @@ public class OpenGeneratedFileAction extends NotificationAction {
             throw new IllegalStateException("could not find generated html file in current project");
         }
 
-        if (LightEdit.owns(project)) {
-            LightEdit.openFile(virtualFile);
-        } else {
-            openInCurrentProject(virtualFile, project);
-        }
+        openInCurrentProject(virtualFile, project);
     }
 
     private void openInCurrentProject(VirtualFile virtualFile, Project project) {

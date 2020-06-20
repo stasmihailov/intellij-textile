@@ -21,6 +21,7 @@ import static com.intellij.openapi.editor.DefaultLanguageHighlighterColors.DOC_C
 import static com.intellij.openapi.editor.colors.TextAttributesKey.find;
 
 public class TextileSyntaxHighlighter extends SyntaxHighlighterBase {
+    private static final TextAttributesKey[] EMPTY_ARRAY = new TextAttributesKey[0];
     private final Map<IElementType, Supplier<TextAttributesKey[]>> textKeysByElementType;
 
     public TextileSyntaxHighlighter() {
@@ -64,7 +65,7 @@ public class TextileSyntaxHighlighter extends SyntaxHighlighterBase {
     @NotNull
     @Override
     public TextAttributesKey[] getTokenHighlights(IElementType elementType) {
-        return textKeysByElementType.getOrDefault(elementType, () -> TextAttributesKey.EMPTY_ARRAY).get();
+        return textKeysByElementType.getOrDefault(elementType, () -> EMPTY_ARRAY).get();
     }
 
     private TextAttributesKey headerStart() {

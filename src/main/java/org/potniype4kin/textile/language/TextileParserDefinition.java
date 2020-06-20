@@ -1,6 +1,7 @@
 package org.potniype4kin.textile.language;
 
 import com.intellij.lang.ASTNode;
+import com.intellij.lang.Language;
 import com.intellij.lang.ParserDefinition;
 import com.intellij.lang.PsiParser;
 import com.intellij.lexer.Lexer;
@@ -8,6 +9,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.psi.FileViewProvider;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
+import com.intellij.psi.tree.IElementType;
 import com.intellij.psi.tree.IFileElementType;
 import com.intellij.psi.tree.TokenSet;
 import org.jetbrains.annotations.NotNull;
@@ -55,5 +57,16 @@ public class TextileParserDefinition implements ParserDefinition {
     @Override
     public PsiFile createFile(FileViewProvider fileViewProvider) {
         return new TextileFile(fileViewProvider);
+    }
+
+    @Override
+    public SpaceRequirements spaceExistanceTypeBetweenTokens(ASTNode left, ASTNode right) {
+        return SpaceRequirements.MAY;
+    }
+
+    @NotNull
+    @Override
+    public TokenSet getWhitespaceTokens() {
+        return TokenSet.create(new IElementType("WHITE_SPACE", Language.ANY));
     }
 }
