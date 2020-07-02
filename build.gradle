@@ -45,7 +45,7 @@ test {
 }
 
 publishPlugin {
-    token = System.getenv('org.gradle.project.intellijpublishtoken')
+    token = System.getenv('ORG_GRADLE_PROJECT_intellijPublishToken')
 }
 
 intellij {
