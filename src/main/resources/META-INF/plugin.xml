@@ -18,7 +18,7 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <fileTypeFactory implementation="org.potniype4kin.textile.TextileFileType$Factory"/>
-    <fileType name="Textile File"
+    <fileType name="Textile Markup"
               implementationClass="org.potniype4kin.textile.TextileFileType"
               fieldName="INSTANCE"
               language="Textile"
