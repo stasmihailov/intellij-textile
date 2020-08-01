@@ -2,5 +2,5 @@ target/
 build/
 out/
 .gradle/
-.idea/workspace.xml
-.idea/emacs.xml
+.idea/*
+*.iml
