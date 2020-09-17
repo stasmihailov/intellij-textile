@@ -140,15 +140,12 @@ TEXT_WITHOUT_MACRO_END=[^\ \t\f\r\n{}][^\ \t\f\r\n}]*
     }
 }
 <code_delim> {
-    {TEXT} / {CODE_START_TOKEN_CLOSE} {
+    [a-zA-Z ]+ / {CODE_START_TOKEN_CLOSE} {
         return TextileType.CODE_LANGUAGE;
     }
     {CODE_START_TOKEN_CLOSE} {
-        return TextileType.CODE_DEF_END;
-    }
-    {LINE_BREAK} {
         yybegin(code);
-        return TextileType.EOL;
+        return TextileType.CODE_DEF_END;
     }
 }
 <code> {

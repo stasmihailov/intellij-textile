@@ -21,4 +21,6 @@ h2. another header
 
 here is some inline code: {{Exception raised by Thread-1{(accidentally)}}
 
+This line actually has an empty code block {code:textile}{code}
+
 The end!

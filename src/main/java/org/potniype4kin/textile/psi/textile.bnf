@@ -24,7 +24,7 @@ private header ::= HEADER_START header_text
 private code_start ::= space? CODE_DEF (CODE_DELIM CODE_LANGUAGE)? CODE_DEF_END
 private code_line ::= space? CODE+
 private code_end ::= space? CODE_END
-private code ::= code_start eol? (code_line eol?)+ code_end
+private code ::= code_start eol? (code_line eol?)* code_end
 
 private code_inline ::= INLINE_CODE_START space? CODE+ space? INLINE_CODE_END
 

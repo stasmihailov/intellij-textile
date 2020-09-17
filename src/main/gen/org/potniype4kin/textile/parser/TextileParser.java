@@ -42,7 +42,7 @@ public class TextileParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // code_start eol? (code_line eol?)+ code_end
+  // code_start eol? (code_line eol?)* code_end
   static boolean code(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "code")) return false;
     if (!nextTokenIs(b, "", CODE_DEF, SPACE)) return false;
@@ -63,19 +63,15 @@ public class TextileParser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // (code_line eol?)+
+  // (code_line eol?)*
   private static boolean code_2(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "code_2")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = code_2_0(b, l + 1);
-    while (r) {
+    while (true) {
       int c = current_position_(b);
       if (!code_2_0(b, l + 1)) break;
       if (!empty_element_parsed_guard_(b, "code_2", c)) break;
     }
-    exit_section_(b, m, null, r);
-    return r;
+    return true;
   }
 
   // code_line eol?
