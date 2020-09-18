@@ -8,6 +8,7 @@ import com.intellij.lang.ASTNode;
 public interface TextileType {
 
 
+  IElementType BOLD_TEXT_DELIM = new TextileToken("BOLD_TEXT_DELIM");
   IElementType CHAPTER_BREAK = new TextileToken("CHAPTER_BREAK");
   IElementType CODE = new TextileToken("CODE");
   IElementType CODE_DEF = new TextileToken("CODE_DEF");
@@ -23,6 +24,7 @@ public interface TextileType {
   IElementType INFO_TEXT = new TextileToken("INFO_TEXT");
   IElementType INLINE_CODE_END = new TextileToken("INLINE_CODE_END");
   IElementType INLINE_CODE_START = new TextileToken("INLINE_CODE_START");
+  IElementType ITALIC_TEXT_DELIM = new TextileToken("ITALIC_TEXT_DELIM");
   IElementType LIST_DELIM = new TextileToken("LIST_DELIM");
   IElementType LIST_TEXT = new TextileToken("LIST_TEXT");
   IElementType ORDERED_LIST_DELIM = new TextileToken("ORDERED_LIST_DELIM");

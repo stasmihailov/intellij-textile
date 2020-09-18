@@ -38,6 +38,8 @@ private list ::= LIST_DELIM list_text
 private numbered_list ::= ORDERED_LIST_DELIM list_text
 
 private text ::= TEXT (space TEXT)*
+private bold_text ::= BOLD_TEXT_DELIM TEXT (space TEXT)* BOLD_TEXT_DELIM
+private italic_text ::= ITALIC_TEXT_DELIM TEXT (space TEXT)* ITALIC_TEXT_DELIM
 private space ::= SPACE
 private signs ::= SIGN_WARNING | SIGN_PLUS | SIGN_MINUS | SIGN_OK | SIGN_QUESTION
 private chapter_break ::= CHAPTER_BREAK
@@ -50,6 +52,8 @@ private item ::= header
     | code_inline
     | info
     | text
+    | bold_text
+    | italic_text
     | chapter_break
     | paragraph_break
     | signs

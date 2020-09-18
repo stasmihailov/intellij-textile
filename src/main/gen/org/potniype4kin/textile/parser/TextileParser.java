@@ -36,6 +36,42 @@ public class TextileParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
+  // BOLD_TEXT_DELIM TEXT (space TEXT)* BOLD_TEXT_DELIM
+  static boolean bold_text(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "bold_text")) return false;
+    if (!nextTokenIs(b, BOLD_TEXT_DELIM)) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = consumeTokens(b, 0, BOLD_TEXT_DELIM, TEXT);
+    r = r && bold_text_2(b, l + 1);
+    r = r && consumeToken(b, BOLD_TEXT_DELIM);
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // (space TEXT)*
+  private static boolean bold_text_2(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "bold_text_2")) return false;
+    while (true) {
+      int c = current_position_(b);
+      if (!bold_text_2_0(b, l + 1)) break;
+      if (!empty_element_parsed_guard_(b, "bold_text_2", c)) break;
+    }
+    return true;
+  }
+
+  // space TEXT
+  private static boolean bold_text_2_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "bold_text_2_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = space(b, l + 1);
+    r = r && consumeToken(b, TEXT);
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  /* ********************************************************** */
   // CHAPTER_BREAK
   static boolean chapter_break(PsiBuilder b, int l) {
     return consumeToken(b, CHAPTER_BREAK);
@@ -442,6 +478,42 @@ public class TextileParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
+  // ITALIC_TEXT_DELIM TEXT (space TEXT)* ITALIC_TEXT_DELIM
+  static boolean italic_text(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "italic_text")) return false;
+    if (!nextTokenIs(b, ITALIC_TEXT_DELIM)) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = consumeTokens(b, 0, ITALIC_TEXT_DELIM, TEXT);
+    r = r && italic_text_2(b, l + 1);
+    r = r && consumeToken(b, ITALIC_TEXT_DELIM);
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // (space TEXT)*
+  private static boolean italic_text_2(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "italic_text_2")) return false;
+    while (true) {
+      int c = current_position_(b);
+      if (!italic_text_2_0(b, l + 1)) break;
+      if (!empty_element_parsed_guard_(b, "italic_text_2", c)) break;
+    }
+    return true;
+  }
+
+  // space TEXT
+  private static boolean italic_text_2_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "italic_text_2_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = space(b, l + 1);
+    r = r && consumeToken(b, TEXT);
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  /* ********************************************************** */
   // header
   //     | list
   //     | numbered_list
@@ -449,6 +521,8 @@ public class TextileParser implements PsiParser, LightPsiParser {
   //     | code_inline
   //     | info
   //     | text
+  //     | bold_text
+  //     | italic_text
   //     | chapter_break
   //     | paragraph_break
   //     | signs
@@ -464,6 +538,8 @@ public class TextileParser implements PsiParser, LightPsiParser {
     if (!r) r = code_inline(b, l + 1);
     if (!r) r = info(b, l + 1);
     if (!r) r = text(b, l + 1);
+    if (!r) r = bold_text(b, l + 1);
+    if (!r) r = italic_text(b, l + 1);
     if (!r) r = chapter_break(b, l + 1);
     if (!r) r = paragraph_break(b, l + 1);
     if (!r) r = signs(b, l + 1);

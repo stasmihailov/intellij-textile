@@ -45,9 +45,13 @@ SIGN_PLUS="(+)"
 SIGN_MINUS="(-)"
 SIGN_OK="(/)"
 SIGN_QUESTION="(?)"
-TEXT=[^\ \t\f\r\n{][^\ \t\f\r\n}]*
+TEXT=[^*_\ \t\f\r\n{][^*_\ \t\f\r\n}]*
+BOLD_TEXT_START="*"
+ITALIC_TEXT_START="_"
 TEXT_WITHOUT_MACRO_END=[^\ \t\f\r\n{}][^\ \t\f\r\n}]*
 
+%state bold_text
+%state italic_text
 %state header
 %state list
 %state numbered_list
@@ -95,8 +99,34 @@ TEXT_WITHOUT_MACRO_END=[^\ \t\f\r\n{}][^\ \t\f\r\n}]*
         yybegin(info_start);
         return TextileType.INFO_START;
     }
+    {BOLD_TEXT_START}{1,2} / [^*] {
+        yybegin(bold_text);
+        return TextileType.BOLD_TEXT_DELIM;
+    }
+    {ITALIC_TEXT_START}{1,2} / [^_] {
+        yybegin(bold_text);
+        return TextileType.ITALIC_TEXT_DELIM;
+    }
     {TEXT} {
         return TextileType.TEXT;
+    }
+}
+<bold_text> {
+    {TEXT} {
+        return TextileType.TEXT;
+    }
+    {BOLD_TEXT_START}{1,2} / [^*] {
+        yybegin(YYINITIAL);
+        return TextileType.BOLD_TEXT_DELIM;
+    }
+}
+<italic_text> {
+    {TEXT} {
+        return TextileType.TEXT;
+    }
+    {ITALIC_TEXT_START}{1,2} / [^_] {
+        yybegin(YYINITIAL);
+        return TextileType.ITALIC_TEXT_DELIM;
     }
 }
 <header> {

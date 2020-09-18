@@ -23,4 +23,7 @@ here is some inline code: {{Exception raised by Thread-1{(accidentally)}}
 
 This line actually has an empty code block {code:textile}{code}
 
+* this list item contains *bold text* right here
+* this list item contains _italic text_ right here
+
 The end!
