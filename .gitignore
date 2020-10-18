@@ -4,3 +4,10 @@ out/
 .gradle/
 .idea/*
 *.iml
+src/main/gen
+
+# output of gradle jflex plugin
+/bin
+.classpath
+.project
+.settings/
