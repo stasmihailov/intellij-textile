@@ -2,11 +2,8 @@ plugins {
     id 'java'
     id 'com.github.johnrengelman.shadow' version '5.2.0'
     id 'org.jetbrains.intellij' version '0.4.18'
-    id "org.jetbrains.grammarkit" version "2020.2.1"
 }
 apply plugin: 'com.github.johnrengelman.shadow'
-apply plugin: 'org.jetbrains.grammarkit'
-import org.jetbrains.grammarkit.tasks.*
 
 group 'org.potniype4kin'
 version '0.1.5'
@@ -16,35 +13,11 @@ repositories {
 }
 
 dependencies {
-    compile group: 'org.jsoup', name: 'jsoup', version: '1.13.1'
-
     testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.4.2'
     testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: '5.4.2'
     testRuntime group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.4.2'
 
     testCompile group: 'org.mockito', name: 'mockito-all', version: '1.10.19'
-}
-
-grammarKit {
-    jflexRelease = '1.7.0-1'
-    grammarKitRelease = '2020.1'
-}
-
-task generateLexer(type: GenerateLexer) {
-    source = "src/main/java/org/potniype4kin/textile/language/Textile.flex"
-    targetDir = "src/main/gen/org/potniype4kin/textile/language/"
-    targetClass = "TextileLexer"
-
-    purgeOldFiles = true
-}
-
-task generateParser(type: GenerateParser) {
-    source = "src/main/java/org/potniype4kin/textile/psi/textile.bnf"
-    targetRoot = 'src/main/gen/'
-    pathToParser = 'TextileParser.java'
-    pathToPsiRoot = 'psi'
-
-    purgeOldFiles = true
 }
 
 compileJava {
@@ -55,7 +28,7 @@ compileJava {
 sourceSets {
     main {
         java {
-            srcDirs += ['src/main/textilej', 'src/main/gen', 'src/main/java']
+            srcDirs += ['src/main/textilej', 'src/main/java']
         }
     }
     test {

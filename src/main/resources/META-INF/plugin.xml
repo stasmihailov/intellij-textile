@@ -23,8 +23,6 @@
               fieldName="INSTANCE"
               language="Textile"
               extensions="textile"/>
-    <lang.parserDefinition language="Textile"
-                           implementationClass="org.potniype4kin.textile.language.TextileParserDefinition"/>
     <lang.syntaxHighlighterFactory language="Textile"
                                    implementationClass="org.potniype4kin.textile.language.TextileSyntaxHighlighter$Factory"/>
     <additionalTextAttributes scheme="Default" file="/colorSchemes/Textile.xml"/>

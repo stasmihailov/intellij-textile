@@ -1,6 +1,5 @@
 package org.potniype4kin.textile.language;
 
-import com.intellij.lexer.FlexLexer;
 import com.intellij.psi.tree.IElementType;
 import com.intellij.psi.TokenType;
 import org.potniype4kin.textile.psi.TextileType;

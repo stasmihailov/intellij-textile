@@ -14,8 +14,8 @@ h6. This is a level 6 header
 
 h7. This is NOT a header
 
-paragraph spans multiple lines
-and is joined unless two line breaks
+*paragraph* spans multiple lines
+and is joined _unless two line breaks_
 
 this is a different paragraph
 

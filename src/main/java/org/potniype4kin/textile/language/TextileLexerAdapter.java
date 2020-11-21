@@ -6,6 +6,6 @@ import java.io.Reader;
 
 public class TextileLexerAdapter extends FlexAdapter {
     public TextileLexerAdapter() {
-        super(new TextileLexer((Reader) null));
+        super(new FlexTextileLexer(new TextileLexer()));
     }
 }
