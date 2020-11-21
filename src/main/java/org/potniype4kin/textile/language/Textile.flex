@@ -16,12 +16,12 @@ import org.potniype4kin.textile.psi.TextileType;
 %eof{  return;
 %eof}
 
-CRLF=[\r\n]
+EOF=\R
 SPACE=[\ \t\f]
 
 CHAPTER_BREAK="-"{4}
-PARAGRAPH_BREAK={CRLF}
-LINE_BREAK={SPACE}*{CRLF}
+PARAGRAPH_BREAK={EOF}
+LINE_BREAK={SPACE}*{EOF}
 
 HEADER_PREFIX="h"
 HEADER_LEVEL=[1-6]
@@ -45,10 +45,10 @@ SIGN_PLUS="(+)"
 SIGN_MINUS="(-)"
 SIGN_OK="(/)"
 SIGN_QUESTION="(?)"
-TEXT=[^*_\ \t\f\r\n{][^*_\ \t\f\r\n}]*
+TEXT=[^*_{SPACE}{EOF}{][^*_{SPACE}{EOF}}]*
 BOLD_TEXT_START="*"
 ITALIC_TEXT_START="_"
-TEXT_WITHOUT_MACRO_END=[^\ \t\f\r\n{}][^\ \t\f\r\n}]*
+TEXT_WITHOUT_MACRO_END=[^{SPACE}{EOF}{}][^{SPACE}{EOF}}]*
 
 %state bold_text
 %state italic_text
