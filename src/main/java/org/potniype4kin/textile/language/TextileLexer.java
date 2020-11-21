@@ -10,16 +10,23 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
+import java.util.LinkedList;
 import java.util.Queue;
 
 public class TextileLexer extends Lexer {
-    private CharSequence buffer = null;
-    private Queue<IElementType> tokens = null;
+    private CharSequence buffer = "";
+    private Queue<IElementType> tokens = new LinkedList<>();
+    private int startOffset = 0;
+    private int endOffset = 0;
+    private int initialState = 0;
 
     @Override
     public void start(@NotNull CharSequence buffer, int startOffset, int endOffset, int initialState) {
         this.buffer = buffer;
         this.tokens = parseTokens(buffer);
+        this.startOffset = startOffset;
+        this.endOffset = endOffset;
+        this.initialState = initialState;
     }
 
     private Queue<IElementType> parseTokens(@NotNull CharSequence buffer) {
@@ -35,27 +42,28 @@ public class TextileLexer extends Lexer {
 
     @Override
     public int getState() {
-        return 0;
+        return initialState;
     }
 
     @Nullable
     @Override
     public IElementType getTokenType() {
-        return tokens.remove();
+        return tokens.peek();
     }
 
     @Override
     public int getTokenStart() {
-        return 0;
+        return startOffset;
     }
 
     @Override
     public int getTokenEnd() {
-        return 0;
+        return endOffset;
     }
 
     @Override
     public void advance() {
+        tokens.poll();
     }
 
     @NotNull
@@ -64,12 +72,12 @@ public class TextileLexer extends Lexer {
         return new LexerPosition() {
             @Override
             public int getOffset() {
-                return 0;
+                return startOffset;
             }
 
             @Override
             public int getState() {
-                return 0;
+                return endOffset;
             }
         };
     }
@@ -86,6 +94,6 @@ public class TextileLexer extends Lexer {
 
     @Override
     public int getBufferEnd() {
-        return 0;
+        return endOffset;
     }
 }
